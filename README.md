@@ -28,7 +28,12 @@ regular files, and the README's commands rebuild the training tensor and
 retrain the model from it. (From a git checkout, `git lfs pull` fetches
 the real LFS files.)
 
-### 2. Environment (Conda)
+### 2. Environment
+
+Set up the Python environment with **either** Conda (2a) **or** uv (2b);
+both install the same `requirements.txt`.
+
+#### 2a. Conda
 
 ```bash
 conda create -n seer python=3.13
@@ -44,7 +49,7 @@ pip install torch==2.13.0 --index-url https://download.pytorch.org/whl/cu130
 python -c "import torch; print(torch.cuda.is_available())"   # expect True
 ```
 
-### 3. Environment (uv)
+#### 2b. uv
 
 ```bash
 uv venv --python 3.13 .venv
