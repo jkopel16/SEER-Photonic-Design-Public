@@ -1,0 +1,99 @@
+{
+  "step1": {
+    "trained": {
+      "signed": {
+        "annulus_conc": 0.24242646129009013,
+        "anisotropy": 2.184527901783895,
+        "peak_px": 10
+      },
+      "rectified": {
+        "doubled_annulus_conc_note": "peak expected at 2x underlying freq",
+        "anisotropy": 1.8948982255114866,
+        "peak_px": 1
+      }
+    },
+    "random": {
+      "signed": {
+        "annulus_conc": 0.0153968091863573,
+        "anisotropy": 2.9565480773052655,
+        "peak_px": 62
+      },
+      "rectified": {
+        "doubled_annulus_conc_note": "peak expected at 2x underlying freq",
+        "anisotropy": 1.530480044051868,
+        "peak_px": 62
+      }
+    },
+    "verdict_learned_signed": true
+  },
+  "step2": {
+    "champ_v1": {
+      "peak_px": 10,
+      "annulus_conc": 0.20663657498658644,
+      "peak_in_annulus": true
+    },
+    "champ_v2": {
+      "peak_px": 10,
+      "annulus_conc": 0.22586649133575232,
+      "peak_in_annulus": true
+    },
+    "bank_best": {
+      "peak_px": 11,
+      "annulus_conc": 0.26892540959152356,
+      "peak_in_annulus": true
+    },
+    "bank_median": {
+      "peak_px": 10,
+      "annulus_conc": 0.25648612447956104,
+      "peak_in_annulus": true
+    }
+  },
+  "step3": {
+    "champ_v1": {
+      "absmax": 0.009046344412723556
+    },
+    "champ_v2": {
+      "absmax": 0.0062776061759796
+    },
+    "bank_best": {
+      "absmax": 0.012684737178497017
+    },
+    "bank_median": {
+      "absmax": 0.01054831050382927
+    },
+    "global_vmax_p99": 0.005781700324729902,
+    "caption_notes": "Interior-pixel gradients are model diagnostics; only edge-adjacent gradient corresponds to a realizable perturbation. Per-hole occlusion (Sec 5.7) is the in-distribution attribution."
+  },
+  "step4": {
+    "rel_max_dev": 1.1535827726444756,
+    "pearson_corr": 0.39618728765995515
+  },
+  "step5": {
+    "per_layout_spread": {
+      "champ_v1": 0.008615732192993164,
+      "champ_v2": 0.007535696029663086,
+      "bank_best": 0.014486074447631836,
+      "bank_median": 0.012728214263916016,
+      "bank2088": 0.013875961303710938,
+      "bank2039": 0.011956214904785156,
+      "bank2032": 0.014794588088989258,
+      "bank2094": 0.014417886734008789,
+      "bank459": 0.011497020721435547,
+      "bank484": 0.01446986198425293,
+      "bank451": 0.015340089797973633,
+      "bank2068": 0.013327598571777344,
+      "bank2083": 0.014061927795410156,
+      "bank493": 0.009382009506225586,
+      "bank2084": 0.011059761047363281,
+      "bank495": 0.012869119644165039,
+      "bank2077": 0.016229867935180664,
+      "bank2044": 0.014542579650878906,
+      "bank2087": 0.0114898681640625,
+      "bank2053": 0.014776468276977539
+    },
+    "mean_spread": 0.012872827053070069,
+    "max_spread": 0.016229867935180664,
+    "reference_d4_view_spread": 0.002,
+    "reference_cell_width": 0.04
+  }
+}

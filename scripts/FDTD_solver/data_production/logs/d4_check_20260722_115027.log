@@ -1,0 +1,108 @@
+[log] mirroring all output to gpu_out_n8r60/logs/d4_check_20260722_115027.log
+================================================================
+D4 AUGMENTATION VALIDITY CHECK
+================================================================
+mode=FULL  solver=torch-FDTD(GPU)  supercell=7x7 (a_super=4550 nm)  res=60/um  decay_tol=0.0003  cap=2500  grid=12/2.5 nm  stack=air/Si(300)/ZnO(80)/Ag  device=auto fp32
+layout: class=jitter sigma=0.1 seed=21300709  (49 holes, fill=0.3848)
+
+[stage 1: isometry invariants across all 8 ops]
+    base: fill=0.384845100065  min wall=79.671 nm (constraint 50 nm)
+    identity : |dfill|=0.00e+00  max|d gap spectrum|=0.00e+00 nm  -> OK
+    rot90    : |dfill|=0.00e+00  max|d gap spectrum|=6.82e-13 nm  -> OK
+    rot180   : |dfill|=0.00e+00  max|d gap spectrum|=9.09e-13 nm  -> OK
+    rot270   : |dfill|=0.00e+00  max|d gap spectrum|=6.82e-13 nm  -> OK
+    mirror_x : |dfill|=0.00e+00  max|d gap spectrum|=6.82e-13 nm  -> OK
+    mirror_y : |dfill|=0.00e+00  max|d gap spectrum|=6.82e-13 nm  -> OK
+    diag     : |dfill|=0.00e+00  max|d gap spectrum|=0.00e+00 nm  -> OK
+    antidiag : |dfill|=0.00e+00  max|d gap spectrum|=9.09e-13 nm  -> OK
+
+[stage 2: raster commutation at IMG_SIZE=128 (the CNN input)]
+    geometry op -> matching numpy array op on the base raster
+    identity  -> as-is              (max|dpixel|=0.00e+00)  -> OK
+    rot90     -> np.rot90(M, 1)     (max|dpixel|=0.00e+00)  -> OK
+    rot180    -> np.rot90(M, 2)     (max|dpixel|=0.00e+00)  -> OK
+    rot270    -> np.rot90(M, 3)     (max|dpixel|=0.00e+00)  -> OK
+    mirror_x  -> np.flipud(M)       (max|dpixel|=0.00e+00)  -> OK
+    mirror_y  -> np.fliplr(M)       (max|dpixel|=0.00e+00)  -> OK
+    diag      -> M.T                (max|dpixel|=0.00e+00)  -> OK
+    antidiag  -> np.rot90(M, 2).T   (max|dpixel|=0.00e+00)  -> OK
+    (this table is the augmentation lookup for the ML stage,
+     for [x, y]-indexed rasters as rasterize_mask emits them)
+
+stages 1-2 PASS: the D4 ops are exact isometries and the raster
+commutes with pure numpy array ops (table -> gpu_out_n8r60/d4_check/augmentation_table.json).
+
+[stage 3: FDTD on all 8 copies]  device=cuda
+    numerics: mode=FULL  solver=torch-FDTD(GPU)  supercell=7x7 (a_super=4550 nm)  res=60/um  decay_tol=0.0003  cap=2500  grid=12/2.5 nm  stack=air/Si(300)/ZnO(80)/Ag  device=auto fp32
+    cost: 8 structures x 6 band/pol runs each, sequential -- expect ~8x one campaign sample.
+      run  1/48  elapsed    0.3 min  ETA   15.8 min
+      run  2/48  elapsed    0.6 min  ETA   13.5 min
+      run  3/48  elapsed    1.8 min  ETA   27.0 min
+      run  4/48  elapsed    3.0 min  ETA   32.9 min
+      run  5/48  elapsed    4.6 min  ETA   39.6 min
+      run  6/48  elapsed    6.6 min  ETA   46.5 min
+      run  7/48  elapsed    6.9 min  ETA   40.3 min
+      run  8/48  elapsed    7.1 min  ETA   35.6 min
+      run  9/48  elapsed    8.3 min  ETA   36.0 min
+      run 10/48  elapsed    9.5 min  ETA   36.1 min
+      run 11/48  elapsed   11.6 min  ETA   38.9 min
+      run 12/48  elapsed   13.2 min  ETA   39.5 min
+      run 13/48  elapsed   13.4 min  ETA   36.1 min
+      run 14/48  elapsed   13.6 min  ETA   33.1 min
+      run 15/48  elapsed   14.8 min  ETA   32.7 min
+      run 16/48  elapsed   16.0 min  ETA   32.0 min
+      run 17/48  elapsed   17.6 min  ETA   32.2 min
+      run 18/48  elapsed   19.7 min  ETA   32.8 min
+      run 19/48  elapsed   19.9 min  ETA   30.4 min
+      run 20/48  elapsed   20.1 min  ETA   28.2 min
+      run 21/48  elapsed   21.3 min  ETA   27.4 min
+      run 22/48  elapsed   22.5 min  ETA   26.6 min
+      run 23/48  elapsed   24.6 min  ETA   26.7 min
+      run 24/48  elapsed   26.2 min  ETA   26.2 min
+      run 25/48  elapsed   26.4 min  ETA   24.3 min
+      run 26/48  elapsed   26.7 min  ETA   22.6 min
+      run 27/48  elapsed   27.9 min  ETA   21.7 min
+      run 28/48  elapsed   29.0 min  ETA   20.7 min
+      run 29/48  elapsed   30.7 min  ETA   20.1 min
+      run 30/48  elapsed   32.7 min  ETA   19.6 min
+      run 31/48  elapsed   32.9 min  ETA   18.1 min
+      run 32/48  elapsed   33.2 min  ETA   16.6 min
+      run 33/48  elapsed   34.4 min  ETA   15.6 min
+      run 34/48  elapsed   35.6 min  ETA   14.7 min
+      run 35/48  elapsed   37.2 min  ETA   13.8 min
+      run 36/48  elapsed   39.2 min  ETA   13.1 min
+      run 37/48  elapsed   39.5 min  ETA   11.7 min
+      run 38/48  elapsed   39.7 min  ETA   10.4 min
+      run 39/48  elapsed   40.9 min  ETA    9.4 min
+      run 40/48  elapsed   42.1 min  ETA    8.4 min
+      run 41/48  elapsed   44.2 min  ETA    7.5 min
+      run 42/48  elapsed   45.8 min  ETA    6.5 min
+      run 43/48  elapsed   46.0 min  ETA    5.3 min
+      run 44/48  elapsed   46.2 min  ETA    4.2 min
+      run 45/48  elapsed   47.4 min  ETA    3.2 min
+      run 46/48  elapsed   48.6 min  ETA    2.1 min
+      run 47/48  elapsed   50.7 min  ETA    1.1 min
+      run 48/48  elapsed   52.3 min  ETA    0.0 min
+
+================================================================
+D4 SYMMETRY LEDGER
+================================================================
+    op                E  dE vs identity       rel  gate
+    identity    2.63109        +0.00000   +0.000%  clean
+    rot90       2.63109        +0.00000   +0.000%  clean
+    rot180      2.63109        -0.00000   -0.000%  clean
+    rot270      2.63109        +0.00000   +0.000%  clean
+    mirror_x    2.63109        -0.00000   -0.000%  clean
+    mirror_y    2.63109        -0.00000   -0.000%  clean
+    diag        2.63109        +0.00000   +0.000%  clean
+    antidiag    2.63109        +0.00000   +0.000%  clean
+
+    clean copies: 8/8   max spread dE = 0.00000  (0.000% of mean)
+
+VERDICT
+    PASS (discretely exact).  The engine's staircase + Yee
+    discretization commutes with D4 to <0.1%.  D4 augmentation is
+    unconditionally valid; reuse the original E for all 8 copies.
+================================================================
+
+artifacts: gpu_out_n8r60/d4_check/d4_results.csv, d4_spectra.npz, augmentation_table.json

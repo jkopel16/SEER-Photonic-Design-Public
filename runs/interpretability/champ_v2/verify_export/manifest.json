@@ -1,0 +1,51 @@
+{
+  "disorder_class": "jitter",
+  "sigma": 0.15,
+  "a_nm": 650.0,
+  "n_cells": 7,
+  "r_nom_nm": 227.49999999999997,
+  "w_min_nm": 50.0,
+  "kappa": 0.2,
+  "screen_keep_frac": null,
+  "bundle": "/project/rise-batteries/Photonics_RISE/runs/surrogate_128_fft_nll_sweep/surrogate_bundle.pt",
+  "calibration": null,
+  "baseline": {
+    "pred_E_mean": 2.6410882472991943,
+    "note": "baseline = unperturbed layout (candidate_0000); compare each perturbed true_E to the reference true_E, same grid, so common-mode error cancels"
+  },
+  "note": "interpretability occlusion spot-check for champ_v2 (/project/rise-batteries/Photonics_RISE/runs/inverse_v2/jitter_s015/candidate_0002.npz); attribution deltas, not designs",
+  "candidates": [
+    {
+      "file": "candidate_0000.npz",
+      "method": "reference",
+      "pred_E_mean": 2.6410882472991943,
+      "pred_E_std": 0.007256671320647001,
+      "pred_E_lcb": 2.639636993408203,
+      "note": "unperturbed layout (reference solve)"
+    },
+    {
+      "file": "candidate_0001.npz",
+      "method": "occ_shift_all",
+      "pred_E_mean": 2.635880708694458,
+      "pred_E_std": 0.007391753606498241,
+      "pred_E_lcb": 2.634402275085449,
+      "note": "all holes moved 13 nm along their +grad (0 frozen for wall feasibility)"
+    },
+    {
+      "file": "candidate_0002.npz",
+      "method": "occ_remove",
+      "pred_E_mean": 2.6350796222686768,
+      "pred_E_std": 0.007215545978397131,
+      "pred_E_lcb": 2.633636474609375,
+      "note": "hole 24 removed (pred dE=-0.00600; fill-changing probe)"
+    },
+    {
+      "file": "candidate_0003.npz",
+      "method": "occ_remove",
+      "pred_E_mean": 2.635375499725342,
+      "pred_E_std": 0.007299531251192093,
+      "pred_E_lcb": 2.633915662765503,
+      "note": "hole 33 removed (pred dE=-0.00571; fill-changing probe)"
+    }
+  ]
+}

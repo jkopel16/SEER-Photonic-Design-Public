@@ -1,0 +1,46 @@
+[log] mirroring all output to /usr4/spclpgm/jkopel/proj/Photonics_RISE/scripts/FDTD_solver/data_hisigma/logs/analyze_20260731_163821.log
+================================================================
+CAMPAIGN ANALYSIS
+================================================================
+loaded 20 banked samples (0 quarantined, inspected separately)
+dataset -> /usr4/spclpgm/jkopel/proj/Photonics_RISE/scripts/FDTD_solver/data_hisigma/dataset.npz  (20 samples)
+labels  -> /usr4/spclpgm/jkopel/proj/Photonics_RISE/scripts/FDTD_solver/data_hisigma/labels.csv
+Traceback (most recent call last):
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/run_dataset.py", line 863, in <module>
+    main()
+    ~~~~^^
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/run_dataset.py", line 858, in main
+    {"generate": cmd_generate, "plan": cmd_plan,
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     "analyze": cmd_analyze, "verify": cmd_verify}[cmd](args)
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/run_dataset.py", line 716, in cmd_analyze
+    fig_histograms(samples, E_ord, fp("fig11_E_histograms.png"))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/run_dataset.py", line 591, in fig_histograms
+    fig, axes = plt.subplots(1, len(show_sigmas),
+                ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+                             figsize=(3.4 * len(show_sigmas), 3.6),
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                             sharey=True)
+                             ^^^^^^^^^^^^
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/site-packages/matplotlib/pyplot.py", line 1887, in subplots
+    axs = fig.subplots(nrows=nrows, ncols=ncols, sharex=sharex, sharey=sharey,
+                       squeeze=squeeze, subplot_kw=subplot_kw,
+                       gridspec_kw=gridspec_kw, height_ratios=height_ratios,
+                       width_ratios=width_ratios)
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/site-packages/matplotlib/figure.py", line 925, in subplots
+    gs = self.add_gridspec(nrows, ncols, figure=self, **gridspec_kw)
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/site-packages/matplotlib/figure.py", line 1608, in add_gridspec
+    gs = GridSpec(nrows=nrows, ncols=ncols, figure=self, **kwargs)
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/site-packages/matplotlib/gridspec.py", line 364, in __init__
+    super().__init__(nrows, ncols,
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+                     width_ratios=width_ratios,
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     height_ratios=height_ratios)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/site-packages/matplotlib/gridspec.py", line 52, in __init__
+    raise ValueError(
+        f"Number of columns must be a positive integer, not {ncols!r}")
+ValueError: Number of columns must be a positive integer, not 0

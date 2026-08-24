@@ -1,0 +1,27 @@
+{
+  "cell": {
+    "class": "jitter",
+    "sigma": 0.06
+  },
+  "floor_pct": 0.3,
+  "bank_cell": {
+    "n": 155,
+    "mean": 2.6159540793251312,
+    "std": 0.007836759121386924,
+    "p95": 2.627053010684747,
+    "max": 2.642179411458847,
+    "min": 2.5937561625048646
+  },
+  "pred_baseline_mean": 2.6160919666290283,
+  "surrogate_bias_on_champions": -0.0006782217321738227,
+  "spearman_pred_true": 0.039097744360902256,
+  "n_claimable": 20,
+  "champion": "candidate_0014",
+  "numerics": {
+    "decay_tol": 0.0003,
+    "cap60": 2500.0,
+    "cap120": 3750.0,
+    "wavelength_grid": "campaign",
+    "mode": "FULL"
+  }
+}

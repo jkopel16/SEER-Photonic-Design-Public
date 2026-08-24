@@ -1,0 +1,15 @@
+{
+  "lr": 0.0005946926467956206,
+  "weight_decay": 0.00021324861999648715,
+  "beta_nll": 0.5,
+  "var_warmup": 10,
+  "hidden_units": 128,
+  "batch_size": 32,
+  "dropout": 0.07206687862923959,
+  "stochastic_depth": 0.02506972533969464,
+  "warmup_epochs": 5,
+  "ema_decay": 0.0,
+  "combo_score": 0.6785403973886699,
+  "within_sigma_spearman": 0.5680369544519404,
+  "best_val_loss": 0.10457640886306763
+}

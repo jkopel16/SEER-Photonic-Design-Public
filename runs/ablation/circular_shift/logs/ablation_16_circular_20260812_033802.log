@@ -1,0 +1,11 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/circular_shift/logs/ablation_16_circular_20260812_033802.log
+[model] device = cuda
+[input] --raster-only: keeping channel 0 of 2 (dropping ['fft_baked_v1'])
+[input] appended fft_onfly_v1 -> X (2724, 2, 128, 128)
+[input] channel recipe: ['raster', 'fft_onfly_v1']
+[eval] norm stats reproduce the bundle's (split verified)
+[eval] 5-member photonic-surrogate-bundle-v2 (heteroscedastic)
+[eval] test/tta_on        MAE 0.005702  RMSE 0.007301  rho +0.656  RMS(s)/RMSE 1.022  PICP1 0.669
+[eval] test/tta_off       MAE 0.005739  RMSE 0.007319  rho +0.647  RMS(s)/RMSE 1.019  PICP1 0.669
+[eval] wrote /project/rise-batteries/Photonics_RISE/runs/ablation/circular_shift/ablation_metrics.json
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 /project/rise-batteries/Photonics_RISE/scripts/interpretability/validate_saliency.py --steps 5 --bundle /project/rise-batteries/Photonics_RISE/runs/ablation/circular_shift/surrogate_bundle.pt --val-dir /project/rise-batteries/Photonics_RISE/runs/ablation/circular_shift/shift_test --device cuda

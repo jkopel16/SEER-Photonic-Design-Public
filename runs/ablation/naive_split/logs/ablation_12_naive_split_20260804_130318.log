@@ -1,0 +1,14 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/naive_split/logs/ablation_12_naive_split_20260804_130318.log
+[skip] /project/rise-batteries/Photonics_RISE/runs/ablation/naive_split/surrogate_bundle.pt exists -- evaluating only
+[model] device = cuda
+[input] --raster-only: keeping channel 0 of 2 (dropping ['fft_baked_v1'])
+[input] appended fft_onfly_v1 -> X (2724, 2, 128, 128)
+[input] channel recipe: ['raster', 'fft_onfly_v1']
+[eval] split from sidecar (naive plain-shuffle split (no grouping, no sigma stratification, naive member folds); evaluated on its OWN test set -- measures the optimism of naive evaluation, deliberately not sample-for-sample comparable with grouped-split rows)
+[eval] norm stats reproduce the bundle's (split verified)
+[eval] 5-member photonic-surrogate-bundle-v2 (heteroscedastic)
+[eval] test/tta_on        MAE 0.005570  RMSE 0.007033  rho +0.592  RMS(s)/RMSE 0.975  PICP1 0.665
+[eval] test/tta_off       MAE 0.005573  RMSE 0.007032  rho +0.598  RMS(s)/RMSE 0.971  PICP1 0.662
+[eval] wrote /project/rise-batteries/Photonics_RISE/runs/ablation/naive_split/ablation_metrics.json
+
+VERDICT: naive-split (own test set) MAE 0.005570, rho +0.592, PICP1 0.665 vs deployed grouped-split row (#4). If the naive numbers look BETTER, that gap is the leakage/selection optimism the grouped protocol prevents -- the caption must carry the own-test-set note verbatim.

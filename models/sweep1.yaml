@@ -1,0 +1,83 @@
+# wandb sweep config for the v4 PhotonicCNN surrogate (models/model1.py).
+# Usage:
+#   wandb sweep sweep1.yaml                          -> prints a SWEEP_ID
+#   wandb agent <entity>/<project>/<SWEEP_ID>        -> runs trials
+#
+# Each trial re-invokes models/model1.py with different CLI args (Bayesian
+# search), so no code changes are needed beyond what's already in model1.py.
+
+program: models/model1.py
+method: bayes
+metric:
+  # model1.py reports a dict of test metrics via wandb.summary.update();
+  # `rmse` is the de-normalised physical-unit RMSE (lower = better).
+  name: rmse
+  goal: minimize
+
+parameters:
+  # ----- optimiser -----
+  lr:
+    distribution: log_uniform_values
+    min: 0.00001
+    max: 0.01
+  weight-decay:
+    distribution: log_uniform_values
+    min: 0.000001
+    max: 0.01
+  smoothl1-beta:
+    distribution: log_uniform_values
+    min: 0.1
+    max: 5.0
+  warmup-epochs:
+    values: [0, 3, 5, 10]
+  grad-clip:
+    distribution: log_uniform_values
+    min: 0.1
+    max: 10.0
+
+  # ----- architecture / regularisation -----
+  # must stay divisible by 8 (GroupNorm(8, ...))
+  hidden-units:
+    values: [32, 64, 96, 128]
+  dropout:
+    distribution: uniform
+    min: 0.0
+    max: 0.4
+  stochastic-depth:
+    distribution: uniform
+    min: 0.0
+    max: 0.3
+
+  # ----- EMA -----
+  # 0 disables EMA; sweep across off and three decay strengths.
+  ema-decay:
+    values: [0.0, 0.99, 0.999, 0.9999]
+
+  # ----- data / training budget -----
+  batch-size:
+    values: [32, 64, 128, 256]
+  # Keep per-trial cost bounded; 120-epoch default is heavy for a sweep.
+  epochs:
+    values: [60, 80, 120]
+  patience:
+    values: [10, 15, 20]
+
+  # ----- ensembling & TTA -----
+  # Keep ensemble=1 inside the sweep (each trial is one model); build the
+  # ensemble post-hoc by loading multiple surrogate bundles. TTA is cheap
+  # and almost always a win, so we leave it on.
+  ensemble:
+    value: 1
+  augment:
+    value: true
+  tta:
+    value: true
+
+# Kills clearly-losing trials early based on reported val_loss, saves compute.
+early_terminate:
+  type: hyperband
+  min_iter: 10
+  eta: 3
+
+# Cap total trials for a bayes search (otherwise it runs until you Ctrl+C).
+run_cap: 60

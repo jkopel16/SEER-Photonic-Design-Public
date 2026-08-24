@@ -1,0 +1,55 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/radius_s015/logs/verify_candidates_20260804_083604.log
+[verify] 20 candidates, radius sigma=0.15, bank=/project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/data_production, device=cuda
+[verify] numerics: campaign wl grid, decay_tol=0.0003, cap=2500 (res60) -- identical to the bank
+[verify] gates: floor 0.30 % (Test 9, res-120 referee); elite rung res 120
+[bank cell] n=155  mean=2.5995  p95=2.6153  max=2.6231
+[solve] candidate_0000 @ res 60  (~7 min)...
+Traceback (most recent call last):
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/verify_candidates.py", line 393, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/verify_candidates.py", line 256, in main
+    e["E60"] = solve_cached(e, 60, cache_dir, device, ctx(),
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                            args.analyze_only) \
+                            ^^^^^^^^^^^^^^^^^^
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/verify_candidates.py", line 171, in solve_cached
+    Ev, secs, spec = solve_rung(x, res, device, ctx["m"], ctx["wl"],
+                     ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                ctx["weights"], ctx["ref"])
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/tests/ladder_referee.py", line 136, in solve_rung
+    A_si, _, _ = broadband_absorption_many(
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        [holes], float(x["a_super_nm"]), C.THICKNESS_NM, wl,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        m["fits"], C.BUFFER_NM, res, C.DECAY_TOL, cap,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        os.path.join(OUT_DIR, "norm_cache"), device=device,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        n_cells_tag=f"lad{C.N_CELLS}r{res}")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/fdtd_torch.py", line 942, in broadband_absorption_many
+    Rb, Ab, dt_s, cap, ns = run_single(
+                            ~~~~~~~~~~^
+        holes_list[g], a_super_nm, thickness_nm, buffer_nm, resolution,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        b, p, wl[idx], fits, norm_dir, device, bits, decay_tol,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        max_time, n_cells_tag)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/fdtd_torch.py", line 871, in run_single
+    sim = _Sim(holes_nm, a_super_nm, thickness_nm, buffer_nm, resolution,
+               band_idx, pol, freqs, fits, device, bits, vacuum=False)
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/fdtd_torch.py", line 483, in __init__
+    self.Ex, self.Ey, self.Ez = zeros(), zeros(), zeros()
+                                ~~~~~^^
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/fdtd_torch.py", line 481, in <lambda>
+    zeros = lambda: torch.zeros(Nx, Ny, Nz, device=device,
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                dtype=self.dtype)
+                                ^^^^^^^^^^^^^^^^^
+torch.AcceleratorError: CUDA error: CUDA-capable device(s) is/are busy or unavailable
+Search for `cudaErrorDevicesUnavailable' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+For more detailed error information, run with CUDA_LOG_FILE=stderr
+

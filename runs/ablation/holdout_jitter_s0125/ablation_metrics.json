@@ -1,0 +1,361 @@
+{
+  "label": "holdout_jitter_s0125",
+  "bundle": "/project/rise-batteries/Photonics_RISE/runs/ablation/holdout_jitter_s0125/surrogate_bundle.pt",
+  "format": "photonic-surrogate-bundle-v2",
+  "n_members": 5,
+  "data": "/project/rise-batteries/Photonics_RISE/data/samples_128.npz",
+  "stored_test_metrics": {},
+  "rows": {
+    "test/tta_on": {
+      "mae": 0.005449462216347456,
+      "rmse": 0.006943971384316683,
+      "r2": 0.9347831010818481,
+      "pct_error": 0.21048428118228912,
+      "n": 257,
+      "rho_pooled": 0.6829381137147579,
+      "per_cell_rho": {
+        "jitter/sigma=0.02": {
+          "rho": 0.8725274725274725,
+          "n": 14,
+          "true_spread_pct": 0.3406,
+          "rho_ceiling": 0.9668,
+          "efficiency": 0.9025
+        },
+        "jitter/sigma=0.04": {
+          "rho": 0.5607142857142857,
+          "n": 15,
+          "true_spread_pct": 0.3158,
+          "rho_ceiling": 0.9617,
+          "efficiency": 0.583
+        },
+        "jitter/sigma=0.06": {
+          "rho": 0.5852941176470589,
+          "n": 16,
+          "true_spread_pct": 0.3224,
+          "rho_ceiling": 0.9632,
+          "efficiency": 0.6077
+        },
+        "jitter/sigma=0.08": {
+          "rho": 0.8,
+          "n": 16,
+          "true_spread_pct": 0.3024,
+          "rho_ceiling": 0.9585,
+          "efficiency": 0.8347
+        },
+        "jitter/sigma=0.1": {
+          "rho": 0.32301341589267285,
+          "n": 18,
+          "true_spread_pct": 0.3688,
+          "rho_ceiling": 0.9715,
+          "efficiency": 0.3325
+        },
+        "jitter/sigma=0.15": {
+          "rho": 0.7440660474716202,
+          "n": 18,
+          "true_spread_pct": 0.4069,
+          "rho_ceiling": 0.9764,
+          "efficiency": 0.7621
+        },
+        "jitter/sigma=0.2": {
+          "rho": 0.15196078431372548,
+          "n": 17,
+          "true_spread_pct": 0.3291,
+          "rho_ceiling": 0.9646,
+          "efficiency": 0.1575
+        },
+        "jitter/sigma=0.25": {
+          "rho": 0.6235294117647059,
+          "n": 16,
+          "true_spread_pct": 0.4559,
+          "rho_ceiling": 0.9811,
+          "efficiency": 0.6356
+        },
+        "jitter/sigma=0.3": {
+          "rho": 0.5035714285714286,
+          "n": 15,
+          "true_spread_pct": 0.3835,
+          "rho_ceiling": 0.9735,
+          "efficiency": 0.5173
+        },
+        "radius/sigma=0.04": {
+          "rho": 0.4,
+          "n": 4,
+          "true_spread_pct": 0.1798,
+          "rho_ceiling": 0.8942,
+          "efficiency": 0.4473
+        },
+        "radius/sigma=0.06": {
+          "rho": 0.7,
+          "n": 5,
+          "true_spread_pct": 0.3341,
+          "rho_ceiling": 0.9656,
+          "efficiency": 0.7249
+        },
+        "radius/sigma=0.08": {
+          "rho": 0.972027972027972,
+          "n": 12,
+          "true_spread_pct": 0.4548,
+          "rho_ceiling": 0.981,
+          "efficiency": 0.9909
+        },
+        "radius/sigma=0.1": {
+          "rho": 0.8321678321678322,
+          "n": 12,
+          "true_spread_pct": 0.3517,
+          "rho_ceiling": 0.9688,
+          "efficiency": 0.859
+        },
+        "radius/sigma=0.125": {
+          "rho": 0.8764705882352941,
+          "n": 16,
+          "true_spread_pct": 0.3374,
+          "rho_ceiling": 0.9662,
+          "efficiency": 0.9071
+        },
+        "radius/sigma=0.15": {
+          "rho": 0.7362637362637363,
+          "n": 13,
+          "true_spread_pct": 0.3031,
+          "rho_ceiling": 0.9586,
+          "efficiency": 0.768
+        },
+        "radius/sigma=0.2": {
+          "rho": 0.832967032967033,
+          "n": 14,
+          "true_spread_pct": 0.406,
+          "rho_ceiling": 0.9763,
+          "efficiency": 0.8532
+        },
+        "radius/sigma=0.25": {
+          "rho": 0.8142857142857143,
+          "n": 15,
+          "true_spread_pct": 0.3903,
+          "rho_ceiling": 0.9744,
+          "efficiency": 0.8357
+        },
+        "radius/sigma=0.3": {
+          "rho": 0.9176470588235294,
+          "n": 16,
+          "true_spread_pct": 0.4741,
+          "rho_ceiling": 0.9825,
+          "efficiency": 0.934
+        },
+        "random/sigma=inf": {
+          "rho": 0.9,
+          "n": 5,
+          "true_spread_pct": 0.257,
+          "rho_ceiling": 0.9438,
+          "efficiency": 0.9536
+        }
+      },
+      "rms_s_total": 0.006804350297898054,
+      "rms_s_alea": 0.00657947501167655,
+      "rms_s_epi": 0.0017348462715744972,
+      "rms_s_over_rmse": 0.9798931938668454,
+      "picp_1s": 0.6653696498054474,
+      "picp_2s": 0.9455252918287937,
+      "picp_3s": 0.9961089494163424
+    },
+    "test/tta_off": {
+      "mae": 0.005496841389685869,
+      "rmse": 0.006991479080170393,
+      "r2": 0.9338876605033875,
+      "pct_error": 0.21232151985168457,
+      "n": 257,
+      "rho_pooled": 0.6769220787564743,
+      "per_cell_rho": {
+        "jitter/sigma=0.02": {
+          "rho": 0.8593406593406593,
+          "n": 14,
+          "true_spread_pct": 0.3406,
+          "rho_ceiling": 0.9668,
+          "efficiency": 0.8888
+        },
+        "jitter/sigma=0.04": {
+          "rho": 0.5571428571428572,
+          "n": 15,
+          "true_spread_pct": 0.3158,
+          "rho_ceiling": 0.9617,
+          "efficiency": 0.5793
+        },
+        "jitter/sigma=0.06": {
+          "rho": 0.6029411764705882,
+          "n": 16,
+          "true_spread_pct": 0.3224,
+          "rho_ceiling": 0.9632,
+          "efficiency": 0.626
+        },
+        "jitter/sigma=0.08": {
+          "rho": 0.7911764705882353,
+          "n": 16,
+          "true_spread_pct": 0.3024,
+          "rho_ceiling": 0.9585,
+          "efficiency": 0.8255
+        },
+        "jitter/sigma=0.1": {
+          "rho": 0.35810113519091846,
+          "n": 18,
+          "true_spread_pct": 0.3688,
+          "rho_ceiling": 0.9715,
+          "efficiency": 0.3686
+        },
+        "jitter/sigma=0.15": {
+          "rho": 0.6862745098039216,
+          "n": 18,
+          "true_spread_pct": 0.4069,
+          "rho_ceiling": 0.9764,
+          "efficiency": 0.7029
+        },
+        "jitter/sigma=0.2": {
+          "rho": 0.15196078431372548,
+          "n": 17,
+          "true_spread_pct": 0.3291,
+          "rho_ceiling": 0.9646,
+          "efficiency": 0.1575
+        },
+        "jitter/sigma=0.25": {
+          "rho": 0.5941176470588235,
+          "n": 16,
+          "true_spread_pct": 0.4559,
+          "rho_ceiling": 0.9811,
+          "efficiency": 0.6056
+        },
+        "jitter/sigma=0.3": {
+          "rho": 0.5107142857142857,
+          "n": 15,
+          "true_spread_pct": 0.3835,
+          "rho_ceiling": 0.9735,
+          "efficiency": 0.5246
+        },
+        "radius/sigma=0.04": {
+          "rho": 0.4,
+          "n": 4,
+          "true_spread_pct": 0.1798,
+          "rho_ceiling": 0.8942,
+          "efficiency": 0.4473
+        },
+        "radius/sigma=0.06": {
+          "rho": 0.7,
+          "n": 5,
+          "true_spread_pct": 0.3341,
+          "rho_ceiling": 0.9656,
+          "efficiency": 0.7249
+        },
+        "radius/sigma=0.08": {
+          "rho": 0.972027972027972,
+          "n": 12,
+          "true_spread_pct": 0.4548,
+          "rho_ceiling": 0.981,
+          "efficiency": 0.9909
+        },
+        "radius/sigma=0.1": {
+          "rho": 0.8461538461538461,
+          "n": 12,
+          "true_spread_pct": 0.3517,
+          "rho_ceiling": 0.9688,
+          "efficiency": 0.8734
+        },
+        "radius/sigma=0.125": {
+          "rho": 0.8764705882352941,
+          "n": 16,
+          "true_spread_pct": 0.3374,
+          "rho_ceiling": 0.9662,
+          "efficiency": 0.9071
+        },
+        "radius/sigma=0.15": {
+          "rho": 0.7362637362637363,
+          "n": 13,
+          "true_spread_pct": 0.3031,
+          "rho_ceiling": 0.9586,
+          "efficiency": 0.768
+        },
+        "radius/sigma=0.2": {
+          "rho": 0.8549450549450549,
+          "n": 14,
+          "true_spread_pct": 0.406,
+          "rho_ceiling": 0.9763,
+          "efficiency": 0.8757
+        },
+        "radius/sigma=0.25": {
+          "rho": 0.75,
+          "n": 15,
+          "true_spread_pct": 0.3903,
+          "rho_ceiling": 0.9744,
+          "efficiency": 0.7697
+        },
+        "radius/sigma=0.3": {
+          "rho": 0.9058823529411765,
+          "n": 16,
+          "true_spread_pct": 0.4741,
+          "rho_ceiling": 0.9825,
+          "efficiency": 0.9221
+        },
+        "random/sigma=inf": {
+          "rho": 0.9,
+          "n": 5,
+          "true_spread_pct": 0.257,
+          "rho_ceiling": 0.9438,
+          "efficiency": 0.9536
+        }
+      },
+      "rms_s_total": 0.00678144209086895,
+      "rms_s_alea": 0.0065140677616000175,
+      "rms_s_epi": 0.0018854386871680617,
+      "rms_s_over_rmse": 0.9699581466392195,
+      "picp_1s": 0.6614785992217899,
+      "picp_2s": 0.9455252918287937,
+      "picp_3s": 0.9961089494163424
+    },
+    "holdout_jitter_s0125/tta_on": {
+      "mae": 0.0055586169473826885,
+      "rmse": 0.0069608003832399845,
+      "r2": 0.42168372869491577,
+      "pct_error": 0.21261882781982422,
+      "n": 155,
+      "rho_pooled": 0.6841577777061648,
+      "per_cell_rho": {
+        "jitter/sigma=0.125": {
+          "rho": 0.6841577777061648,
+          "n": 155,
+          "true_spread_pct": 0.3503,
+          "rho_ceiling": 0.9685,
+          "efficiency": 0.7064
+        }
+      },
+      "rms_s_total": 0.007549818139523268,
+      "rms_s_alea": 0.007340293377637863,
+      "rms_s_epi": 0.0017663062317296863,
+      "rms_s_over_rmse": 1.0846192569609527,
+      "picp_1s": 0.7354838709677419,
+      "picp_2s": 0.9741935483870968,
+      "picp_3s": 0.9935483870967742
+    },
+    "holdout_jitter_s0125/tta_off": {
+      "mae": 0.005623199045658112,
+      "rmse": 0.007039541844278574,
+      "r2": 0.4085257053375244,
+      "pct_error": 0.21508224308490753,
+      "n": 155,
+      "rho_pooled": 0.6730140826915021,
+      "per_cell_rho": {
+        "jitter/sigma=0.125": {
+          "rho": 0.6730140826915021,
+          "n": 155,
+          "true_spread_pct": 0.3503,
+          "rho_ceiling": 0.9685,
+          "efficiency": 0.6949
+        }
+      },
+      "rms_s_total": 0.007521552499383688,
+      "rms_s_alea": 0.007277947384864092,
+      "rms_s_epi": 0.0018987464718520641,
+      "rms_s_over_rmse": 1.068471878677285,
+      "picp_1s": 0.7096774193548387,
+      "picp_2s": 0.9741935483870968,
+      "picp_3s": 1.0
+    }
+  },
+  "notes": [
+    "split from sidecar split.json: cell holdout: jitter_s0125 excluded from train/val/test; extra set = the held-out cell (OOD generalization)"
+  ]
+}

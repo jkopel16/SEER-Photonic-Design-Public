@@ -1,0 +1,4 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/kappa0_jitter_s015/logs/ablation_05_kappa0_20260804_030423.log
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.inverse_design --bundle /project/rise-batteries/Photonics_RISE/runs/surrogate_128_fft_nll_sweep/surrogate_bundle.pt --disorder-class jitter --sigma 0.15 --export-dir /project/rise-batteries/Photonics_RISE/runs/ablation/kappa0_jitter_s015 --kappa 0.0 --no-calibration --tiers baseline screen cmaes gradient --n-baseline 5000 --n-screen 50000 --screen-keep-frac 0.2 --cmaes-restarts 12 --cmaes-iters 600 --cmaes-popsize 24 --grad-starts 12 --grad-steps 500 --grad-lr 0.015 --export-top 20
+
+[note] no verification.csv yet -- run with --verify on a GPU node to produce the verified arm; predicted-only results are never quotable (the surrogate proposes, FDTD disposes).

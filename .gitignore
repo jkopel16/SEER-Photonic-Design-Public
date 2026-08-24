@@ -1,0 +1,25 @@
+wandb/
+__pycache__/
+*.pyc
+git-lfs-3.4.0/
+git-lfs-linux-amd64-v3.4.0.tar.gz
+
+# regenerable solver caches / scratch outputs (never part of the reproducibility record)
+scripts/FDTD_solver/data_production/norm_cache/
+scripts/FDTD_solver/data_production/quarantine/
+scripts/FDTD_solver/tests/gpu_out/
+scripts/FDTD_solver/tests/gpu_out_diag/
+
+# workshop paper sources and figures: local-only, kept off GitHub
+PAPER_CLIMATE_WORKSHOP.tex
+AI4MAT_WORKSHOP.tex
+SIM2SCIENCE_WORKSHOP.tex
+checklist.tex
+checklist_ai4mat.tex
+archive/checklist_answers_draft.tex
+/figures/
+PAPER_OFFICIAL.tex
+archive/
+
+# default scratch output of models.model (training and --eval-bundle)
+runs/surrogate_new/

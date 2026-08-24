@@ -1,0 +1,10 @@
+{
+ "identity": "as-is",
+ "rot90": "np.rot90(M, 1)",
+ "rot180": "np.rot90(M, 2)",
+ "rot270": "np.rot90(M, 3)",
+ "mirror_x": "np.flipud(M)",
+ "mirror_y": "np.fliplr(M)",
+ "diag": "M.T",
+ "antidiag": "np.rot90(M, 2).T"
+}

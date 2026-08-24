@@ -1,0 +1,2 @@
+[log] mirroring all output to runs/inverse_v2/jitter_s008/logs/verify_candidates_20260731_221301.log
+no manifest.json in runs/inverse_v2/jitter_s008 -- create the folder and copy the ENTIRE inverse_design export into it (manifest.json + all candidate_XXXX.npz), or pass --in-dir.

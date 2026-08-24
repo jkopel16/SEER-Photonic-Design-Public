@@ -1,0 +1,4 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/raster256/logs/ablation_14_raster256_20260804_030323.log
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.build_dataset -i /project/rise-batteries/Photonics_RISE/data/samples --img-size 256 --no-fft-channel -o /project/rise-batteries/Photonics_RISE/data/samples_256.npz
+[dry] would copy /project/rise-batteries/Photonics_RISE/runs/surrogate_128_fft_nll_sweep/best_params.json -> /project/rise-batteries/Photonics_RISE/runs/ablation/raster256/best_params.json
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.model -i /project/rise-batteries/Photonics_RISE/data/samples_256.npz -o /project/rise-batteries/Photonics_RISE/runs/ablation/raster256 --raster-only --fft-channel --ensemble 5 --seed 137 --use-best --no-wandb --nll-head --kfold-members

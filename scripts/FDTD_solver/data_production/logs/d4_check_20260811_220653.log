@@ -1,0 +1,36 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/data_production/logs/d4_check_20260811_220653.log
+================================================================
+D4 AUGMENTATION VALIDITY CHECK
+================================================================
+mode=FULL  solver=torch-FDTD(GPU)  supercell=7x7 (a_super=4550 nm)  res=60/um  decay_tol=0.0003  cap=2500  grid=12/2.5 nm  stack=air/Si(300)/ZnO(80)/Ag  device=auto fp32
+layout: class=jitter sigma=0.1 seed=21300709  (49 holes, fill=0.3848)
+
+[stage 1: isometry invariants across all 8 ops]
+    base: fill=0.384845100065  min wall=79.671 nm (constraint 50 nm)
+    identity : |dfill|=0.00e+00  max|d gap spectrum|=0.00e+00 nm  -> OK
+    rot90    : |dfill|=0.00e+00  max|d gap spectrum|=6.82e-13 nm  -> OK
+    rot180   : |dfill|=0.00e+00  max|d gap spectrum|=9.09e-13 nm  -> OK
+    rot270   : |dfill|=0.00e+00  max|d gap spectrum|=6.82e-13 nm  -> OK
+    mirror_x : |dfill|=0.00e+00  max|d gap spectrum|=6.82e-13 nm  -> OK
+    mirror_y : |dfill|=0.00e+00  max|d gap spectrum|=6.82e-13 nm  -> OK
+    diag     : |dfill|=0.00e+00  max|d gap spectrum|=0.00e+00 nm  -> OK
+    antidiag : |dfill|=0.00e+00  max|d gap spectrum|=9.09e-13 nm  -> OK
+
+[stage 2: raster commutation at IMG_SIZE=128 (the CNN input)]
+    geometry op -> matching numpy array op on the base raster
+    identity  -> as-is              (max|dpixel|=0.00e+00)  -> OK
+    rot90     -> np.rot90(M, 1)     (max|dpixel|=0.00e+00)  -> OK
+    rot180    -> np.rot90(M, 2)     (max|dpixel|=0.00e+00)  -> OK
+    rot270    -> np.rot90(M, 3)     (max|dpixel|=0.00e+00)  -> OK
+    mirror_x  -> np.flipud(M)       (max|dpixel|=0.00e+00)  -> OK
+    mirror_y  -> np.fliplr(M)       (max|dpixel|=0.00e+00)  -> OK
+    diag      -> M.T                (max|dpixel|=0.00e+00)  -> OK
+    antidiag  -> np.rot90(M, 2).T   (max|dpixel|=0.00e+00)  -> OK
+    (this table is the augmentation lookup for the ML stage,
+     for [x, y]-indexed rasters as rasterize_mask emits them)
+
+stages 1-2 PASS: the D4 ops are exact isometries and the raster
+commutes with pure numpy array ops (table -> /project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/data_production/d4_check/augmentation_table.json).
+
+--geometry-only: stopping before FDTD.  Re-run without the flag
+(in tmux, FULL mode) for the E-label verdict.

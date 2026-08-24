@@ -1,0 +1,35 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/holdout_jitter_s0125/logs/ablation_15_cell_holdout_20260804_074353.log
+[model] device = cuda
+[input] --raster-only: keeping channel 0 of 2 (dropping ['fft_baked_v1'])
+[input] appended fft_onfly_v1 -> X (2724, 2, 128, 128)
+[input] channel recipe: ['raster', 'fft_onfly_v1']
+[holdout] jitter_s0125: 155 samples held out entirely; 2569 remain for the standard split
+[split] train=2055 val=257 test=257 (+155 holdout)
+[kfold] 5 members over pool n=2312; fold sizes [465, 463, 463, 462, 459]
+
+=== member 1/5 (seed=137, val fold 0) ===
+
+=== member 2/5 (seed=274, val fold 1) ===
+  early stop at epoch 103 (no improvement in 20)
+
+=== member 3/5 (seed=411, val fold 2) ===
+
+=== member 4/5 (seed=548, val fold 3) ===
+  early stop at epoch 117 (no improvement in 20)
+
+=== member 5/5 (seed=685, val fold 4) ===
+[bundle] saved -> /project/rise-batteries/Photonics_RISE/runs/ablation/holdout_jitter_s0125/surrogate_bundle.pt
+[out] split.json sidecar written (holdout as extra set)
+[input] --raster-only: keeping channel 0 of 2 (dropping ['fft_baked_v1'])
+[input] appended fft_onfly_v1 -> X (2724, 2, 128, 128)
+[input] channel recipe: ['raster', 'fft_onfly_v1']
+[eval] split from sidecar (cell holdout: jitter_s0125 excluded from train/val/test; extra set = the held-out cell (OOD generalization))
+[eval] norm stats reproduce the bundle's (split verified)
+[eval] 5-member photonic-surrogate-bundle-v2 (heteroscedastic)
+[eval] test/tta_on        MAE 0.005449  RMSE 0.006944  rho +0.683  RMS(s)/RMSE 0.980  PICP1 0.665
+[eval] test/tta_off       MAE 0.005497  RMSE 0.006991  rho +0.677  RMS(s)/RMSE 0.970  PICP1 0.661
+[eval] holdout_jitter_s0125/tta_on MAE 0.005559  RMSE 0.006961  rho +0.684  RMS(s)/RMSE 1.085  PICP1 0.735
+[eval] holdout_jitter_s0125/tta_off MAE 0.005623  RMSE 0.007040  rho +0.673  RMS(s)/RMSE 1.068  PICP1 0.710
+[eval] wrote /project/rise-batteries/Photonics_RISE/runs/ablation/holdout_jitter_s0125/ablation_metrics.json
+
+VERDICT: in-distribution test rho +0.683 (MAE 0.005449); HELD-OUT cell jitter_s0125 rho +0.684 (MAE 0.005559, PICP1 0.735). Compare the holdout rho against the deployed model's per-cell rho for the same cell (#4 JSON): parity = the surrogate interpolates across disorder strength; collapse = cell memorization, and within-cell-only search claims must say so.

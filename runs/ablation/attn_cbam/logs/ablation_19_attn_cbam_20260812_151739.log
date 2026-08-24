@@ -1,0 +1,13 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/attn_cbam/logs/ablation_19_attn_cbam_20260812_151739.log
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.model -i /project/rise-batteries/Photonics_RISE/data/samples_128.npz -o /project/rise-batteries/Photonics_RISE/runs/ablation/attn_cbam --raster-only --fft-channel --ensemble 5 --seed 137 --use-best --nll-head --kfold-members --attention cbam
+[model] device = cuda
+[input] --raster-only: keeping channel 0 of 2 (dropping ['fft_baked_v1'])
+[input] appended fft_onfly_v1 -> X (2724, 2, 128, 128)
+[input] channel recipe: ['raster', 'fft_onfly_v1']
+[eval] norm stats reproduce the bundle's (split verified)
+[eval] 5-member photonic-surrogate-bundle-v2 (heteroscedastic)
+[eval] test/tta_on        MAE 0.005843  RMSE 0.007408  rho +0.638  RMS(s)/RMSE 1.114  PICP1 0.702
+[eval] test/tta_off       MAE 0.005903  RMSE 0.007448  rho +0.638  RMS(s)/RMSE 1.101  PICP1 0.699
+[eval] wrote /project/rise-batteries/Photonics_RISE/runs/ablation/attn_cbam/ablation_metrics.json
+
+VERDICT: CBAM MAE 0.005843, rho +0.638, PICP1 0.702 -- compare to deployed v2 (MAE 0.005447, rho 0.701, PICP1 0.651). Beat SE = spatial gating earns its paragraph; parity = the channel gate carries the attention value.

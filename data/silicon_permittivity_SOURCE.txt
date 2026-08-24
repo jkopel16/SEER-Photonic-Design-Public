@@ -1,0 +1,22 @@
+Crystalline silicon (c-Si) optical constants
+=============================================
+
+Source:  M. A. Green, "Self-consistent optical parameters of intrinsic
+         silicon at 300 K including temperature coefficients,"
+         Solar Energy Materials and Solar Cells 92, 1305-1310 (2008).
+         DOI: 10.1016/j.solmat.2008.06.009
+
+Retrieved from refractiveindex.info (database licensed CC0 1.0, public domain).
+
+Original file layout: wavelength in micrometres, with n and k in two stacked
+two-column blocks. Here merged into a single table and wavelength converted
+to nanometres.
+
+Temperature: 300 K.  k is band-to-band absorption.
+
+Columns in silicon_permittivity.csv:
+    wavelength_nm  -- wavelength in nanometres
+    n              -- real part of the refractive index
+    k              -- extinction coefficient (imaginary part)
+
+Tabulated range: 250-1450 nm, 121 points.

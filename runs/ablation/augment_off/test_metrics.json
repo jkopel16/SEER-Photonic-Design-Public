@@ -1,0 +1,158 @@
+{
+  "mae": 0.006111853290349245,
+  "rmse": 0.0078078629449009895,
+  "r2": 0.9224429130554199,
+  "pct_error": 0.2358013242483139,
+  "within_sigma_spearman": 0.6207476044906044,
+  "tta_std_mean": 0.002055856166407466,
+  "ensemble_std_mean": 0.001880713738501072,
+  "relative_uncertainty": 0.0007947825943119824,
+  "error_uncertainty_rho": 0.1289479459112626,
+  "nll_sigma_mean": 0.007829270325601101,
+  "nll_picp_1sigma": 0.7022058823529411,
+  "nll_picp_2sigma": 0.9558823529411765,
+  "nll_picp_3sigma": 1.0,
+  "error_sigma_rho": 0.16501585022314347,
+  "per_cell_spearman": {
+    "jitter/sigma=0.02": {
+      "rho": 0.5076923076923077,
+      "n": 14,
+      "true_spread_pct": 0.3406,
+      "rho_ceiling": 0.9668,
+      "efficiency": 0.5251
+    },
+    "jitter/sigma=0.04": {
+      "rho": 0.6214285714285714,
+      "n": 15,
+      "true_spread_pct": 0.3158,
+      "rho_ceiling": 0.9617,
+      "efficiency": 0.6462
+    },
+    "jitter/sigma=0.06": {
+      "rho": 0.611764705882353,
+      "n": 16,
+      "true_spread_pct": 0.3224,
+      "rho_ceiling": 0.9632,
+      "efficiency": 0.6351
+    },
+    "jitter/sigma=0.08": {
+      "rho": 0.8264705882352941,
+      "n": 16,
+      "true_spread_pct": 0.3024,
+      "rho_ceiling": 0.9585,
+      "efficiency": 0.8623
+    },
+    "jitter/sigma=0.1": {
+      "rho": 0.37048503611971106,
+      "n": 18,
+      "true_spread_pct": 0.3688,
+      "rho_ceiling": 0.9715,
+      "efficiency": 0.3814
+    },
+    "jitter/sigma=0.125": {
+      "rho": 0.5149638802889577,
+      "n": 18,
+      "true_spread_pct": 0.4034,
+      "rho_ceiling": 0.976,
+      "efficiency": 0.5276
+    },
+    "jitter/sigma=0.15": {
+      "rho": 0.8176470588235294,
+      "n": 16,
+      "true_spread_pct": 0.3879,
+      "rho_ceiling": 0.9741,
+      "efficiency": 0.8394
+    },
+    "jitter/sigma=0.2": {
+      "rho": 0.5335397316821465,
+      "n": 18,
+      "true_spread_pct": 0.4455,
+      "rho_ceiling": 0.9802,
+      "efficiency": 0.5443
+    },
+    "jitter/sigma=0.25": {
+      "rho": 0.5097744360902255,
+      "n": 20,
+      "true_spread_pct": 0.3166,
+      "rho_ceiling": 0.9619,
+      "efficiency": 0.53
+    },
+    "jitter/sigma=0.3": {
+      "rho": 0.16083916083916083,
+      "n": 12,
+      "true_spread_pct": 0.3054,
+      "rho_ceiling": 0.9592,
+      "efficiency": 0.1677
+    },
+    "radius/sigma=0.04": {
+      "rho": 0.4,
+      "n": 4,
+      "true_spread_pct": 0.1798,
+      "rho_ceiling": 0.8942,
+      "efficiency": 0.4473
+    },
+    "radius/sigma=0.06": {
+      "rho": 0.7,
+      "n": 5,
+      "true_spread_pct": 0.3341,
+      "rho_ceiling": 0.9656,
+      "efficiency": 0.7249
+    },
+    "radius/sigma=0.08": {
+      "rho": 0.986013986013986,
+      "n": 12,
+      "true_spread_pct": 0.4548,
+      "rho_ceiling": 0.981,
+      "efficiency": 1.0051
+    },
+    "radius/sigma=0.1": {
+      "rho": 0.8041958041958042,
+      "n": 12,
+      "true_spread_pct": 0.3517,
+      "rho_ceiling": 0.9688,
+      "efficiency": 0.8301
+    },
+    "radius/sigma=0.125": {
+      "rho": 0.8461538461538461,
+      "n": 13,
+      "true_spread_pct": 0.2283,
+      "rho_ceiling": 0.9303,
+      "efficiency": 0.9095
+    },
+    "radius/sigma=0.15": {
+      "rho": 0.5678571428571428,
+      "n": 15,
+      "true_spread_pct": 0.3182,
+      "rho_ceiling": 0.9623,
+      "efficiency": 0.5901
+    },
+    "radius/sigma=0.2": {
+      "rho": 0.521978021978022,
+      "n": 13,
+      "true_spread_pct": 0.344,
+      "rho_ceiling": 0.9674,
+      "efficiency": 0.5395
+    },
+    "radius/sigma=0.25": {
+      "rho": 0.8545454545454545,
+      "n": 11,
+      "true_spread_pct": 0.4474,
+      "rho_ceiling": 0.9804,
+      "efficiency": 0.8717
+    },
+    "radius/sigma=0.3": {
+      "rho": 0.7035087719298245,
+      "n": 19,
+      "true_spread_pct": 0.4908,
+      "rho_ceiling": 0.9836,
+      "efficiency": 0.7152
+    },
+    "random/sigma=inf": {
+      "rho": 0.6,
+      "n": 5,
+      "true_spread_pct": 0.3678,
+      "rho_ceiling": 0.9713,
+      "efficiency": 0.6177
+    }
+  }
+}

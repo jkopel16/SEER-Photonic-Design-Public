@@ -1,0 +1,10 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/logs/ablation_06_random_baseline_20260804_030433.log
+[model] device = cpu
+[scorer] channel recipe: ['raster', 'fft_onfly_v1']
+[scorer] 5-model ensemble (heteroscedastic v2), img=128px, TTA=on, kappa=0.0
+[scorer] UQ calibration: none (raw ensemble std)
+[export] 2 candidates + manifest -> /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/jitter_s015
+[gen] jitter_s015: 2 draws, surrogate pred mean 2.6052 max 2.6089
+[schema] OK: 2 candidates in /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/jitter_s015 carry every field the verifier reads
+
+[note] nothing verified yet; the claim table appears after --verify runs.

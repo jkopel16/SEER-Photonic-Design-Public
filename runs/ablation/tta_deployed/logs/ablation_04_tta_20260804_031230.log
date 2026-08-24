@@ -1,0 +1,28 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/tta_deployed/logs/ablation_04_tta_20260804_031230.log
+[model] device = cuda
+[input] --raster-only: keeping channel 0 of 2 (dropping ['fft_baked_v1'])
+[input] appended fft_onfly_v1 -> X (2724, 2, 128, 128)
+[input] channel recipe: ['raster', 'fft_onfly_v1']
+[eval] norm stats reproduce the bundle's (split verified)
+[eval] 5-member photonic-surrogate-bundle-v2 (heteroscedastic)
+[eval] test/tta_on        MAE 0.005442  RMSE 0.006912  rho +0.701  RMS(s)/RMSE 1.005  PICP1 0.651
+[eval] test/tta_off       MAE 0.005442  RMSE 0.006913  rho +0.701  RMS(s)/RMSE 1.003  PICP1 0.651
+[eval] wrote /project/rise-batteries/Photonics_RISE/runs/ablation/tta_deployed/ablation_metrics.json
+
+=== evaluator gate (tta_on vs bundle test_metrics) ===
+  OK  mae                      evaluator 0.005442  stored 0.005442  (|d| = 4.19e-09)
+  OK  within_sigma_spearman    evaluator 0.701156  stored 0.701156  (|d| = 0.00e+00)
+  OK  nll_picp_1sigma          evaluator 0.650735  stored 0.650735  (|d| = 0.00e+00)
+  OK  nll_picp_2sigma          evaluator 0.952206  stored 0.952206  (|d| = 0.00e+00)
+  OK  nll_picp_3sigma          evaluator 0.996324  stored 0.996324  (|d| = 0.00e+00)
+
+=== TTA ablation (test split, n = 272) ===
+                       TTA on      TTA off
+  MAE                  0.0054       0.0054
+  RMSE                 0.0069       0.0069
+  rho (pooled)         0.7012       0.7006
+  RMS(s)/RMSE          1.0053       1.0031
+  PICP +-1s            0.6507       0.6507
+  PICP +-2s            0.9522       0.9522
+
+VERDICT: gate passed -- the shared evaluator is trustworthy; the two rows above are the TTA ablation for the paper table (and the deployed-reference row every retrain compares to). Together with ablation_10's two rows they form the train-aug x TTA 2x2.

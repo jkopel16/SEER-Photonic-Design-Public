@@ -1,0 +1,7 @@
+GPU-FDTD timing test  (2026-07-14 00:25 UTC)
+mode=FULL device=cuda fake=False
+gates: {'materials': True, 'planar_pseudo1d': True, 'uniform_3d': True}
+probe ordered: 719.9 s  E=2.457 cap=False
+probe jitter_s0.15: 683.6 s  E=2.592 cap=False
+plan 1551 samples, 684 s/sample, 294.5 h on 1 GPU
+ALL GATES PASS

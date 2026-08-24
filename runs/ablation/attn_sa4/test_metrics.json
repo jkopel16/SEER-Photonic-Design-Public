@@ -1,0 +1,158 @@
+{
+  "mae": 0.005883853882551193,
+  "rmse": 0.0074647050350904465,
+  "r2": 0.9291104078292847,
+  "pct_error": 0.2271299511194229,
+  "within_sigma_spearman": 0.6457331901806382,
+  "tta_std_mean": 0.0018074915278702974,
+  "ensemble_std_mean": 0.0023267348296940327,
+  "relative_uncertainty": 0.0006984521169215441,
+  "error_uncertainty_rho": 0.07026396618499373,
+  "nll_sigma_mean": 0.008694284595549107,
+  "nll_picp_1sigma": 0.7389705882352942,
+  "nll_picp_2sigma": 0.9816176470588235,
+  "nll_picp_3sigma": 1.0,
+  "error_sigma_rho": 0.15310793076290113,
+  "per_cell_spearman": {
+    "jitter/sigma=0.02": {
+      "rho": 0.6791208791208792,
+      "n": 14,
+      "true_spread_pct": 0.3406,
+      "rho_ceiling": 0.9668,
+      "efficiency": 0.7024
+    },
+    "jitter/sigma=0.04": {
+      "rho": 0.6678571428571428,
+      "n": 15,
+      "true_spread_pct": 0.3158,
+      "rho_ceiling": 0.9617,
+      "efficiency": 0.6944
+    },
+    "jitter/sigma=0.06": {
+      "rho": 0.6764705882352942,
+      "n": 16,
+      "true_spread_pct": 0.3224,
+      "rho_ceiling": 0.9632,
+      "efficiency": 0.7023
+    },
+    "jitter/sigma=0.08": {
+      "rho": 0.788235294117647,
+      "n": 16,
+      "true_spread_pct": 0.3024,
+      "rho_ceiling": 0.9585,
+      "efficiency": 0.8224
+    },
+    "jitter/sigma=0.1": {
+      "rho": 0.391124871001032,
+      "n": 18,
+      "true_spread_pct": 0.3688,
+      "rho_ceiling": 0.9715,
+      "efficiency": 0.4026
+    },
+    "jitter/sigma=0.125": {
+      "rho": 0.653250773993808,
+      "n": 18,
+      "true_spread_pct": 0.4034,
+      "rho_ceiling": 0.976,
+      "efficiency": 0.6693
+    },
+    "jitter/sigma=0.15": {
+      "rho": 0.7911764705882353,
+      "n": 16,
+      "true_spread_pct": 0.3879,
+      "rho_ceiling": 0.9741,
+      "efficiency": 0.8122
+    },
+    "jitter/sigma=0.2": {
+      "rho": 0.5356037151702786,
+      "n": 18,
+      "true_spread_pct": 0.4455,
+      "rho_ceiling": 0.9802,
+      "efficiency": 0.5464
+    },
+    "jitter/sigma=0.25": {
+      "rho": 0.5082706766917293,
+      "n": 20,
+      "true_spread_pct": 0.3166,
+      "rho_ceiling": 0.9619,
+      "efficiency": 0.5284
+    },
+    "jitter/sigma=0.3": {
+      "rho": 0.3146853146853147,
+      "n": 12,
+      "true_spread_pct": 0.3054,
+      "rho_ceiling": 0.9592,
+      "efficiency": 0.3281
+    },
+    "radius/sigma=0.04": {
+      "rho": 0.4,
+      "n": 4,
+      "true_spread_pct": 0.1798,
+      "rho_ceiling": 0.8942,
+      "efficiency": 0.4473
+    },
+    "radius/sigma=0.06": {
+      "rho": 0.7,
+      "n": 5,
+      "true_spread_pct": 0.3341,
+      "rho_ceiling": 0.9656,
+      "efficiency": 0.7249
+    },
+    "radius/sigma=0.08": {
+      "rho": 0.965034965034965,
+      "n": 12,
+      "true_spread_pct": 0.4548,
+      "rho_ceiling": 0.981,
+      "efficiency": 0.9837
+    },
+    "radius/sigma=0.1": {
+      "rho": 0.8111888111888111,
+      "n": 12,
+      "true_spread_pct": 0.3517,
+      "rho_ceiling": 0.9688,
+      "efficiency": 0.8373
+    },
+    "radius/sigma=0.125": {
+      "rho": 0.8956043956043956,
+      "n": 13,
+      "true_spread_pct": 0.2283,
+      "rho_ceiling": 0.9303,
+      "efficiency": 0.9627
+    },
+    "radius/sigma=0.15": {
+      "rho": 0.6142857142857143,
+      "n": 15,
+      "true_spread_pct": 0.3182,
+      "rho_ceiling": 0.9623,
+      "efficiency": 0.6384
+    },
+    "radius/sigma=0.2": {
+      "rho": 0.3076923076923077,
+      "n": 13,
+      "true_spread_pct": 0.344,
+      "rho_ceiling": 0.9674,
+      "efficiency": 0.318
+    },
+    "radius/sigma=0.25": {
+      "rho": 0.8545454545454545,
+      "n": 11,
+      "true_spread_pct": 0.4474,
+      "rho_ceiling": 0.9804,
+      "efficiency": 0.8717
+    },
+    "radius/sigma=0.3": {
+      "rho": 0.7614035087719299,
+      "n": 19,
+      "true_spread_pct": 0.4908,
+      "rho_ceiling": 0.9836,
+      "efficiency": 0.7741
+    },
+    "random/sigma=inf": {
+      "rho": 0.5,
+      "n": 5,
+      "true_spread_pct": 0.3678,
+      "rho_ceiling": 0.9713,
+      "efficiency": 0.5148
+    }
+  }
+}

@@ -1,0 +1,12 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/logs/ablation_13_ensemble_size_20260804_030323.log
+
+################ ensemble k = 1 ################
+[dry] would copy /project/rise-batteries/Photonics_RISE/runs/surrogate_128_fft_nll_sweep/best_params.json -> /project/rise-batteries/Photonics_RISE/runs/ablation/ens_k1/best_params.json
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.model -i /project/rise-batteries/Photonics_RISE/data/samples_128.npz -o /project/rise-batteries/Photonics_RISE/runs/ablation/ens_k1 --raster-only --fft-channel --ensemble 1 --seed 137 --use-best --no-wandb --nll-head
+
+################ ensemble k = 3 ################
+[dry] would copy /project/rise-batteries/Photonics_RISE/runs/surrogate_128_fft_nll_sweep/best_params.json -> /project/rise-batteries/Photonics_RISE/runs/ablation/ens_k3/best_params.json
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.model -i /project/rise-batteries/Photonics_RISE/data/samples_128.npz -o /project/rise-batteries/Photonics_RISE/runs/ablation/ens_k3 --raster-only --fft-channel --ensemble 3 --seed 137 --use-best --no-wandb --nll-head
+
+################ ensemble k = 5 ################
+[note] k=5 shared-split row is ablation #8's run (/project/rise-batteries/Photonics_RISE/runs/ablation/kfold_off); train it via ablation_08_kfold_off.py (skipping here to avoid a duplicate training).

@@ -1,0 +1,53 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/data_hisigma/logs/dataset_shard1_20260731_150013.log
+================================================================
+DATASET GENERATION (GPU FDTD)  [mode=FULL  solver=torch-FDTD(GPU)  supercell=7x7 (a_super=4550 nm)  res=60/um  decay_tol=0.0003  cap=2500  grid=12/2.5 nm  stack=air/Si(300)/ZnO(80)/Ag  device=auto fp32]
+grid: 1 classes x 4 sigmas x 20 seeds + 0 random + ordered
+================================================================
+[device] cuda
+
+[pre-flight validation]
+[Drude-Lorentz fit ledger  (per band, fit vs table)]
+    si    400- 700 nm: max|dn|=1.41e-02  max|dk|=9.25e-03  (rel k err where k>1e-3: 7.35%)  -> OK
+    si    700- 950 nm: max|dn|=1.53e-03  max|dk|=7.12e-04  (rel k err where k>1e-3: 8.43%)  -> OK
+    si    950-1100 nm: max|dn|=3.12e-03  max|dk|=3.64e-04  (rel k err where k>1e-3: 32.49%)  -> OK
+    zno   400- 700 nm: max|dn|=2.47e-05  max|dk|=3.94e-09  (rel k err where k>1e-3: 0.00%)  -> OK
+    zno   700- 950 nm: max|dn|=4.08e-06  max|dk|=6.92e-10  (rel k err where k>1e-3: 0.00%)  -> OK
+    zno   950-1100 nm: max|dn|=7.02e-06  max|dk|=4.41e-10  (rel k err where k>1e-3: 0.00%)  -> OK
+    ag    400- 700 nm: max|dn|=1.09e-03  max|dk|=4.06e-03  (rel k err where k>1e-3: 0.17%)  -> OK
+    ag    700- 950 nm: max|dn|=2.21e-03  max|dk|=4.65e-03  (rel k err where k>1e-3: 0.08%)  -> OK
+    ag    950-1100 nm: max|dn|=2.71e-03  max|dk|=7.93e-03  (rel k err where k>1e-3: 0.10%)  -> OK
+    LABEL GATE planar: eta(table)=0.13968  eta(fit)=0.13853  (-0.82%, gate 1%)   max|dA_si|=2.429e-02
+    LABEL GATE trapping (L_eff=15um): eta(table)=0.69847  eta(fit)=0.69512  (-0.48%, gate 2.5%)
+[pseudo-1D planar stack: torch-FDTD vs fitted-material TMM, res=500/um, device=cuda]
+    band 400-700 nm: max|dA_si| = 4.51e-03  (R err 4.51e-03, A_par err 1.84e-04)  -> OK
+    band 700-950 nm: max|dA_si| = 3.44e-04  (R err 3.64e-04, A_par err 2.74e-05)  -> OK
+    band 950-1100 nm: max|dA_si| = 2.73e-05  (R err 4.24e-05, A_par err 4.10e-05)  -> OK
+[3D uniform slab @ res=120, cell=650 nm]
+    band 400-700: max|dA_si| = 5.95e-02 (gate 8e-02)  -> OK
+    band 700-950: max|dA_si| = 2.53e-03 (gate 2e-02)  -> OK
+    band 950-1100: max|dA_si| = 2.36e-04 (gate 1e-02)  -> OK
+
+shard 1/3: 27 samples to solve, one at a time on cuda
+  [    1/27] sample      1 (jitter  s=0.4) E=2.568   961.6s  ->  shard ETA 6.9 h
+  [    2/27] sample      4 (jitter  s=0.4) E=2.556   834.0s  ->  shard ETA 6.2 h
+  [    3/27] sample      7 (jitter  s=0.4) E=2.535   893.9s  ->  shard ETA 6.0 h
+  [    4/27] sample     10 (jitter  s=0.4) E=2.559   949.5s  ->  shard ETA 5.8 h
+  [    5/27] sample     13 (jitter  s=0.4) E=2.563  1021.3s  ->  shard ETA 5.7 h
+  [    6/27] sample     16 (jitter  s=0.4) E=2.563   988.5s  ->  shard ETA 5.5 h
+  [    7/27] sample     19 (jitter  s=0.4) E=2.582   905.4s  ->  shard ETA 5.2 h
+Traceback (most recent call last):
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/run_dataset.py", line 863, in <module>
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/run_dataset.py", line 858, in main
+    cmd = args.cmd or "generate"
+    if cmd == "generate" and not hasattr(args, "shard"):
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/run_dataset.py", line 306, in cmd_generate
+    rec = make_record(row)
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/run_dataset.py", line 186, in make_record
+    return make_layout(row["class"], row["sigma"], row["seed"],
+                       a_nm=C.A_NM, n_cells=C.N_CELLS,
+                       r_nm=C.R_OVER_A * C.A_NM, w_min_nm=C.W_MIN_NM)
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/disorder.py", line 278, in make_layout
+    raise RuntimeError(
+    ...<2 lines>...
+        f"has collided with manufacturability at this strength/fill.")
+RuntimeError: layout generation failed after 50 restarts (class=jitter, sigma=0.6, seed=21270710) -- disorder has collided with manufacturability at this strength/fill.

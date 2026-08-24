@@ -1,0 +1,18 @@
+[log] mirroring all output to gpu_out_n8r60/logs/analyze_20260717_133117.log
+================================================================
+CAMPAIGN ANALYSIS
+================================================================
+loaded 693 banked samples (56 quarantined, inspected separately)
+dataset -> gpu_out_n8r60/dataset.npz  (693 samples)
+labels  -> gpu_out_n8r60/labels.csv
+figures -> gpu_out_n8r60/figs/fig5..fig12
+
+----------------------------------------------------------------
+SUMMARY
+  ordered reference     E = 2.4570   (NIR band x4.60, parasitic 3.60%)
+  jitter: best mean E = 2.6237 +- 0.0009 at sigma* = 0.08 (n = 75)
+  radius: best mean E = 2.5650 +- 0.0088 at sigma* = 0.08 (n = 2)
+  champion realization  E = 2.6449  (jitter, sigma=0.08, seed=21290746)
+  realizations beating the ordered lattice: 692/692
+  next: python run_dataset.py verify --top 6
+----------------------------------------------------------------

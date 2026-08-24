@@ -1,0 +1,73 @@
+[log] mirroring all output to gpu_out_n8r60/logs/timing_test_20260713_233718.log
+mode=FULL  solver=torch-FDTD(GPU)  supercell=7x7 (a_super=4550 nm)  res=50/um  decay_tol=0.0003  cap=2500  grid=12/2.5 nm  stack=air/Si(300)/ZnO(80)/Ag  device=auto fp32
+[device] cuda  (NVIDIA A100 80GB PCIe, 79 GB)
+
+=== GATE 1/3: material fits (label impact) ===
+[Drude-Lorentz fit ledger  (per band, fit vs table)]
+    si    400- 700 nm: max|dn|=1.41e-02  max|dk|=9.25e-03  (rel k err where k>1e-3: 7.35%)  -> OK
+    si    700- 950 nm: max|dn|=1.53e-03  max|dk|=7.12e-04  (rel k err where k>1e-3: 8.43%)  -> OK
+    si    950-1100 nm: max|dn|=3.12e-03  max|dk|=3.64e-04  (rel k err where k>1e-3: 32.49%)  -> OK
+    zno   400- 700 nm: max|dn|=2.47e-05  max|dk|=3.94e-09  (rel k err where k>1e-3: 0.00%)  -> OK
+    zno   700- 950 nm: max|dn|=4.08e-06  max|dk|=6.92e-10  (rel k err where k>1e-3: 0.00%)  -> OK
+    zno   950-1100 nm: max|dn|=7.02e-06  max|dk|=4.41e-10  (rel k err where k>1e-3: 0.00%)  -> OK
+    ag    400- 700 nm: max|dn|=1.09e-03  max|dk|=4.06e-03  (rel k err where k>1e-3: 0.17%)  -> OK
+    ag    700- 950 nm: max|dn|=2.21e-03  max|dk|=4.65e-03  (rel k err where k>1e-3: 0.08%)  -> OK
+    ag    950-1100 nm: max|dn|=2.71e-03  max|dk|=7.93e-03  (rel k err where k>1e-3: 0.10%)  -> OK
+    LABEL GATE planar: eta(table)=0.13968  eta(fit)=0.13853  (-0.82%, gate 1%)   max|dA_si|=2.429e-02
+    LABEL GATE trapping (L_eff=15um): eta(table)=0.69847  eta(fit)=0.69512  (-0.48%, gate 2.5%)
+
+=== GATE 2/3: pseudo-1D planar stack vs fitted-material TMM ===
+[pseudo-1D planar stack: torch-FDTD vs fitted-material TMM, res=500/um, device=cuda]
+    band 400-700 nm: max|dA_si| = 4.51e-03  (R err 4.51e-03, A_par err 1.84e-04)  -> OK
+    band 700-950 nm: max|dA_si| = 3.43e-04  (R err 3.63e-04, A_par err 2.74e-05)  -> OK
+    band 950-1100 nm: max|dA_si| = 2.54e-05  (R err 4.27e-05, A_par err 4.10e-05)  -> OK
+    figure -> figs/fig_gate_planar.png
+
+=== GATE 3/3: 3D uniform slab at unit-cell production numerics ===
+[3D uniform slab @ res=120, cell=650 nm]
+    band 400-700: max|dA_si| = 5.95e-02 (gate 8e-02)  -> OK
+    band 700-950: max|dA_si| = 2.53e-03 (gate 2e-02)  -> OK
+    band 950-1100: max|dA_si| = 2.35e-04 (gate 1e-02)  -> OK
+
+[wavelength grid] 186 points (400-1100 nm; VIS step 12.0, NIR step 2.5)
+
+=== TIMING PROBES at PRODUCTION numerics (N=7x7, res=50, decay=0.0003) ===
+    ordered: starting (6 FDTD runs; heartbeat after each)...
+      [19:39:55] ordered: run 1/6 done, 1 min elapsed, ~3 min left
+      [19:40:29] ordered: run 2/6 done, 1 min elapsed, ~2 min left
+      [19:41:40] ordered: run 3/6 done, 2 min elapsed, ~2 min left
+      [19:42:52] ordered: run 4/6 done, 4 min elapsed, ~2 min left
+      [19:48:21] ordered: run 5/6 done, 9 min elapsed, ~2 min left
+      [19:53:52] ordered: run 6/6 done, 15 min elapsed, ~0 min left
+    ordered         :   873.8 s   E=3057247812.248  cap=True  steps=612000, peak GPU mem 3.6 GB
+      WARNING: hit MAX_TIME cap -- production samples like this would be quarantined; consider a larger PC MAX_TIME or looser decay_tol.
+    jitter_s0.15: starting (6 FDTD runs; heartbeat after each)...
+      [19:54:02] jitter_s0.15: run 1/6 done, 0 min elapsed, ~1 min left
+      [19:54:13] jitter_s0.15: run 2/6 done, 0 min elapsed, ~1 min left
+      [19:55:09] jitter_s0.15: run 3/6 done, 1 min elapsed, ~1 min left
+      [19:56:13] jitter_s0.15: run 4/6 done, 2 min elapsed, ~1 min left
+      [19:57:54] jitter_s0.15: run 5/6 done, 4 min elapsed, ~1 min left
+      [19:59:23] jitter_s0.15: run 6/6 done, 6 min elapsed, ~0 min left
+    jitter_s0.15    :   331.5 s   E=2.395  cap=False  steps=242000, peak GPU mem 5.2 GB
+
+=== DATASET ETA (plan: 1551 samples; probe 331 s/sample) ===
+     GPUs      wall time  samples/12h
+        1       142.8 h           130
+        2        71.4 h           260
+        4        35.7 h           520
+        8        17.9 h          1040
+
+    (samples/12h = how many fit in one 12 h SCC window; the array job
+     resumes automatically, so multiple windows just continue the manifest)
+
+[persisted] gpu_out_n8r60/timing_report.txt
+[persisted] gpu_out_n8r60/timing_report.json
+
+=== VERDICT ===
+All gates passed on this device.  Interpretation guide:
+  * anchor within a few % of 2.547 -> engine agrees with the RCWA/Meep
+    lineage at unit-cell scale; ladder spread is the discretization
+    uncertainty of the label.
+  * the ETA table is measured, not estimated: scope SEEDS_PER_SIGMA in
+    run_dataset.py (env PC_SEEDS_PER_SIGMA) to fit your GPU budget.
+  * next: qsub submit_dataset.sh

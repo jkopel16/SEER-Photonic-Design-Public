@@ -1,0 +1,4 @@
+runs/**/*.pt filter=lfs diff=lfs merge=lfs -text
+runs/**/*.npz filter=lfs diff=lfs merge=lfs -text
+data/samples_128.npz filter=lfs diff=lfs merge=lfs -text
+scripts/FDTD_solver/data_production/**/*.npz filter=lfs diff=lfs merge=lfs -text

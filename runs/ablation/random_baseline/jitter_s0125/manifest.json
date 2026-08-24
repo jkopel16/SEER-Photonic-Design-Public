@@ -1,0 +1,159 @@
+{
+  "disorder_class": "jitter",
+  "sigma": 0.125,
+  "a_nm": 650.0,
+  "n_cells": 7,
+  "r_nom_nm": 227.49999999999997,
+  "w_min_nm": 50.0,
+  "kappa": 0.0,
+  "screen_keep_frac": null,
+  "bundle": "/project/rise-batteries/Photonics_RISE/runs/surrogate_128_fft_nll_sweep/surrogate_bundle.pt",
+  "calibration": null,
+  "baseline": {
+    "pred_E_mean": 2.611604690551758,
+    "note": "pred_E_mean cloned from production manifest (5000-draw surrogate estimate)"
+  },
+  "note": "Ablation control arm -- layouts drawn by disorder.make_layout, not optimized. Predicted values from the deployed v2 surrogate for pred-vs-true bookkeeping only.",
+  "candidates": [
+    {
+      "file": "candidate_0000.npz",
+      "method": "random",
+      "pred_E_mean": 2.61287,
+      "pred_E_std": 0.00741,
+      "pred_E_lcb": 2.61287
+    },
+    {
+      "file": "candidate_0001.npz",
+      "method": "random",
+      "pred_E_mean": 2.61253,
+      "pred_E_std": 0.00743,
+      "pred_E_lcb": 2.61253
+    },
+    {
+      "file": "candidate_0002.npz",
+      "method": "random",
+      "pred_E_mean": 2.60846,
+      "pred_E_std": 0.00751,
+      "pred_E_lcb": 2.60846
+    },
+    {
+      "file": "candidate_0003.npz",
+      "method": "random",
+      "pred_E_mean": 2.62041,
+      "pred_E_std": 0.00736,
+      "pred_E_lcb": 2.62041
+    },
+    {
+      "file": "candidate_0004.npz",
+      "method": "random",
+      "pred_E_mean": 2.61734,
+      "pred_E_std": 0.00749,
+      "pred_E_lcb": 2.61734
+    },
+    {
+      "file": "candidate_0005.npz",
+      "method": "random",
+      "pred_E_mean": 2.61983,
+      "pred_E_std": 0.00756,
+      "pred_E_lcb": 2.61983
+    },
+    {
+      "file": "candidate_0006.npz",
+      "method": "random",
+      "pred_E_mean": 2.61831,
+      "pred_E_std": 0.00833,
+      "pred_E_lcb": 2.61831
+    },
+    {
+      "file": "candidate_0007.npz",
+      "method": "random",
+      "pred_E_mean": 2.60695,
+      "pred_E_std": 0.00746,
+      "pred_E_lcb": 2.60695
+    },
+    {
+      "file": "candidate_0008.npz",
+      "method": "random",
+      "pred_E_mean": 2.61045,
+      "pred_E_std": 0.00749,
+      "pred_E_lcb": 2.61045
+    },
+    {
+      "file": "candidate_0009.npz",
+      "method": "random",
+      "pred_E_mean": 2.60977,
+      "pred_E_std": 0.00749,
+      "pred_E_lcb": 2.60977
+    },
+    {
+      "file": "candidate_0010.npz",
+      "method": "random",
+      "pred_E_mean": 2.60912,
+      "pred_E_std": 0.00782,
+      "pred_E_lcb": 2.60912
+    },
+    {
+      "file": "candidate_0011.npz",
+      "method": "random",
+      "pred_E_mean": 2.60592,
+      "pred_E_std": 0.00748,
+      "pred_E_lcb": 2.60592
+    },
+    {
+      "file": "candidate_0012.npz",
+      "method": "random",
+      "pred_E_mean": 2.61265,
+      "pred_E_std": 0.00736,
+      "pred_E_lcb": 2.61265
+    },
+    {
+      "file": "candidate_0013.npz",
+      "method": "random",
+      "pred_E_mean": 2.6151,
+      "pred_E_std": 0.00734,
+      "pred_E_lcb": 2.6151
+    },
+    {
+      "file": "candidate_0014.npz",
+      "method": "random",
+      "pred_E_mean": 2.61384,
+      "pred_E_std": 0.00749,
+      "pred_E_lcb": 2.61384
+    },
+    {
+      "file": "candidate_0015.npz",
+      "method": "random",
+      "pred_E_mean": 2.60947,
+      "pred_E_std": 0.00744,
+      "pred_E_lcb": 2.60947
+    },
+    {
+      "file": "candidate_0016.npz",
+      "method": "random",
+      "pred_E_mean": 2.60477,
+      "pred_E_std": 0.00748,
+      "pred_E_lcb": 2.60477
+    },
+    {
+      "file": "candidate_0017.npz",
+      "method": "random",
+      "pred_E_mean": 2.61135,
+      "pred_E_std": 0.00755,
+      "pred_E_lcb": 2.61135
+    },
+    {
+      "file": "candidate_0018.npz",
+      "method": "random",
+      "pred_E_mean": 2.61265,
+      "pred_E_std": 0.00754,
+      "pred_E_lcb": 2.61265
+    },
+    {
+      "file": "candidate_0019.npz",
+      "method": "random",
+      "pred_E_mean": 2.61028,
+      "pred_E_std": 0.00745,
+      "pred_E_lcb": 2.61028
+    }
+  ]
+}

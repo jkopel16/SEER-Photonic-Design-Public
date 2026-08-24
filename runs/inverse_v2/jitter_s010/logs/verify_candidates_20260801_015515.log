@@ -1,0 +1,82 @@
+[log] mirroring all output to runs/inverse_v2/jitter_s010/logs/verify_candidates_20260801_015515.log
+[verify] 20 candidates, jitter sigma=0.1, bank=/project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/data_production, device=cuda
+[verify] numerics: campaign wl grid, decay_tol=0.0003, cap=2500 (res60) -- identical to the bank
+[verify] gates: floor 0.30 % (Test 9, res-120 referee); elite rung res 120
+[bank cell] n=155  mean=2.6208  p95=2.6346  max=2.6386
+[solve] candidate_0000 @ res 60  (~7 min)...
+        E(res60) = 2.6416   (268s)
+[solve] candidate_0001 @ res 60  (~7 min)...
+        E(res60) = 2.6543   (230s)
+[solve] candidate_0002 @ res 60  (~7 min)...
+        E(res60) = 2.6517   (246s)
+[solve] candidate_0003 @ res 60  (~7 min)...
+        E(res60) = 2.6543   (271s)
+[solve] candidate_0004 @ res 60  (~7 min)...
+        E(res60) = 2.6316   (249s)
+[solve] candidate_0005 @ res 60  (~7 min)...
+        E(res60) = 2.6516   (211s)
+[solve] candidate_0006 @ res 60  (~7 min)...
+        E(res60) = 2.6469   (220s)
+[solve] candidate_0007 @ res 60  (~7 min)...
+        E(res60) = 2.6626   (233s)
+[solve] candidate_0008 @ res 60  (~7 min)...
+        E(res60) = 2.6455   (259s)
+[solve] candidate_0009 @ res 60  (~7 min)...
+        E(res60) = 2.6591   (237s)
+[solve] candidate_0010 @ res 60  (~7 min)...
+        E(res60) = 2.6350   (244s)
+[solve] candidate_0011 @ res 60  (~7 min)...
+        E(res60) = 2.6459   (223s)
+[solve] candidate_0012 @ res 60  (~7 min)...
+        E(res60) = 2.6529   (240s)
+[solve] candidate_0013 @ res 60  (~7 min)...
+        E(res60) = 2.6516   (240s)
+[solve] candidate_0014 @ res 60  (~7 min)...
+        E(res60) = 2.6581   (235s)
+[solve] candidate_0015 @ res 60  (~7 min)...
+        E(res60) = 2.6480   (239s)
+[solve] candidate_0016 @ res 60  (~7 min)...
+        E(res60) = 2.6446   (226s)
+[solve] candidate_0017 @ res 60  (~7 min)...
+        E(res60) = 2.6506   (258s)
+[solve] candidate_0018 @ res 60  (~7 min)...
+        E(res60) = 2.6351   (260s)
+[solve] candidate_0019 @ res 60  (~7 min)...
+        E(res60) = 2.6428   (241s)
+
+============================================================================
+VERIFICATION TABLE (res 60 -- same numerics as the bank)
+============================================================================
+  candidate        method     pred E  true E60 pred-true gain vs cell mean  verdict
+  candidate_0007   cmaes      2.6420    2.6626   -0.0207            +1.60%  CLAIMABLE
+  candidate_0009   cmaes      2.6418    2.6591   -0.0173            +1.46%  CLAIMABLE
+  candidate_0014   gradient   2.6400    2.6581   -0.0181            +1.42%  CLAIMABLE
+  candidate_0003   cmaes      2.6422    2.6543   -0.0121            +1.28%  CLAIMABLE
+  candidate_0001   cmaes      2.6426    2.6543   -0.0117            +1.28%  CLAIMABLE
+  candidate_0012   gradient   2.6404    2.6529   -0.0126            +1.23%  CLAIMABLE
+  candidate_0002   cmaes      2.6426    2.6517   -0.0091            +1.18%  CLAIMABLE
+  candidate_0005   cmaes      2.6421    2.6516   -0.0095            +1.18%  CLAIMABLE
+  candidate_0013   gradient   2.6402    2.6516   -0.0114            +1.17%  CLAIMABLE
+  candidate_0017   gradient   2.6396    2.6506   -0.0110            +1.14%  CLAIMABLE
+  candidate_0015   gradient   2.6399    2.6480   -0.0081            +1.04%  CLAIMABLE
+  candidate_0006   cmaes      2.6420    2.6469   -0.0050            +1.00%  CLAIMABLE
+  candidate_0011   cmaes      2.6417    2.6459   -0.0042            +0.96%  CLAIMABLE
+  candidate_0008   cmaes      2.6419    2.6455   -0.0036            +0.94%  CLAIMABLE
+  candidate_0016   gradient   2.6396    2.6446   -0.0050            +0.91%  CLAIMABLE
+  candidate_0019   gradient   2.6395    2.6428   -0.0033            +0.84%  CLAIMABLE
+  candidate_0000   cmaes      2.6427    2.6416   +0.0011            +0.79%  CLAIMABLE
+  candidate_0018   gradient   2.6395    2.6351   +0.0044            +0.55%  CLAIMABLE
+  candidate_0010   cmaes      2.6418    2.6350   +0.0068            +0.54%  CLAIMABLE
+  candidate_0004   cmaes      2.6421    2.6316   +0.0105            +0.41%  CLAIMABLE
+
+  surrogate bias on champions (pred - true): -0.0070 (-0.26 %)  <- winner's-curse check
+  rank agreement Spearman(pred, true): +0.206  (n=20)
+
+  CHAMPION: candidate_0007  true E60 = 2.6626
+    vs cell mean 2.6208: +1.60 % (floor 0.30 %)
+    vs cell p95  2.6346: +1.06 %
+    vs cell MAX  2.6386: +0.91 %  <- beats every random draw in the bank?
+    candidates above the banked max: 17/20
+
+[out] verification.csv + verdict JSON -> runs/inverse_v2/jitter_s010
+[out] 20 bank-schema records -> runs/inverse_v2/jitter_s010/verified_samples (active learning; sample_id 900000+)

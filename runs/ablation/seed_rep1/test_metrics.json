@@ -1,0 +1,158 @@
+{
+  "mae": 0.005351545289158821,
+  "rmse": 0.006804592441767454,
+  "r2": 0.9410937428474426,
+  "pct_error": 0.2066604346036911,
+  "within_sigma_spearman": 0.6925949634654787,
+  "tta_std_mean": 0.0007494016317650676,
+  "ensemble_std_mean": 0.0014851306332275271,
+  "relative_uncertainty": 0.0002895746729336679,
+  "error_uncertainty_rho": 0.08481419817430236,
+  "nll_sigma_mean": 0.006781669333577156,
+  "nll_picp_1sigma": 0.6580882352941176,
+  "nll_picp_2sigma": 0.9558823529411765,
+  "nll_picp_3sigma": 0.9963235294117647,
+  "error_sigma_rho": 0.12039431157078216,
+  "per_cell_spearman": {
+    "jitter/sigma=0.02": {
+      "rho": 0.7846153846153846,
+      "n": 14,
+      "true_spread_pct": 0.3406,
+      "rho_ceiling": 0.9668,
+      "efficiency": 0.8115
+    },
+    "jitter/sigma=0.04": {
+      "rho": 0.5571428571428572,
+      "n": 15,
+      "true_spread_pct": 0.3158,
+      "rho_ceiling": 0.9617,
+      "efficiency": 0.5793
+    },
+    "jitter/sigma=0.06": {
+      "rho": 0.6029411764705882,
+      "n": 16,
+      "true_spread_pct": 0.3224,
+      "rho_ceiling": 0.9632,
+      "efficiency": 0.626
+    },
+    "jitter/sigma=0.08": {
+      "rho": 0.7470588235294118,
+      "n": 16,
+      "true_spread_pct": 0.3024,
+      "rho_ceiling": 0.9585,
+      "efficiency": 0.7794
+    },
+    "jitter/sigma=0.1": {
+      "rho": 0.3333333333333333,
+      "n": 18,
+      "true_spread_pct": 0.3688,
+      "rho_ceiling": 0.9715,
+      "efficiency": 0.3431
+    },
+    "jitter/sigma=0.125": {
+      "rho": 0.7812177502579979,
+      "n": 18,
+      "true_spread_pct": 0.4034,
+      "rho_ceiling": 0.976,
+      "efficiency": 0.8004
+    },
+    "jitter/sigma=0.15": {
+      "rho": 0.8529411764705882,
+      "n": 16,
+      "true_spread_pct": 0.3879,
+      "rho_ceiling": 0.9741,
+      "efficiency": 0.8756
+    },
+    "jitter/sigma=0.2": {
+      "rho": 0.7585139318885449,
+      "n": 18,
+      "true_spread_pct": 0.4455,
+      "rho_ceiling": 0.9802,
+      "efficiency": 0.7738
+    },
+    "jitter/sigma=0.25": {
+      "rho": 0.6736842105263158,
+      "n": 20,
+      "true_spread_pct": 0.3166,
+      "rho_ceiling": 0.9619,
+      "efficiency": 0.7004
+    },
+    "jitter/sigma=0.3": {
+      "rho": 0.3006993006993007,
+      "n": 12,
+      "true_spread_pct": 0.3054,
+      "rho_ceiling": 0.9592,
+      "efficiency": 0.3135
+    },
+    "radius/sigma=0.04": {
+      "rho": 0.4,
+      "n": 4,
+      "true_spread_pct": 0.1798,
+      "rho_ceiling": 0.8942,
+      "efficiency": 0.4473
+    },
+    "radius/sigma=0.06": {
+      "rho": 0.7,
+      "n": 5,
+      "true_spread_pct": 0.3341,
+      "rho_ceiling": 0.9656,
+      "efficiency": 0.7249
+    },
+    "radius/sigma=0.08": {
+      "rho": 0.972027972027972,
+      "n": 12,
+      "true_spread_pct": 0.4548,
+      "rho_ceiling": 0.981,
+      "efficiency": 0.9909
+    },
+    "radius/sigma=0.1": {
+      "rho": 0.8251748251748252,
+      "n": 12,
+      "true_spread_pct": 0.3517,
+      "rho_ceiling": 0.9688,
+      "efficiency": 0.8518
+    },
+    "radius/sigma=0.125": {
+      "rho": 0.8241758241758241,
+      "n": 13,
+      "true_spread_pct": 0.2283,
+      "rho_ceiling": 0.9303,
+      "efficiency": 0.8859
+    },
+    "radius/sigma=0.15": {
+      "rho": 0.6571428571428571,
+      "n": 15,
+      "true_spread_pct": 0.3182,
+      "rho_ceiling": 0.9623,
+      "efficiency": 0.6829
+    },
+    "radius/sigma=0.2": {
+      "rho": 0.4945054945054945,
+      "n": 13,
+      "true_spread_pct": 0.344,
+      "rho_ceiling": 0.9674,
+      "efficiency": 0.5111
+    },
+    "radius/sigma=0.25": {
+      "rho": 0.8363636363636363,
+      "n": 11,
+      "true_spread_pct": 0.4474,
+      "rho_ceiling": 0.9804,
+      "efficiency": 0.8531
+    },
+    "radius/sigma=0.3": {
+      "rho": 0.8491228070175438,
+      "n": 19,
+      "true_spread_pct": 0.4908,
+      "rho_ceiling": 0.9836,
+      "efficiency": 0.8633
+    },
+    "random/sigma=inf": {
+      "rho": 0.8,
+      "n": 5,
+      "true_spread_pct": 0.3678,
+      "rho_ceiling": 0.9713,
+      "efficiency": 0.8236
+    }
+  }
+}

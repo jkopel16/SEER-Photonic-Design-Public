@@ -1,0 +1,11 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/screen_only_jitter_s015/logs/ablation_26_screen_only_20260812_201206.log
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.inverse_design --bundle /project/rise-batteries/Photonics_RISE/runs/surrogate_128_fft_nll_sweep/surrogate_bundle.pt --disorder-class jitter --sigma 0.15 --export-dir /project/rise-batteries/Photonics_RISE/runs/ablation/screen_only_jitter_s015 --kappa 0.2 --no-calibration --tiers baseline screen --n-baseline 5000 --n-screen 50000 --screen-keep-frac 0.2 --export-top 20
+[cmd] PC_MODE=FULL PC_COMPILE=1 /project/rise-batteries/photonics-fdtd/bin/python3 -u scripts/FDTD_solver/verify_candidates.py --in-dir /project/rise-batteries/Photonics_RISE/runs/ablation/screen_only_jitter_s015
+
+=== screen-only ablation, verified arms (mean +- SE) ===
+  production 4-tier            n=20  E = 2.6472 +- 0.0025  max 2.6675  claimable 20/20
+  screen-only (jitter_s015)    n=20  E = 2.6171 +- 0.0013  max 2.6296  claimable 17/20
+
+  arm difference (screen-only - production): -0.0301 +- 0.0029 E
+
+VERDICT: the arms differ beyond 2 SE -- the CMA-ES tier has a measurable verified-E effect; cite this arm table.

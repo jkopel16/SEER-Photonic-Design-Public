@@ -1,0 +1,3 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/circular_shift/logs/ablation_16_circular_20260812_025553.log
+[dry] would copy /project/rise-batteries/Photonics_RISE/runs/surrogate_128_fft_nll_sweep/best_params.json -> /project/rise-batteries/Photonics_RISE/runs/ablation/circular_shift/best_params.json
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.model -i /project/rise-batteries/Photonics_RISE/data/samples_128.npz -o /project/rise-batteries/Photonics_RISE/runs/ablation/circular_shift --raster-only --fft-channel --ensemble 5 --seed 137 --use-best --no-wandb --nll-head --kfold-members --circular-padding --shift-aug

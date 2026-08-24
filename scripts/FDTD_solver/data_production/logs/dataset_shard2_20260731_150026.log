@@ -1,0 +1,8 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/data_production/logs/dataset_shard2_20260731_150026.log
+================================================================
+DATASET GENERATION (GPU FDTD)  [mode=FULL  solver=torch-FDTD(GPU)  supercell=7x7 (a_super=4550 nm)  res=60/um  decay_tol=0.0003  cap=2500  grid=12/2.5 nm  stack=air/Si(300)/ZnO(80)/Ag  device=auto fp32]
+grid: 1 classes x 10 sigmas x 20 seeds + 0 random + ordered
+================================================================
+[device] cuda
+ABORT: /project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/data_production/meta.json was written with different numerics: {'seeds_per_sigma': (75, 20), 'n_random': (50, 0), 'extra_seeds': (80, 0)}.
+Either restore the original settings (PC_MODE / config.py / PC_SEEDS_PER_SIGMA) or point PC_OUT at a fresh directory.

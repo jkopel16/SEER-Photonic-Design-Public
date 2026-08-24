@@ -1,0 +1,42 @@
+# wandb sweep config for PhotonicCNN
+# Usage:
+#   wandb sweep sweep.yaml            -> prints a SWEEP_ID
+#   wandb agent <entity>/<project>/<SWEEP_ID>   -> runs trials
+#
+# Each trial re-invokes model.py with different CLI args (Bayesian search),
+# so no code changes are needed beyond what's already in model.py.
+
+program: models/model.py          # change to models/model.py if that's your real path
+method: bayes
+metric:
+  name: best_val_loss      # reads wandb.summary["best_val_loss"], not the noisy last-epoch value
+  goal: minimize
+
+parameters:
+  lr:
+    distribution: log_uniform_values
+    min: 0.00001
+    max: 0.01
+  weight-decay:
+    distribution: log_uniform_values
+    min: 0.000001
+    max: 0.01
+  hidden-units:
+    values: [32, 64, 96, 128]     # must stay divisible by 8 (GroupNorm(8, ...))
+  batch-size:
+    values: [32, 64, 128, 256]
+  smoothl1-beta:
+    distribution: log_uniform_values
+    min: 0.1
+    max: 5.0
+  warmup-epochs:
+    values: [0, 3, 5, 10]
+
+# Kills clearly-losing trials early based on reported val_loss, saves compute.
+early_terminate:
+  type: hyperband
+  min_iter: 10
+  eta: 3
+
+# Cap total trials for a bayes search (otherwise it runs until you Ctrl+C).
+run_cap: 40

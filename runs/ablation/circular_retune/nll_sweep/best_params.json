@@ -1,0 +1,9 @@
+{
+  "beta_nll": 0,
+  "lr": 0.0026937115218941374,
+  "var_warmup": 10,
+  "weight_decay": 0.00884868665516769,
+  "combo_score": 0.6426253965789706,
+  "within_sigma_spearman": 0.5547738352902485,
+  "best_val_loss": 0.11330254375934601
+}

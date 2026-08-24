@@ -1,0 +1,158 @@
+{
+  "mae": 0.005842789076268673,
+  "rmse": 0.00740806432440877,
+  "r2": 0.9301820993423462,
+  "pct_error": 0.2256014347076416,
+  "within_sigma_spearman": 0.6383570354249647,
+  "tta_std_mean": 0.0014341010246425867,
+  "ensemble_std_mean": 0.0024245907552540302,
+  "relative_uncertainty": 0.0005542218568734825,
+  "error_uncertainty_rho": 0.11695174805658852,
+  "nll_sigma_mean": 0.008174636401236057,
+  "nll_picp_1sigma": 0.7022058823529411,
+  "nll_picp_2sigma": 0.9705882352941176,
+  "nll_picp_3sigma": 1.0,
+  "error_sigma_rho": 0.16992119016212787,
+  "per_cell_spearman": {
+    "jitter/sigma=0.02": {
+      "rho": 0.9252747252747253,
+      "n": 14,
+      "true_spread_pct": 0.3406,
+      "rho_ceiling": 0.9668,
+      "efficiency": 0.957
+    },
+    "jitter/sigma=0.04": {
+      "rho": 0.5428571428571428,
+      "n": 15,
+      "true_spread_pct": 0.3158,
+      "rho_ceiling": 0.9617,
+      "efficiency": 0.5645
+    },
+    "jitter/sigma=0.06": {
+      "rho": 0.5941176470588235,
+      "n": 16,
+      "true_spread_pct": 0.3224,
+      "rho_ceiling": 0.9632,
+      "efficiency": 0.6168
+    },
+    "jitter/sigma=0.08": {
+      "rho": 0.5794117647058824,
+      "n": 16,
+      "true_spread_pct": 0.3024,
+      "rho_ceiling": 0.9585,
+      "efficiency": 0.6045
+    },
+    "jitter/sigma=0.1": {
+      "rho": 0.46542827657378744,
+      "n": 18,
+      "true_spread_pct": 0.3688,
+      "rho_ceiling": 0.9715,
+      "efficiency": 0.4791
+    },
+    "jitter/sigma=0.125": {
+      "rho": 0.675954592363261,
+      "n": 18,
+      "true_spread_pct": 0.4034,
+      "rho_ceiling": 0.976,
+      "efficiency": 0.6926
+    },
+    "jitter/sigma=0.15": {
+      "rho": 0.8147058823529412,
+      "n": 16,
+      "true_spread_pct": 0.3879,
+      "rho_ceiling": 0.9741,
+      "efficiency": 0.8364
+    },
+    "jitter/sigma=0.2": {
+      "rho": 0.7296181630546955,
+      "n": 18,
+      "true_spread_pct": 0.4455,
+      "rho_ceiling": 0.9802,
+      "efficiency": 0.7444
+    },
+    "jitter/sigma=0.25": {
+      "rho": 0.5353383458646617,
+      "n": 20,
+      "true_spread_pct": 0.3166,
+      "rho_ceiling": 0.9619,
+      "efficiency": 0.5566
+    },
+    "jitter/sigma=0.3": {
+      "rho": -0.04895104895104895,
+      "n": 12,
+      "true_spread_pct": 0.3054,
+      "rho_ceiling": 0.9592,
+      "efficiency": -0.051
+    },
+    "radius/sigma=0.04": {
+      "rho": 0.4,
+      "n": 4,
+      "true_spread_pct": 0.1798,
+      "rho_ceiling": 0.8942,
+      "efficiency": 0.4473
+    },
+    "radius/sigma=0.06": {
+      "rho": 0.6,
+      "n": 5,
+      "true_spread_pct": 0.3341,
+      "rho_ceiling": 0.9656,
+      "efficiency": 0.6214
+    },
+    "radius/sigma=0.08": {
+      "rho": 0.9440559440559441,
+      "n": 12,
+      "true_spread_pct": 0.4548,
+      "rho_ceiling": 0.981,
+      "efficiency": 0.9624
+    },
+    "radius/sigma=0.1": {
+      "rho": 0.7832167832167832,
+      "n": 12,
+      "true_spread_pct": 0.3517,
+      "rho_ceiling": 0.9688,
+      "efficiency": 0.8085
+    },
+    "radius/sigma=0.125": {
+      "rho": 0.8681318681318682,
+      "n": 13,
+      "true_spread_pct": 0.2283,
+      "rho_ceiling": 0.9303,
+      "efficiency": 0.9332
+    },
+    "radius/sigma=0.15": {
+      "rho": 0.6857142857142857,
+      "n": 15,
+      "true_spread_pct": 0.3182,
+      "rho_ceiling": 0.9623,
+      "efficiency": 0.7126
+    },
+    "radius/sigma=0.2": {
+      "rho": 0.45604395604395603,
+      "n": 13,
+      "true_spread_pct": 0.344,
+      "rho_ceiling": 0.9674,
+      "efficiency": 0.4714
+    },
+    "radius/sigma=0.25": {
+      "rho": 0.7727272727272727,
+      "n": 11,
+      "true_spread_pct": 0.4474,
+      "rho_ceiling": 0.9804,
+      "efficiency": 0.7882
+    },
+    "radius/sigma=0.3": {
+      "rho": 0.6368421052631579,
+      "n": 19,
+      "true_spread_pct": 0.4908,
+      "rho_ceiling": 0.9836,
+      "efficiency": 0.6475
+    },
+    "random/sigma=inf": {
+      "rho": 0.7,
+      "n": 5,
+      "true_spread_pct": 0.3678,
+      "rho_ceiling": 0.9713,
+      "efficiency": 0.7207
+    }
+  }
+}

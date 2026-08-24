@@ -1,0 +1,7 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/tta_deployed/logs/ablation_04_tta_20260804_030535.log
+[model] device = cpu
+[input] --raster-only: keeping channel 0 of 2 (dropping ['fft_baked_v1'])
+[input] appended fft_onfly_v1 -> X (2724, 2, 128, 128)
+[input] channel recipe: ['raster', 'fft_onfly_v1']
+[eval] norm stats reproduce the bundle's (split verified)
+[eval] 5-member photonic-surrogate-bundle-v2 (heteroscedastic)

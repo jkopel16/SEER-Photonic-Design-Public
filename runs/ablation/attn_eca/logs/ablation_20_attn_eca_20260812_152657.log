@@ -1,0 +1,13 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/attn_eca/logs/ablation_20_attn_eca_20260812_152657.log
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.model -i /project/rise-batteries/Photonics_RISE/data/samples_128.npz -o /project/rise-batteries/Photonics_RISE/runs/ablation/attn_eca --raster-only --fft-channel --ensemble 5 --seed 137 --use-best --nll-head --kfold-members --attention eca
+[model] device = cuda
+[input] --raster-only: keeping channel 0 of 2 (dropping ['fft_baked_v1'])
+[input] appended fft_onfly_v1 -> X (2724, 2, 128, 128)
+[input] channel recipe: ['raster', 'fft_onfly_v1']
+[eval] norm stats reproduce the bundle's (split verified)
+[eval] 5-member photonic-surrogate-bundle-v2 (heteroscedastic)
+[eval] test/tta_on        MAE 0.005584  RMSE 0.007059  rho +0.665  RMS(s)/RMSE 1.125  PICP1 0.706
+[eval] test/tta_off       MAE 0.005616  RMSE 0.007083  rho +0.660  RMS(s)/RMSE 1.121  PICP1 0.706
+[eval] wrote /project/rise-batteries/Photonics_RISE/runs/ablation/attn_eca/ablation_metrics.json
+
+VERDICT: ECA MAE 0.005584, rho +0.665, PICP1 0.706 -- compare to deployed v2 (MAE 0.005447, rho 0.701, PICP1 0.651). ECA ~ SE = the MLP bottleneck is unnecessary; ECA < SE = the bottleneck caps overfitting and earns its keep.

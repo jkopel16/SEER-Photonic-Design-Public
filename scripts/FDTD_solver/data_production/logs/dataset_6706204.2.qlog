@@ -1,0 +1,17 @@
+host: scc-701  task 2/2  CUDA_VISIBLE_DEVICES=0
+[log] mirroring all output to gpu_out_n8r60/logs/dataset_shard1_20260716_130607.log
+================================================================
+DATASET GENERATION (GPU FDTD)  [mode=FULL  solver=torch-FDTD(GPU)  supercell=7x7 (a_super=4550 nm)  res=60/um  decay_tol=0.0003  cap=2500  grid=12/2.5 nm  stack=air/Si(300)/ZnO(80)/Ag  device=auto fp32]
+grid: 2 classes x 10 sigmas x 75 seeds + 50 random + ordered
+================================================================
+[device] cuda
+  NOTE: skipping 6 previously QUARANTINED samples in this shard;
+  inspect gpu_out_n8r60/quarantine and delete their files to force a re-solve.
+
+shard 1/2: 603 samples to solve, one at a time on cuda
+  [    1/603] sample    109 (jitter  s=0.04) E=2.594   439.0s  ->  shard ETA 73.4 h
+  [    2/603] sample    111 (jitter  s=0.04) E=2.582   348.5s  ->  shard ETA 65.7 h
+  [    3/603] sample    115 (jitter  s=0.04) E=2.592   344.1s  ->  shard ETA 62.9 h
+  [    4/603] sample    117 (jitter  s=0.04) E=2.586   361.9s  ->  shard ETA 62.1 h
+  [    5/603] sample    119 (jitter  s=0.04) E=2.596   388.2s  ->  shard ETA 62.5 h
+  [    6/603] sample    123 (jitter  s=0.04) E=2.585   374.7s  ->  shard ETA 62.4 h

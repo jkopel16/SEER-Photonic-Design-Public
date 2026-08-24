@@ -1,0 +1,21 @@
+[log] mirroring all output to runs/inverse/radius_s025/logs/verify_candidates_20260729_210426.log
+[verify] 20 candidates, radius sigma=0.25, bank=/usr4/spclpgm/mcheung2/Photonics_RISE/scripts/FDTD_solver/data_production, device=cuda
+[verify] numerics: campaign wl grid, decay_tol=0.0003, cap=2500 (res60) -- identical to the bank
+[verify] gates: floor 0.30 % (Test 9, res-120 referee); elite rung res 120
+Traceback (most recent call last):
+  File "/usr4/spclpgm/mcheung2/Photonics_RISE/scripts/FDTD_solver/verify_candidates.py", line 393, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/usr4/spclpgm/mcheung2/Photonics_RISE/scripts/FDTD_solver/verify_candidates.py", line 229, in main
+    bank_stats, bank_rows = cell_bank_stats(cls, sigma)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr4/spclpgm/mcheung2/Photonics_RISE/scripts/FDTD_solver/verify_candidates.py", line 135, in cell_bank_stats
+    for x in _load_samples():
+             ^^^^^^^^^^^^^^^
+  File "/usr4/spclpgm/mcheung2/Photonics_RISE/scripts/FDTD_solver/run_dataset.py", line 380, in _load_samples
+    with np.load(f, allow_pickle=False) as z:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr4/spclpgm/mcheung2/Photonics_RISE/.venv/lib/python3.11/site-packages/numpy/lib/_npyio_impl.py", line 461, in load
+    magic = fid.read(N)
+            ^^^^^^^^^^^
+KeyboardInterrupt

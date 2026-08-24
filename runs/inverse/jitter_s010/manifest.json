@@ -1,0 +1,159 @@
+{
+  "disorder_class": "jitter",
+  "sigma": 0.1,
+  "a_nm": 650.0,
+  "n_cells": 7,
+  "r_nom_nm": 227.49999999999997,
+  "w_min_nm": 50.0,
+  "kappa": 0.8,
+  "baseline": {
+    "n": 5000,
+    "pred_E_mean": 2.6214358806610107,
+    "pred_E_std": 0.003140231827273965,
+    "pred_E_p95": 2.6261255741119385,
+    "pred_E_max": 2.63047194480896
+  },
+  "note": "Predicted values only. Validate every candidate with the FDTD engine before claiming anything; gains below the 0.30% within-sigma resolvability floor (audit Test 9, res-120 referee) are not claimable. Feed (layout, true E) pairs back into training (active learning) and re-run the search.",
+  "candidates": [
+    {
+      "file": "candidate_0000.npz",
+      "method": "cmaes",
+      "pred_E_mean": 2.64456,
+      "pred_E_std": 0.00138,
+      "pred_E_lcb": 2.64345
+    },
+    {
+      "file": "candidate_0001.npz",
+      "method": "cmaes",
+      "pred_E_mean": 2.64428,
+      "pred_E_std": 0.00114,
+      "pred_E_lcb": 2.64338
+    },
+    {
+      "file": "candidate_0002.npz",
+      "method": "cmaes",
+      "pred_E_mean": 2.64432,
+      "pred_E_std": 0.00139,
+      "pred_E_lcb": 2.64321
+    },
+    {
+      "file": "candidate_0003.npz",
+      "method": "cmaes",
+      "pred_E_mean": 2.64404,
+      "pred_E_std": 0.00113,
+      "pred_E_lcb": 2.64314
+    },
+    {
+      "file": "candidate_0004.npz",
+      "method": "cmaes",
+      "pred_E_mean": 2.64391,
+      "pred_E_std": 0.00116,
+      "pred_E_lcb": 2.64299
+    },
+    {
+      "file": "candidate_0005.npz",
+      "method": "cmaes",
+      "pred_E_mean": 2.64403,
+      "pred_E_std": 0.00137,
+      "pred_E_lcb": 2.64294
+    },
+    {
+      "file": "candidate_0006.npz",
+      "method": "cmaes",
+      "pred_E_mean": 2.6439,
+      "pred_E_std": 0.0014,
+      "pred_E_lcb": 2.64278
+    },
+    {
+      "file": "candidate_0007.npz",
+      "method": "cmaes",
+      "pred_E_mean": 2.64363,
+      "pred_E_std": 0.00115,
+      "pred_E_lcb": 2.64271
+    },
+    {
+      "file": "candidate_0008.npz",
+      "method": "cmaes",
+      "pred_E_mean": 2.64333,
+      "pred_E_std": 0.00094,
+      "pred_E_lcb": 2.64258
+    },
+    {
+      "file": "candidate_0009.npz",
+      "method": "cmaes",
+      "pred_E_mean": 2.64359,
+      "pred_E_std": 0.00137,
+      "pred_E_lcb": 2.6425
+    },
+    {
+      "file": "candidate_0010.npz",
+      "method": "cmaes",
+      "pred_E_mean": 2.64324,
+      "pred_E_std": 0.00104,
+      "pred_E_lcb": 2.64241
+    },
+    {
+      "file": "candidate_0011.npz",
+      "method": "cmaes",
+      "pred_E_mean": 2.64257,
+      "pred_E_std": 0.00099,
+      "pred_E_lcb": 2.64178
+    },
+    {
+      "file": "candidate_0012.npz",
+      "method": "gradient",
+      "pred_E_mean": 2.64186,
+      "pred_E_std": 0.00089,
+      "pred_E_lcb": 2.64115
+    },
+    {
+      "file": "candidate_0013.npz",
+      "method": "gradient",
+      "pred_E_mean": 2.64176,
+      "pred_E_std": 0.00088,
+      "pred_E_lcb": 2.64106
+    },
+    {
+      "file": "candidate_0014.npz",
+      "method": "gradient",
+      "pred_E_mean": 2.64145,
+      "pred_E_std": 0.00107,
+      "pred_E_lcb": 2.64059
+    },
+    {
+      "file": "candidate_0015.npz",
+      "method": "gradient",
+      "pred_E_mean": 2.64117,
+      "pred_E_std": 0.00086,
+      "pred_E_lcb": 2.64048
+    },
+    {
+      "file": "candidate_0016.npz",
+      "method": "gradient",
+      "pred_E_mean": 2.64109,
+      "pred_E_std": 0.00088,
+      "pred_E_lcb": 2.64039
+    },
+    {
+      "file": "candidate_0017.npz",
+      "method": "gradient",
+      "pred_E_mean": 2.64115,
+      "pred_E_std": 0.00102,
+      "pred_E_lcb": 2.64034
+    },
+    {
+      "file": "candidate_0018.npz",
+      "method": "gradient",
+      "pred_E_mean": 2.64111,
+      "pred_E_std": 0.00097,
+      "pred_E_lcb": 2.64033
+    },
+    {
+      "file": "candidate_0019.npz",
+      "method": "gradient",
+      "pred_E_mean": 2.64097,
+      "pred_E_std": 0.0011,
+      "pred_E_lcb": 2.64008
+    }
+  ]
+}

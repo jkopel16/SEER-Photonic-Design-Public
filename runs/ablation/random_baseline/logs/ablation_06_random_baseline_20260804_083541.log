@@ -1,0 +1,55 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/logs/ablation_06_random_baseline_20260804_083541.log
+[model] device = cuda
+[scorer] channel recipe: ['raster', 'fft_onfly_v1']
+[scorer] 5-model ensemble (heteroscedastic v2), img=128px, TTA=on, kappa=0.0
+[scorer] UQ calibration: none (raw ensemble std)
+[export] 20 candidates + manifest -> /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/jitter_s006
+[gen] jitter_s006: 20 draws, surrogate pred mean 2.6150 max 2.6237
+[export] 20 candidates + manifest -> /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/jitter_s008
+[gen] jitter_s008: 20 draws, surrogate pred mean 2.6244 max 2.6300
+[export] 20 candidates + manifest -> /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/jitter_s010
+[gen] jitter_s010: 20 draws, surrogate pred mean 2.6209 max 2.6277
+[export] 20 candidates + manifest -> /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/jitter_s0125
+[gen] jitter_s0125: 20 draws, surrogate pred mean 2.6121 max 2.6204
+[export] 20 candidates + manifest -> /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/jitter_s015
+[gen] jitter_s015: 20 draws, surrogate pred mean 2.6036 max 2.6121
+[export] 20 candidates + manifest -> /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/radius_s015
+[gen] radius_s015: 20 draws, surrogate pred mean 2.6003 max 2.6144
+[export] 20 candidates + manifest -> /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/radius_s020
+[gen] radius_s020: 20 draws, surrogate pred mean 2.6033 max 2.6132
+[export] 20 candidates + manifest -> /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/radius_s025
+[gen] radius_s025: 20 draws, surrogate pred mean 2.5902 max 2.6054
+
+################ verifying jitter_s006 ################
+[cmd] PC_MODE=FULL PC_COMPILE=1 /project/rise-batteries/photonics-fdtd/bin/python3 -u scripts/FDTD_solver/verify_candidates.py --in-dir /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/jitter_s006
+[warn] verification failed for jitter_s006; continuing (rerun --verify to resume)
+
+################ verifying jitter_s008 ################
+[cmd] PC_MODE=FULL PC_COMPILE=1 /project/rise-batteries/photonics-fdtd/bin/python3 -u scripts/FDTD_solver/verify_candidates.py --in-dir /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/jitter_s008
+[warn] verification failed for jitter_s008; continuing (rerun --verify to resume)
+
+################ verifying jitter_s010 ################
+[cmd] PC_MODE=FULL PC_COMPILE=1 /project/rise-batteries/photonics-fdtd/bin/python3 -u scripts/FDTD_solver/verify_candidates.py --in-dir /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/jitter_s010
+[warn] verification failed for jitter_s010; continuing (rerun --verify to resume)
+
+################ verifying jitter_s0125 ################
+[cmd] PC_MODE=FULL PC_COMPILE=1 /project/rise-batteries/photonics-fdtd/bin/python3 -u scripts/FDTD_solver/verify_candidates.py --in-dir /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/jitter_s0125
+[warn] verification failed for jitter_s0125; continuing (rerun --verify to resume)
+
+################ verifying jitter_s015 ################
+[cmd] PC_MODE=FULL PC_COMPILE=1 /project/rise-batteries/photonics-fdtd/bin/python3 -u scripts/FDTD_solver/verify_candidates.py --in-dir /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/jitter_s015
+[warn] verification failed for jitter_s015; continuing (rerun --verify to resume)
+
+################ verifying radius_s015 ################
+[cmd] PC_MODE=FULL PC_COMPILE=1 /project/rise-batteries/photonics-fdtd/bin/python3 -u scripts/FDTD_solver/verify_candidates.py --in-dir /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/radius_s015
+[warn] verification failed for radius_s015; continuing (rerun --verify to resume)
+
+################ verifying radius_s020 ################
+[cmd] PC_MODE=FULL PC_COMPILE=1 /project/rise-batteries/photonics-fdtd/bin/python3 -u scripts/FDTD_solver/verify_candidates.py --in-dir /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/radius_s020
+[warn] verification failed for radius_s020; continuing (rerun --verify to resume)
+
+################ verifying radius_s025 ################
+[cmd] PC_MODE=FULL PC_COMPILE=1 /project/rise-batteries/photonics-fdtd/bin/python3 -u scripts/FDTD_solver/verify_candidates.py --in-dir /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/radius_s025
+[warn] verification failed for radius_s025; continuing (rerun --verify to resume)
+
+[note] nothing verified yet; the claim table appears after --verify runs.

@@ -1,0 +1,34 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/logs/ablation_13_ensemble_size_20260804_073020.log
+
+################ ensemble k = 1 ################
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.model -i /project/rise-batteries/Photonics_RISE/data/samples_128.npz -o /project/rise-batteries/Photonics_RISE/runs/ablation/ens_k1 --raster-only --fft-channel --ensemble 1 --seed 137 --use-best --no-wandb --nll-head
+[model] device = cuda
+[input] --raster-only: keeping channel 0 of 2 (dropping ['fft_baked_v1'])
+[input] appended fft_onfly_v1 -> X (2724, 2, 128, 128)
+[input] channel recipe: ['raster', 'fft_onfly_v1']
+[eval] norm stats reproduce the bundle's (split verified)
+[eval] 1-member photonic-surrogate-bundle-v2 (heteroscedastic)
+[eval] test/tta_on        MAE 0.006007  RMSE 0.007614  rho +0.618  RMS(s)/RMSE 1.103  PICP1 0.702
+[eval] test/tta_off       MAE 0.005981  RMSE 0.007589  rho +0.612  RMS(s)/RMSE 1.104  PICP1 0.702
+[eval] wrote /project/rise-batteries/Photonics_RISE/runs/ablation/ens_k1/ablation_metrics.json
+
+################ ensemble k = 3 ################
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.model -i /project/rise-batteries/Photonics_RISE/data/samples_128.npz -o /project/rise-batteries/Photonics_RISE/runs/ablation/ens_k3 --raster-only --fft-channel --ensemble 3 --seed 137 --use-best --no-wandb --nll-head
+[warn] training failed for k=3; continuing
+
+################ ensemble k = 5 ################
+[input] --raster-only: keeping channel 0 of 2 (dropping ['fft_baked_v1'])
+[input] appended fft_onfly_v1 -> X (2724, 2, 128, 128)
+[input] channel recipe: ['raster', 'fft_onfly_v1']
+[eval] norm stats reproduce the bundle's (split verified)
+[eval] 5-member photonic-surrogate-bundle-v2 (heteroscedastic)
+[eval] test/tta_on        MAE 0.005287  RMSE 0.006716  rho +0.694  RMS(s)/RMSE 1.027  PICP1 0.669
+[eval] test/tta_off       MAE 0.005265  RMSE 0.006702  rho +0.706  RMS(s)/RMSE 1.025  PICP1 0.673
+[eval] wrote /project/rise-batteries/Photonics_RISE/runs/ablation/kfold_off/ablation_metrics.json
+
+=== ensemble size sweep (shared splits, TTA on) ===
+   k        MAE       RMSE     rho  RMS(s)/RMSE   PICP1     s_epi
+   1   0.006007   0.007614  +0.618        1.103   0.702  0.000000
+   5   0.005287   0.006716  +0.694        1.027   0.669  0.001538
+
+VERDICT: caption MUST carry the pre-registered note -- shared-split sweep, indicative of size scaling only; the deployed model is k-fold-rotated and is NOT on this curve (its row lives in ablation #4).

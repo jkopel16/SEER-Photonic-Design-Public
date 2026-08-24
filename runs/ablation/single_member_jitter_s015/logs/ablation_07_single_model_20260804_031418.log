@@ -1,0 +1,8 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/single_member_jitter_s015/logs/ablation_07_single_model_20260804_031418.log
+[slice] 1 member(s) -> /project/rise-batteries/Photonics_RISE/runs/ablation/single_member_bundle.pt
+[model] device = cuda
+[scorer] channel recipe: ['raster', 'fft_onfly_v1']
+[scorer] 1-model ensemble (heteroscedastic v2), img=128px, TTA=on, kappa=0.0
+[scorer] UQ calibration: none (raw ensemble std)
+
+VERDICT: slice written and loads through SurrogateScorer -- smoke test passed, no design launched.

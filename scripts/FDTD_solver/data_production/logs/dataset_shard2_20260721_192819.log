@@ -1,0 +1,167 @@
+[log] mirroring all output to gpu_out_n8r60/logs/dataset_shard2_20260721_192819.log
+================================================================
+DATASET GENERATION (GPU FDTD)  [mode=FULL  solver=torch-FDTD(GPU)  supercell=7x7 (a_super=4550 nm)  res=60/um  decay_tol=0.0003  cap=2500  grid=12/2.5 nm  stack=air/Si(300)/ZnO(80)/Ag  device=auto fp32]
+grid: 2 classes x 10 sigmas x 75 seeds + 50 random + ordered
+================================================================
+[device] cuda
+
+[pre-flight validation]
+[Drude-Lorentz fit ledger  (per band, fit vs table)]
+    si    400- 700 nm: max|dn|=1.41e-02  max|dk|=9.25e-03  (rel k err where k>1e-3: 7.35%)  -> OK
+    si    700- 950 nm: max|dn|=1.53e-03  max|dk|=7.12e-04  (rel k err where k>1e-3: 8.43%)  -> OK
+    si    950-1100 nm: max|dn|=3.12e-03  max|dk|=3.64e-04  (rel k err where k>1e-3: 32.49%)  -> OK
+    zno   400- 700 nm: max|dn|=2.47e-05  max|dk|=3.94e-09  (rel k err where k>1e-3: 0.00%)  -> OK
+    zno   700- 950 nm: max|dn|=4.08e-06  max|dk|=6.92e-10  (rel k err where k>1e-3: 0.00%)  -> OK
+    zno   950-1100 nm: max|dn|=7.02e-06  max|dk|=4.41e-10  (rel k err where k>1e-3: 0.00%)  -> OK
+    ag    400- 700 nm: max|dn|=1.09e-03  max|dk|=4.06e-03  (rel k err where k>1e-3: 0.17%)  -> OK
+    ag    700- 950 nm: max|dn|=2.21e-03  max|dk|=4.65e-03  (rel k err where k>1e-3: 0.08%)  -> OK
+    ag    950-1100 nm: max|dn|=2.71e-03  max|dk|=7.93e-03  (rel k err where k>1e-3: 0.10%)  -> OK
+    LABEL GATE planar: eta(table)=0.13968  eta(fit)=0.13853  (-0.82%, gate 1%)   max|dA_si|=2.429e-02
+    LABEL GATE trapping (L_eff=15um): eta(table)=0.69847  eta(fit)=0.69512  (-0.48%, gate 2.5%)
+[pseudo-1D planar stack: torch-FDTD vs fitted-material TMM, res=500/um, device=cuda]
+    band 400-700 nm: max|dA_si| = 4.51e-03  (R err 4.51e-03, A_par err 1.84e-04)  -> OK
+    band 700-950 nm: max|dA_si| = 3.43e-04  (R err 3.63e-04, A_par err 2.74e-05)  -> OK
+    band 950-1100 nm: max|dA_si| = 2.54e-05  (R err 4.27e-05, A_par err 4.10e-05)  -> OK
+[3D uniform slab @ res=120, cell=650 nm]
+    band 400-700: max|dA_si| = 5.95e-02 (gate 8e-02)  -> OK
+    band 700-950: max|dA_si| = 2.53e-03 (gate 2e-02)  -> OK
+    band 950-1100: max|dA_si| = 2.35e-04 (gate 1e-02)  -> OK
+  NOTE: skipping 46 previously QUARANTINED samples in this shard;
+  inspect gpu_out_n8r60/quarantine and delete their files to force a re-solve.
+
+shard 2/3: 334 samples to solve, one at a time on cuda
+  [    1/334] sample   2069 (jitter  s=0.15) E=2.616  1003.0s  ->  shard ETA 92.8 h
+  [    2/334] sample   2072 (jitter  s=0.15) E=2.594   878.5s  ->  shard ETA 86.8 h
+  [    3/334] sample   2075 (jitter  s=0.15) E=2.599   902.7s  ->  shard ETA 85.3 h
+  [    4/334] sample   2078 (jitter  s=0.15) E=2.627   967.7s  ->  shard ETA 86.0 h
+  [    5/334] sample   2081 (jitter  s=0.15) E=2.590  1039.0s  ->  shard ETA 87.6 h
+  [    6/334] sample   2084 (jitter  s=0.15) E=2.605  1006.2s  ->  shard ETA 88.0 h
+  [    7/334] sample   2087 (jitter  s=0.15) E=2.602   857.2s  ->  shard ETA 86.4 h
+  [    8/334] sample   2090 (jitter  s=0.15) E=2.613   940.9s  ->  shard ETA 86.0 h
+  [    9/334] sample   2093 (jitter  s=0.15) E=2.602   983.5s  ->  shard ETA 86.1 h
+  [   10/334] sample   2096 (jitter  s=0.15) E=2.583   961.6s  ->  shard ETA 85.9 h
+  [   11/334] sample   2099 (jitter  s=0.15) E=2.625  1010.3s  ->  shard ETA 86.1 h
+  [   12/334] sample   2102 (jitter  s=0.15) E=2.608   865.0s  ->  shard ETA 85.1 h
+  [   13/334] sample   2105 (jitter  s=0.15) E=2.617  1057.6s  ->  shard ETA 85.6 h
+  [   14/334] sample   2108 (jitter  s=0.15) E=2.606   900.0s  ->  shard ETA 84.9 h
+  [   15/334] sample   2111 (jitter  s=0.2) E=2.597   933.2s  ->  shard ETA 84.5 h
+  [   16/334] sample   2114 (jitter  s=0.2) E=2.599  1105.9s  ->  shard ETA 85.1 h
+  [   17/334] sample   2117 (jitter  s=0.2) E=2.588   916.9s  ->  shard ETA 84.6 h
+  [   18/334] sample   2120 (jitter  s=0.2) E=2.598  1008.8s  ->  shard ETA 84.6 h
+  [   19/334] sample   2123 (jitter  s=0.2) E=2.604   905.3s  ->  shard ETA 84.0 h
+  [   20/334] sample   2126 (jitter  s=0.2) E=2.570   942.0s  ->  shard ETA 83.7 h
+  [   21/334] sample   2129 (jitter  s=0.2) E=2.575   881.3s  ->  shard ETA 83.1 h
+  [   22/334] sample   2132 (jitter  s=0.2) E=2.586  1017.4s  ->  shard ETA 83.1 h
+  [   23/334] sample   2135 (jitter  s=0.2) E=2.595   851.2s  ->  shard ETA 82.4 h
+  [   24/334] sample   2138 (jitter  s=0.2) E=2.587   846.4s  ->  shard ETA 81.7 h
+  [   25/334] sample   2141 (jitter  s=0.2) E=2.573   740.2s  ->  shard ETA 80.8 h
+  [   26/334] sample   2144 (jitter  s=0.2) E=2.585   947.6s  ->  shard ETA 80.5 h
+  [   27/334] sample   2147 (jitter  s=0.2) E=2.586   820.3s  ->  shard ETA 79.9 h
+  [   28/334] sample   2150 (jitter  s=0.2) E=2.586   865.0s  ->  shard ETA 79.4 h
+  [   29/334] sample   2153 (jitter  s=0.2) E=2.586   947.0s  ->  shard ETA 79.2 h
+  [   30/334] sample   2156 (jitter  s=0.2) E=2.590   857.6s  ->  shard ETA 78.7 h
+  [   31/334] sample   2159 (jitter  s=0.2) E=2.582   928.1s  ->  shard ETA 78.4 h
+  [   32/334] sample   2162 (jitter  s=0.2) E=2.591   934.5s  ->  shard ETA 78.2 h
+  [   33/334] sample   2165 (jitter  s=0.2) E=2.579   928.3s  ->  shard ETA 77.9 h
+  [   34/334] sample   2168 (jitter  s=0.2) E=2.595   846.3s  ->  shard ETA 77.4 h
+  [   35/334] sample   2171 (jitter  s=0.2) E=2.582   817.0s  ->  shard ETA 76.9 h
+  [   36/334] sample   2174 (jitter  s=0.2) E=2.596   820.4s  ->  shard ETA 76.4 h
+  [   37/334] sample   2177 (jitter  s=0.2) E=2.569   878.4s  ->  shard ETA 76.1 h
+  [   38/334] sample   2180 (jitter  s=0.2) E=2.588   958.0s  ->  shard ETA 75.9 h
+  [   39/334] sample   2183 (jitter  s=0.2) E=2.588   888.7s  ->  shard ETA 75.6 h
+  [   40/334] sample   2186 (jitter  s=0.2) E=2.590   842.3s  ->  shard ETA 75.1 h
+  [   41/334] sample   2189 (jitter  s=0.2) E=2.589   922.6s  ->  shard ETA 74.9 h
+  [   42/334] sample   2192 (jitter  s=0.25) E=2.586   805.9s  ->  shard ETA 74.4 h
+  [   43/334] sample   2195 (jitter  s=0.25) E=2.582   903.3s  ->  shard ETA 74.1 h
+  [   44/334] sample   2198 (jitter  s=0.25) E=2.590   853.0s  ->  shard ETA 73.8 h
+  [   45/334] sample   2201 (jitter  s=0.25) E=2.582   863.2s  ->  shard ETA 73.4 h
+  [   46/334] sample   2204 (jitter  s=0.25) E=2.591   774.2s  ->  shard ETA 72.9 h
+  [   47/334] sample   2207 (jitter  s=0.25) E=2.582  1020.3s  ->  shard ETA 72.8 h
+  [   48/334] sample   2210 (jitter  s=0.25) E=2.580   894.2s  ->  shard ETA 72.6 h
+  [   49/334] sample   2213 (jitter  s=0.25) E=2.570   894.2s  ->  shard ETA 72.3 h
+  [   50/334] sample   2216 (jitter  s=0.25) E=2.576   922.0s  ->  shard ETA 72.0 h
+  [   51/334] sample   2219 (jitter  s=0.25) E=2.571   954.0s  ->  shard ETA 71.8 h
+  [   52/334] sample   2222 (jitter  s=0.25) E=2.577   863.8s  ->  shard ETA 71.5 h
+  [   53/334] sample   2225 (jitter  s=0.25) E=2.572   956.0s  ->  shard ETA 71.3 h
+  [   54/334] sample   2228 (jitter  s=0.25) E=2.576   848.1s  ->  shard ETA 71.0 h
+  [   55/334] sample   2231 (jitter  s=0.25) E=2.586   807.2s  ->  shard ETA 70.6 h
+  [   56/334] sample   2234 (jitter  s=0.25) E=2.584   840.3s  ->  shard ETA 70.2 h
+  [   57/334] sample   2237 (jitter  s=0.25) E=2.565   911.6s  ->  shard ETA 70.0 h
+  [   58/334] sample   2240 (jitter  s=0.25) E=2.584   923.9s  ->  shard ETA 69.7 h
+  [   59/334] sample   2243 (jitter  s=0.25) E=2.578   916.5s  ->  shard ETA 69.5 h
+  [   60/334] sample   2246 (jitter  s=0.25) E=2.576   906.6s  ->  shard ETA 69.2 h
+  [   61/334] sample   2249 (jitter  s=0.25) E=2.578   919.2s  ->  shard ETA 69.0 h
+  [   62/334] sample   2252 (jitter  s=0.25) E=2.571  1002.9s  ->  shard ETA 68.9 h
+  [   63/334] sample   2255 (jitter  s=0.25) E=2.583   880.8s  ->  shard ETA 68.6 h
+  [   64/334] sample   2258 (jitter  s=0.25) E=2.582   870.5s  ->  shard ETA 68.3 h
+  [   65/334] sample   2261 (jitter  s=0.25) E=2.564  1198.4s  ->  shard ETA 68.4 h
+  [   66/334] sample   2264 (jitter  s=0.25) E=2.596   955.4s  ->  shard ETA 68.1 h
+  [   67/334] sample   2267 (jitter  s=0.25) E=2.576   858.7s  ->  shard ETA 67.8 h
+  [   68/334] sample   2270 (jitter  s=0.25) E=2.585   910.4s  ->  shard ETA 67.6 h
+  [   69/334] sample   2273 (jitter  s=0.3) E=2.565   785.8s  ->  shard ETA 67.2 h
+  [   70/334] sample   2276 (jitter  s=0.3) E=2.566   873.8s  ->  shard ETA 66.9 h
+Traceback (most recent call last):
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_GPU_test/run_dataset.py", line 833, in <module>
+    main()
+    ~~~~^^
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_GPU_test/run_dataset.py", line 828, in main
+    {"generate": cmd_generate, "plan": cmd_plan,
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     "analyze": cmd_analyze, "verify": cmd_verify}[cmd](args)
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_GPU_test/run_dataset.py", line 298, in cmd_generate
+    A_si, A_par, info = solve_one(rec, wl, device)
+                        ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_GPU_test/run_dataset.py", line 210, in solve_one
+    return broadband_absorption_many(
+        [holes], rec.get("a_super_nm", C.A_SUPER_NM), C.THICKNESS_NM, wl,
+        m["fits"], C.BUFFER_NM, resolution or C.RESOLUTION,
+        decay_tol or C.DECAY_TOL, max_time or C.MAX_TIME, NORM_DIR,
+        device=device, n_cells_tag=f"sc{C.N_CELLS}")
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_GPU_test/fdtd_torch.py", line 945, in broadband_absorption_many
+    Rb, Ab, dt_s, cap, ns = run_single(
+                            ~~~~~~~~~~^
+        holes_list[g], a_super_nm, thickness_nm, buffer_nm, resolution,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        b, p, wl[idx], fits, norm_dir, device, bits, decay_tol,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        max_time, n_cells_tag)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_GPU_test/fdtd_torch.py", line 877, in run_single
+    res = sim.run(decay_tol=decay_tol, max_time=max_time)
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_GPU_test/fdtd_torch.py", line 749, in run
+    self._step(n)
+    ~~~~~~~~~~^^^
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_GPU_test/fdtd_torch.py", line 715, in _step
+    (self._core_e_c or self._core_e)(self._g)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/site-packages/torch/_dynamo/eval_frame.py", line 1166, in compile_wrapper
+    result = fn(*args, **kwargs)
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_GPU_test/fdtd_torch.py", line 654, in _core_e
+    def _core_e(self, g):
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/site-packages/torch/_dynamo/eval_frame.py", line 1446, in _fn
+    return fn(*args, **kwargs)
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/site-packages/torch/_functorch/aot_autograd.py", line 1277, in forward
+    return compiled_fn(full_args)
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 2548, in __call__
+    return self.compiled_fn(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 1141, in runtime_wrapper
+    result = _codegen_runtime_wrapper(
+        _inner_compiled_fn,
+    ...<2 lines>...
+        args,
+    )
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/site-packages/torch/_functorch/_aot_autograd/subclass_codegen.py:codegen(runtime_wrapper_orchestration)", line 9, in _runtime_wrapper
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/site-packages/torch/_inductor/output_code.py", line 763, in __call__
+    return self.current_callable(inputs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/site-packages/torch/_inductor/utils.py", line 3835, in run
+    out = model(new_inputs)
+  File "/scratch/6806250.1.l40s/torchinductor_mcheung2/uc/cucd67ch7zu4frrjx5agghyf5njnnsff4mvezdt4xrwlfug4kuvb.py", line 1590, in call
+    triton_red_fused__to_copy_add_mul_slice_sub_sum_4.run(arg30_1, arg27_1, arg31_1, arg32_1, arg33_1, arg25_1, arg28_1, arg29_1, buf3, buf4, 1416051, s34, stream=raw_stream0)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/site-packages/torch/_inductor/runtime/triton_heuristics.py", line 2086, in run
+    return fast(*args, stream=stream)
+  File "<string>", line 5, in launcher
+KeyboardInterrupt

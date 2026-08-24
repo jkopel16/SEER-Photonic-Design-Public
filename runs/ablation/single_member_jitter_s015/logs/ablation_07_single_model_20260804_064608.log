@@ -1,0 +1,8 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/single_member_jitter_s015/logs/ablation_07_single_model_20260804_064608.log
+[skip] /project/rise-batteries/Photonics_RISE/runs/ablation/single_member_bundle.pt exists
+[model] device = cuda
+[scorer] channel recipe: ['raster', 'fft_onfly_v1']
+[scorer] 1-model ensemble (heteroscedastic v2), img=128px, TTA=on, kappa=0.0
+[scorer] UQ calibration: none (raw ensemble std)
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.inverse_design --bundle /project/rise-batteries/Photonics_RISE/runs/ablation/single_member_bundle.pt --disorder-class jitter --sigma 0.15 --export-dir /project/rise-batteries/Photonics_RISE/runs/ablation/single_member_jitter_s015 --kappa 0.0 --no-calibration --tiers baseline screen cmaes gradient --n-baseline 5000 --n-screen 50000 --screen-keep-frac 0.2 --cmaes-restarts 12 --cmaes-iters 600 --cmaes-popsize 24 --grad-starts 12 --grad-steps 500 --grad-lr 0.015 --export-top 20
+[abort] design step failed

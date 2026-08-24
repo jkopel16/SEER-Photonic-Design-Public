@@ -1,0 +1,30 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/circular_shift/logs/ablation_16_circular_20260812_025740.log
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.model -i /project/rise-batteries/Photonics_RISE/data/samples_128.npz -o /project/rise-batteries/Photonics_RISE/runs/ablation/circular_shift --raster-only --fft-channel --ensemble 5 --seed 137 --use-best --no-wandb --nll-head --kfold-members --circular-padding --shift-aug
+Traceback (most recent call last):
+  File "/project/rise-batteries/Photonics_RISE/scripts/ablation/ablation_16_circular.py", line 97, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/project/rise-batteries/Photonics_RISE/scripts/ablation/ablation_16_circular.py", line 60, in main
+    rc = run_training(
+        standard_train_cli(OUT_DIR,
+                           extra=["--circular-padding", "--shift-aug"]),
+        OUT_DIR, dry_run=args.dry_run)
+  File "/project/rise-batteries/Photonics_RISE/scripts/ablation/common.py", line 171, in run_training
+    return run_cmd([ENV_PY, "-u", "-m", "models.model"] + cli,
+                   dry_run=dry_run)
+  File "/project/rise-batteries/Photonics_RISE/scripts/ablation/common.py", line 118, in run_cmd
+    return subprocess.call(cmd, cwd=REPO, env=_env(extra_env))
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/subprocess.py", line 397, in call
+    return p.wait(timeout=timeout)
+           ~~~~~~^^^^^^^^^^^^^^^^^
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/subprocess.py", line 1280, in wait
+    return self._wait(timeout=timeout)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/subprocess.py", line 2085, in _wait
+    (pid, sts) = self._try_wait(0)
+                 ~~~~~~~~~~~~~~^^^
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/subprocess.py", line 2043, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+                 ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

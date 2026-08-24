@@ -1,0 +1,158 @@
+{
+  "mae": 0.006286324933171272,
+  "rmse": 0.007787934970110655,
+  "r2": 0.9228382706642151,
+  "pct_error": 0.24271106719970703,
+  "within_sigma_spearman": 0.5644929173145802,
+  "tta_std_mean": 0.0015142925549298525,
+  "ensemble_std_mean": 0.001587819424457848,
+  "relative_uncertainty": 0.0005850833840668201,
+  "error_uncertainty_rho": -0.1207199030619912,
+  "nll_sigma_mean": 0.008584175258874893,
+  "nll_picp_1sigma": 0.7169117647058824,
+  "nll_picp_2sigma": 0.9632352941176471,
+  "nll_picp_3sigma": 1.0,
+  "error_sigma_rho": -0.01996901513940802,
+  "per_cell_spearman": {
+    "jitter/sigma=0.02": {
+      "rho": 0.5384615384615384,
+      "n": 14,
+      "true_spread_pct": 0.3406,
+      "rho_ceiling": 0.9668,
+      "efficiency": 0.5569
+    },
+    "jitter/sigma=0.04": {
+      "rho": 0.48928571428571427,
+      "n": 15,
+      "true_spread_pct": 0.3158,
+      "rho_ceiling": 0.9617,
+      "efficiency": 0.5088
+    },
+    "jitter/sigma=0.06": {
+      "rho": 0.17647058823529413,
+      "n": 16,
+      "true_spread_pct": 0.3224,
+      "rho_ceiling": 0.9632,
+      "efficiency": 0.1832
+    },
+    "jitter/sigma=0.08": {
+      "rho": 0.37941176470588234,
+      "n": 16,
+      "true_spread_pct": 0.3024,
+      "rho_ceiling": 0.9585,
+      "efficiency": 0.3959
+    },
+    "jitter/sigma=0.1": {
+      "rho": 0.2631578947368421,
+      "n": 18,
+      "true_spread_pct": 0.3688,
+      "rho_ceiling": 0.9715,
+      "efficiency": 0.2709
+    },
+    "jitter/sigma=0.125": {
+      "rho": 0.6470588235294118,
+      "n": 18,
+      "true_spread_pct": 0.4034,
+      "rho_ceiling": 0.976,
+      "efficiency": 0.663
+    },
+    "jitter/sigma=0.15": {
+      "rho": 0.7382352941176471,
+      "n": 16,
+      "true_spread_pct": 0.3879,
+      "rho_ceiling": 0.9741,
+      "efficiency": 0.7578
+    },
+    "jitter/sigma=0.2": {
+      "rho": 0.6594427244582043,
+      "n": 18,
+      "true_spread_pct": 0.4455,
+      "rho_ceiling": 0.9802,
+      "efficiency": 0.6728
+    },
+    "jitter/sigma=0.25": {
+      "rho": 0.6390977443609023,
+      "n": 20,
+      "true_spread_pct": 0.3166,
+      "rho_ceiling": 0.9619,
+      "efficiency": 0.6644
+    },
+    "jitter/sigma=0.3": {
+      "rho": 0.1958041958041958,
+      "n": 12,
+      "true_spread_pct": 0.3054,
+      "rho_ceiling": 0.9592,
+      "efficiency": 0.2041
+    },
+    "radius/sigma=0.04": {
+      "rho": 0.8,
+      "n": 4,
+      "true_spread_pct": 0.1798,
+      "rho_ceiling": 0.8942,
+      "efficiency": 0.8946
+    },
+    "radius/sigma=0.06": {
+      "rho": 0.9,
+      "n": 5,
+      "true_spread_pct": 0.3341,
+      "rho_ceiling": 0.9656,
+      "efficiency": 0.9321
+    },
+    "radius/sigma=0.08": {
+      "rho": 0.9440559440559441,
+      "n": 12,
+      "true_spread_pct": 0.4548,
+      "rho_ceiling": 0.981,
+      "efficiency": 0.9624
+    },
+    "radius/sigma=0.1": {
+      "rho": 0.8601398601398601,
+      "n": 12,
+      "true_spread_pct": 0.3517,
+      "rho_ceiling": 0.9688,
+      "efficiency": 0.8879
+    },
+    "radius/sigma=0.125": {
+      "rho": 0.7362637362637363,
+      "n": 13,
+      "true_spread_pct": 0.2283,
+      "rho_ceiling": 0.9303,
+      "efficiency": 0.7914
+    },
+    "radius/sigma=0.15": {
+      "rho": 0.48214285714285715,
+      "n": 15,
+      "true_spread_pct": 0.3182,
+      "rho_ceiling": 0.9623,
+      "efficiency": 0.5011
+    },
+    "radius/sigma=0.2": {
+      "rho": 0.13736263736263737,
+      "n": 13,
+      "true_spread_pct": 0.344,
+      "rho_ceiling": 0.9674,
+      "efficiency": 0.142
+    },
+    "radius/sigma=0.25": {
+      "rho": 0.7545454545454545,
+      "n": 11,
+      "true_spread_pct": 0.4474,
+      "rho_ceiling": 0.9804,
+      "efficiency": 0.7697
+    },
+    "radius/sigma=0.3": {
+      "rho": 0.8070175438596491,
+      "n": 19,
+      "true_spread_pct": 0.4908,
+      "rho_ceiling": 0.9836,
+      "efficiency": 0.8205
+    },
+    "random/sigma=inf": {
+      "rho": 0.6,
+      "n": 5,
+      "true_spread_pct": 0.3678,
+      "rho_ceiling": 0.9713,
+      "efficiency": 0.6177
+    }
+  }
+}

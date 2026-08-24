@@ -1,0 +1,23 @@
+{
+ "mode": "FULL",
+ "n_cells": 7,
+ "a_nm": 650.0,
+ "thickness_nm": 300.0,
+ "r_over_a": 0.35,
+ "w_min_nm": 50.0,
+ "buffer_nm": 80.0,
+ "solver": "torch-fdtd-gpu",
+ "engine": "torch-fdtd-1.0",
+ "resolution": 60,
+ "decay_tol": 0.0003,
+ "max_time": 2500.0,
+ "bands": 3,
+ "n_wl": 186,
+ "wl_sum": 158500.0,
+ "vis_step": 12.0,
+ "nir_step": 2.5,
+ "base_seed": 20260709,
+ "seeds_per_sigma": 75,
+ "n_random": 50,
+ "extra_seeds": 80
+}

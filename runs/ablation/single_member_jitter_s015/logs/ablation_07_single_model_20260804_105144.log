@@ -1,0 +1,17 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/single_member_jitter_s015/logs/ablation_07_single_model_20260804_105144.log
+[skip] /project/rise-batteries/Photonics_RISE/runs/ablation/single_member_bundle.pt exists
+[model] device = cuda
+[scorer] channel recipe: ['raster', 'fft_onfly_v1']
+[scorer] 1-model ensemble (heteroscedastic v2), img=128px, TTA=on, kappa=0.0
+[scorer] UQ calibration: none (raw ensemble std)
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.inverse_design --bundle /project/rise-batteries/Photonics_RISE/runs/ablation/single_member_bundle.pt --disorder-class jitter --sigma 0.15 --export-dir /project/rise-batteries/Photonics_RISE/runs/ablation/single_member_jitter_s015 --kappa 0.0 --no-calibration --tiers baseline screen cmaes gradient --n-baseline 5000 --n-screen 50000 --screen-keep-frac 0.2 --cmaes-restarts 12 --cmaes-iters 600 --cmaes-popsize 24 --grad-starts 12 --grad-steps 500 --grad-lr 0.015 --export-top 20
+[cmd] PC_MODE=FULL PC_COMPILE=1 /project/rise-batteries/photonics-fdtd/bin/python3 -u scripts/FDTD_solver/verify_candidates.py --in-dir /project/rise-batteries/Photonics_RISE/runs/ablation/single_member_jitter_s015
+
+=== search ablation, verified arms (mean +- SE) ===
+  5-member LCB (production)          n=20  E = 2.6472 +- 0.0025  max 2.6675  claimable 20/20
+  5-member mean, kappa=0 (#5)        n=20  E = 2.6503 +- 0.0020  max 2.6618  claimable 20/20
+  single member, kappa=0 (jitter_s015) n=20  E = 2.6493 +- 0.0015  max 2.6636  claimable 20/20
+
+  read DOWN the three arms: production -> #5 isolates the s-term, #5 -> #7 isolates the ensemble mean itself.
+
+VERDICT: apply the pre-registered rule jointly with #5 (module docstring) -- decide the abstract wording from the two nulls/non-nulls, not from this arm alone.

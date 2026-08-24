@@ -1,0 +1,34 @@
+[log] mirroring all output to runs/interpretability/bank_best/verify_export/logs/verify_candidates_20260811_203508.log
+[verify] 4 candidates, jitter sigma=0.15, bank=/project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/data_production, device=cuda
+[verify] numerics: campaign wl grid, decay_tol=0.0003, cap=2500 (res60) -- identical to the bank
+[verify] gates: floor 0.30 % (Test 9, res-120 referee); elite rung res 120
+[bank cell] n=155  mean=2.6036  p95=2.6193  max=2.6283
+[solve] candidate_0000 @ res 60  (~7 min)...
+        E(res60) = 2.6282   (997s)
+[solve] candidate_0001 @ res 60  (~7 min)...
+        E(res60) = 2.6357   (946s)
+[solve] candidate_0002 @ res 60  (~7 min)...
+        E(res60) = 2.6030   (1025s)
+[solve] candidate_0003 @ res 60  (~7 min)...
+        E(res60) = 2.6098   (1129s)
+
+============================================================================
+VERIFICATION TABLE (res 60 -- same numerics as the bank)
+============================================================================
+  candidate        method     pred E  true E60 pred-true gain vs cell mean  verdict
+  candidate_0001   occ_shift_all   2.6206    2.6357   -0.0150            +1.23%  CLAIMABLE
+  candidate_0000   reference   2.6111    2.6282   -0.0171            +0.95%  CLAIMABLE
+  candidate_0003   occ_remove   2.6044    2.6098   -0.0055            +0.24%  ELITE-VERIFY
+  candidate_0002   occ_remove   2.6035    2.6030   +0.0005            -0.02%  below mean
+
+  surrogate bias on champions (pred - true): -0.0093 (-0.35 %)  <- winner's-curse check
+  rank agreement Spearman(pred, true): +1.000  (n=4)
+
+  CHAMPION: candidate_0001  true E60 = 2.6357
+    vs cell mean 2.6036: +1.23 % (floor 0.30 %)
+    vs cell p95  2.6193: +0.63 %
+    vs cell MAX  2.6283: +0.28 %  <- beats every random draw in the bank?
+    candidates above the banked max: 1/4
+
+[out] verification.csv + verdict JSON -> runs/interpretability/bank_best/verify_export
+[out] 4 bank-schema records -> runs/interpretability/bank_best/verify_export/verified_samples (active learning; sample_id 900000+)

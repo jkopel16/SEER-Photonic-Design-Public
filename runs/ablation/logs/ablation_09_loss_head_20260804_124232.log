@@ -1,0 +1,28 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/logs/ablation_09_loss_head_20260804_124232.log
+
+################ train SmoothL1 + kfold ################
+[skip] /project/rise-batteries/Photonics_RISE/runs/ablation/smoothl1_kfold/surrogate_bundle.pt already exists -- refusing to retrain (delete the dir to redo; out-dirs are never reused, audit sec. 11.3)
+
+################ train SmoothL1 + shared ################
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.model -i /project/rise-batteries/Photonics_RISE/data/samples_128.npz -o /project/rise-batteries/Photonics_RISE/runs/ablation/smoothl1_shared --raster-only --fft-channel --ensemble 5 --seed 137 --use-best --no-wandb
+[model] device = cuda
+[input] --raster-only: keeping channel 0 of 2 (dropping ['fft_baked_v1'])
+[input] appended fft_onfly_v1 -> X (2724, 2, 128, 128)
+[input] channel recipe: ['raster', 'fft_onfly_v1']
+[eval] norm stats reproduce the bundle's (split verified)
+[eval] 5-member photonic-surrogate-bundle-v1 (point-estimate)
+[eval] test/tta_on        MAE 0.005415  RMSE 0.006822  rho +0.694  RMS(s)/RMSE 0.210  PICP1 0.173
+[eval] test/tta_off       MAE 0.005409  RMSE 0.006820  rho +0.685  RMS(s)/RMSE 0.243  PICP1 0.210
+[eval] wrote /project/rise-batteries/Photonics_RISE/runs/ablation/smoothl1_kfold/ablation_metrics.json
+[corner kfold] MAE 0.005415  rho +0.694  PICP1(s=disagreement) 0.173
+[input] --raster-only: keeping channel 0 of 2 (dropping ['fft_baked_v1'])
+[input] appended fft_onfly_v1 -> X (2724, 2, 128, 128)
+[input] channel recipe: ['raster', 'fft_onfly_v1']
+[eval] norm stats reproduce the bundle's (split verified)
+[eval] 5-member photonic-surrogate-bundle-v1 (point-estimate)
+[eval] test/tta_on        MAE 0.005319  RMSE 0.006712  rho +0.699  RMS(s)/RMSE 0.219  PICP1 0.158
+[eval] test/tta_off       MAE 0.005304  RMSE 0.006693  rho +0.697  RMS(s)/RMSE 0.259  PICP1 0.199
+[eval] wrote /project/rise-batteries/Photonics_RISE/runs/ablation/smoothl1_shared/ablation_metrics.json
+[corner shared] MAE 0.005319  rho +0.699  PICP1(s=disagreement) 0.158
+
+VERDICT: place these corners in the 2x2 with deployed v2 (#4) and NLL+shared (#8). Accuracy column answers 'does the NLL head cost accuracy?'; the PICP column (s = disagreement only here, per evaluator notes) answers 'what does the learned s buy over ensemble spread?'.

@@ -1,0 +1,33 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/logs/ablation_01_search_branch_20260804_030251.log
+[panel] 320 verified candidates from 16 campaign cells
+
+=== verified E by search branch (arm mean +- SE) ===
+  v1 cmaes     n= 96  mean=2.6421 +- 0.0009  max=2.6676
+  v1 gradient  n= 64  mean=2.6428 +- 0.0012  max=2.6662
+  v2 cmaes     n= 95  mean=2.6461 +- 0.0009  max=2.6675
+  v2 gradient  n= 65  mean=2.6470 +- 0.0009  max=2.6670
+
+=== per-cell champion branch ===
+  v1 jitter_s006    champion 2.6428  <- cmaes
+  v1 jitter_s008    champion 2.6549  <- cmaes
+  v1 jitter_s010    champion 2.6597  <- cmaes
+  v1 jitter_s0125   champion 2.6597  <- cmaes
+  v1 jitter_s015    champion 2.6674  <- cmaes
+  v1 radius_s015    champion 2.6478  <- gradient
+  v1 radius_s020    champion 2.6676  <- cmaes
+  v1 radius_s025    champion 2.6515  <- cmaes
+  v2 jitter_s006    champion 2.6508  <- gradient
+  v2 jitter_s008    champion 2.6657  <- gradient
+  v2 jitter_s010    champion 2.6626  <- cmaes
+  v2 jitter_s0125   champion 2.6609  <- cmaes
+  v2 jitter_s015    champion 2.6675  <- cmaes
+  v2 radius_s015    champion 2.6547  <- gradient
+  v2 radius_s020    champion 2.6640  <- cmaes
+  v2 radius_s025    champion 2.6564  <- cmaes
+  branch champion count: {'cmaes': 12, 'gradient': 4}
+
+[out] per-candidate table -> /project/rise-batteries/Photonics_RISE/runs/ablation/search_branch.csv
+  v1: |cmaes - gradient| = 0.028 % (+- 0.057 % SE)
+  v2: |cmaes - gradient| = 0.038 % (+- 0.049 % SE)
+
+VERDICT: branch means are statistically indistinguishable at the arm level and far below the 0.30 % floor at the candidate level -- the two refiners are interchangeable at the landscape ceiling. Report as robustness (keep both); do not name a winning branch.

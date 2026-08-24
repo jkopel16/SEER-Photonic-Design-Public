@@ -1,0 +1,5 @@
+name,method,pred_E_mean,pred_E_lcb,true_E60,gain_vs_cell_mean_pct,verdict,true_E120
+candidate_0000,reference,2.61110,2.60953,2.62825,0.947,CLAIMABLE,nan
+candidate_0001,occ_shift_all,2.62061,2.61907,2.63565,1.231,CLAIMABLE,nan
+candidate_0002,occ_remove,2.60354,2.60192,2.60301,-0.022,below mean,nan
+candidate_0003,occ_remove,2.60438,2.60274,2.60984,0.240,ELITE-VERIFY,nan

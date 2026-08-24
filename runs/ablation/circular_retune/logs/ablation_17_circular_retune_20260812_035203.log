@@ -1,0 +1,7 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/circular_retune/logs/ablation_17_circular_retune_20260812_035203.log
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.model -i /project/rise-batteries/Photonics_RISE/data/samples_128.npz --raster-only --fft-channel --seed 137 -o /project/rise-batteries/Photonics_RISE/runs/ablation/circular_retune/huber_sweep --sweep --sweep-count 40 --circular-padding --shift-aug
+[dry] stage B pins stage A's winners on the CLI (unknown until stage A runs)
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.model -i /project/rise-batteries/Photonics_RISE/data/samples_128.npz --raster-only --fft-channel --seed 137 -o /project/rise-batteries/Photonics_RISE/runs/ablation/circular_retune/nll_sweep --sweep --sweep-count 30 --circular-padding --shift-aug --nll-head
+[stage C] merged hyperparameters: (dry)
+[dry] would copy /project/rise-batteries/Photonics_RISE/runs/surrogate_128_fft_nll_sweep/best_params.json -> /project/rise-batteries/Photonics_RISE/runs/ablation/circular_retune/final/best_params.json
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.model -i /project/rise-batteries/Photonics_RISE/data/samples_128.npz -o /project/rise-batteries/Photonics_RISE/runs/ablation/circular_retune/final --raster-only --fft-channel --ensemble 5 --seed 137 --use-best --nll-head --kfold-members --circular-padding --shift-aug

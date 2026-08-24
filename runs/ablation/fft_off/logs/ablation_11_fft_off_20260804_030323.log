@@ -1,0 +1,3 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/fft_off/logs/ablation_11_fft_off_20260804_030323.log
+[dry] would copy /project/rise-batteries/Photonics_RISE/runs/surrogate_128_fft_nll_sweep/best_params.json -> /project/rise-batteries/Photonics_RISE/runs/ablation/fft_off/best_params.json
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.model -i /project/rise-batteries/Photonics_RISE/data/samples_128.npz -o /project/rise-batteries/Photonics_RISE/runs/ablation/fft_off --raster-only --ensemble 5 --seed 137 --use-best --no-wandb --nll-head --kfold-members

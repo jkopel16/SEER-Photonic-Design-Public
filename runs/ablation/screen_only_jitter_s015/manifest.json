@@ -1,0 +1,162 @@
+{
+  "disorder_class": "jitter",
+  "sigma": 0.15,
+  "a_nm": 650.0,
+  "n_cells": 7,
+  "r_nom_nm": 227.49999999999997,
+  "w_min_nm": 50.0,
+  "kappa": 0.2,
+  "screen_keep_frac": 0.2,
+  "bundle": "/project/rise-batteries/Photonics_RISE/runs/surrogate_128_fft_nll_sweep/surrogate_bundle.pt",
+  "calibration": null,
+  "baseline": {
+    "n": 5000,
+    "pred_E_mean": 2.603008270263672,
+    "pred_E_std": 0.005575820337980986,
+    "pred_E_p95": 2.61179518699646,
+    "pred_E_max": 2.6199090480804443
+  },
+  "note": "Predicted values only. Validate every candidate with the FDTD engine before claiming anything; gains below the 0.30% within-sigma resolvability floor (audit Test 9, res-120 referee) are not claimable. Feed (layout, true E) pairs back into training (active learning) and re-run the search.",
+  "candidates": [
+    {
+      "file": "candidate_0000.npz",
+      "method": "screen",
+      "pred_E_mean": 2.62074,
+      "pred_E_std": 0.00761,
+      "pred_E_lcb": 2.61922
+    },
+    {
+      "file": "candidate_0001.npz",
+      "method": "screen",
+      "pred_E_mean": 2.61987,
+      "pred_E_std": 0.00759,
+      "pred_E_lcb": 2.61836
+    },
+    {
+      "file": "candidate_0002.npz",
+      "method": "screen",
+      "pred_E_mean": 2.61912,
+      "pred_E_std": 0.00747,
+      "pred_E_lcb": 2.61762
+    },
+    {
+      "file": "candidate_0003.npz",
+      "method": "screen",
+      "pred_E_mean": 2.61873,
+      "pred_E_std": 0.00741,
+      "pred_E_lcb": 2.61725
+    },
+    {
+      "file": "candidate_0004.npz",
+      "method": "screen",
+      "pred_E_mean": 2.61844,
+      "pred_E_std": 0.00761,
+      "pred_E_lcb": 2.61692
+    },
+    {
+      "file": "candidate_0005.npz",
+      "method": "screen",
+      "pred_E_mean": 2.61764,
+      "pred_E_std": 0.00745,
+      "pred_E_lcb": 2.61615
+    },
+    {
+      "file": "candidate_0006.npz",
+      "method": "screen",
+      "pred_E_mean": 2.61749,
+      "pred_E_std": 0.00747,
+      "pred_E_lcb": 2.61599
+    },
+    {
+      "file": "candidate_0007.npz",
+      "method": "screen",
+      "pred_E_mean": 2.61744,
+      "pred_E_std": 0.00755,
+      "pred_E_lcb": 2.61592
+    },
+    {
+      "file": "candidate_0008.npz",
+      "method": "screen",
+      "pred_E_mean": 2.61738,
+      "pred_E_std": 0.00747,
+      "pred_E_lcb": 2.61588
+    },
+    {
+      "file": "candidate_0009.npz",
+      "method": "screen",
+      "pred_E_mean": 2.61725,
+      "pred_E_std": 0.00739,
+      "pred_E_lcb": 2.61577
+    },
+    {
+      "file": "candidate_0010.npz",
+      "method": "screen",
+      "pred_E_mean": 2.61701,
+      "pred_E_std": 0.00748,
+      "pred_E_lcb": 2.61552
+    },
+    {
+      "file": "candidate_0011.npz",
+      "method": "screen",
+      "pred_E_mean": 2.61698,
+      "pred_E_std": 0.00741,
+      "pred_E_lcb": 2.6155
+    },
+    {
+      "file": "candidate_0012.npz",
+      "method": "screen",
+      "pred_E_mean": 2.61695,
+      "pred_E_std": 0.00743,
+      "pred_E_lcb": 2.61546
+    },
+    {
+      "file": "candidate_0013.npz",
+      "method": "screen",
+      "pred_E_mean": 2.6168,
+      "pred_E_std": 0.00759,
+      "pred_E_lcb": 2.61528
+    },
+    {
+      "file": "candidate_0014.npz",
+      "method": "screen",
+      "pred_E_mean": 2.61666,
+      "pred_E_std": 0.00737,
+      "pred_E_lcb": 2.61518
+    },
+    {
+      "file": "candidate_0015.npz",
+      "method": "screen",
+      "pred_E_mean": 2.61659,
+      "pred_E_std": 0.0075,
+      "pred_E_lcb": 2.61509
+    },
+    {
+      "file": "candidate_0016.npz",
+      "method": "screen",
+      "pred_E_mean": 2.61634,
+      "pred_E_std": 0.00747,
+      "pred_E_lcb": 2.61485
+    },
+    {
+      "file": "candidate_0017.npz",
+      "method": "screen",
+      "pred_E_mean": 2.6163,
+      "pred_E_std": 0.00752,
+      "pred_E_lcb": 2.61479
+    },
+    {
+      "file": "candidate_0018.npz",
+      "method": "screen",
+      "pred_E_mean": 2.61627,
+      "pred_E_std": 0.00755,
+      "pred_E_lcb": 2.61476
+    },
+    {
+      "file": "candidate_0019.npz",
+      "method": "screen",
+      "pred_E_mean": 2.61623,
+      "pred_E_std": 0.00789,
+      "pred_E_lcb": 2.61465
+    }
+  ]
+}

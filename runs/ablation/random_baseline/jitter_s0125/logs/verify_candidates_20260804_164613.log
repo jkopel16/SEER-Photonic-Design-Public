@@ -1,0 +1,82 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/jitter_s0125/logs/verify_candidates_20260804_164613.log
+[verify] 20 candidates, jitter sigma=0.125, bank=/project/rise-batteries/Photonics_RISE/scripts/FDTD_solver/data_production, device=cuda
+[verify] numerics: campaign wl grid, decay_tol=0.0003, cap=2500 (res60) -- identical to the bank
+[verify] gates: floor 0.30 % (Test 9, res-120 referee); elite rung res 120
+[bank cell] n=155  mean=2.6131  p95=2.6272  max=2.6421
+[solve] candidate_0000 @ res 60  (~7 min)...
+        E(res60) = 2.6091   (266s)
+[solve] candidate_0001 @ res 60  (~7 min)...
+        E(res60) = 2.6254   (256s)
+[solve] candidate_0002 @ res 60  (~7 min)...
+        E(res60) = 2.6142   (230s)
+[solve] candidate_0003 @ res 60  (~7 min)...
+        E(res60) = 2.6273   (223s)
+[solve] candidate_0004 @ res 60  (~7 min)...
+        E(res60) = 2.6269   (268s)
+[solve] candidate_0005 @ res 60  (~7 min)...
+        E(res60) = 2.6225   (250s)
+[solve] candidate_0006 @ res 60  (~7 min)...
+        E(res60) = 2.6275   (237s)
+[solve] candidate_0007 @ res 60  (~7 min)...
+        E(res60) = 2.6132   (241s)
+[solve] candidate_0008 @ res 60  (~7 min)...
+        E(res60) = 2.6184   (214s)
+[solve] candidate_0009 @ res 60  (~7 min)...
+        E(res60) = 2.6118   (230s)
+[solve] candidate_0010 @ res 60  (~7 min)...
+        E(res60) = 2.6113   (252s)
+[solve] candidate_0011 @ res 60  (~7 min)...
+        E(res60) = 2.6070   (241s)
+[solve] candidate_0012 @ res 60  (~7 min)...
+        E(res60) = 2.6101   (266s)
+[solve] candidate_0013 @ res 60  (~7 min)...
+        E(res60) = 2.6068   (220s)
+[solve] candidate_0014 @ res 60  (~7 min)...
+        E(res60) = 2.6206   (229s)
+[solve] candidate_0015 @ res 60  (~7 min)...
+        E(res60) = 2.5932   (236s)
+[solve] candidate_0016 @ res 60  (~7 min)...
+        E(res60) = 2.6006   (257s)
+[solve] candidate_0017 @ res 60  (~7 min)...
+        E(res60) = 2.6174   (233s)
+[solve] candidate_0018 @ res 60  (~7 min)...
+        E(res60) = 2.6193   (218s)
+[solve] candidate_0019 @ res 60  (~7 min)...
+        E(res60) = 2.6141   (265s)
+
+============================================================================
+VERIFICATION TABLE (res 60 -- same numerics as the bank)
+============================================================================
+  candidate        method     pred E  true E60 pred-true gain vs cell mean  verdict
+  candidate_0006   random     2.6183    2.6275   -0.0092            +0.55%  CLAIMABLE
+  candidate_0003   random     2.6204    2.6273   -0.0069            +0.55%  CLAIMABLE
+  candidate_0004   random     2.6173    2.6269   -0.0096            +0.53%  CLAIMABLE
+  candidate_0001   random     2.6125    2.6254   -0.0128            +0.47%  CLAIMABLE
+  candidate_0005   random     2.6198    2.6225   -0.0026            +0.36%  CLAIMABLE
+  candidate_0014   random     2.6138    2.6206   -0.0068            +0.29%  ELITE-VERIFY
+  candidate_0018   random     2.6126    2.6193   -0.0066            +0.24%  ELITE-VERIFY
+  candidate_0008   random     2.6105    2.6184   -0.0080            +0.21%  ELITE-VERIFY
+  candidate_0017   random     2.6113    2.6174   -0.0060            +0.17%  ELITE-VERIFY
+  candidate_0002   random     2.6085    2.6142   -0.0057            +0.04%  ELITE-VERIFY
+  candidate_0019   random     2.6103    2.6141   -0.0038            +0.04%  ELITE-VERIFY
+  candidate_0007   random     2.6069    2.6132   -0.0063            +0.01%  ELITE-VERIFY
+  candidate_0009   random     2.6098    2.6118   -0.0020            -0.05%  below mean
+  candidate_0010   random     2.6091    2.6113   -0.0021            -0.07%  below mean
+  candidate_0012   random     2.6126    2.6101   +0.0026            -0.11%  below mean
+  candidate_0000   random     2.6129    2.6091   +0.0038            -0.15%  below mean
+  candidate_0011   random     2.6059    2.6070   -0.0011            -0.23%  below mean
+  candidate_0013   random     2.6151    2.6068   +0.0083            -0.24%  below mean
+  candidate_0016   random     2.6048    2.6006   +0.0042            -0.48%  below mean
+  candidate_0015   random     2.6095    2.5932   +0.0163            -0.76%  below mean
+
+  surrogate bias on champions (pred - true): -0.0027 (-0.10 %)  <- winner's-curse check
+  rank agreement Spearman(pred, true): +0.638  (n=20)
+
+  CHAMPION: candidate_0006  true E60 = 2.6275
+    vs cell mean 2.6131: +0.55 % (floor 0.30 %)
+    vs cell p95  2.6272: +0.01 %
+    vs cell MAX  2.6421: -0.55 %  <- beats every random draw in the bank?
+    candidates above the banked max: 0/20
+
+[out] verification.csv + verdict JSON -> /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/jitter_s0125
+[out] 20 bank-schema records -> /project/rise-batteries/Photonics_RISE/runs/ablation/random_baseline/jitter_s0125/verified_samples (active learning; sample_id 900000+)

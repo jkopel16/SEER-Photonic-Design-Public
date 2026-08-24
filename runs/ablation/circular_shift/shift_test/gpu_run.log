@@ -1,0 +1,11 @@
+[model] device = cuda
+[model] device = cuda
+[scorer] channel recipe: ['raster', 'fft_onfly_v1']
+[scorer] 5-model ensemble (heteroscedastic v2), img=128px, TTA=on, kappa=0.2
+[scorer] UQ calibration: none (raw ensemble std)
+
+[step 5] circular-shift invariance of the prediction
+  20 layouts x 16 rolls: mean spread 0.0014, max 0.0021 in E units
+  references: D4 per-view spread ~0.002, cell width ~0.04
+
+all requested steps done -> runs/ablation/circular_shift/shift_test/validation.json

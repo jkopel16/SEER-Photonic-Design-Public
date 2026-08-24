@@ -1,0 +1,28 @@
+AM1.5G reference solar spectrum -- Global tilt
+==============================================
+
+Source:  ASTM G-173-03 Reference Spectra, derived from SMARTS v2.9.2.
+         NREL file: astmg173.xls, "Global tilt" column.
+         https://www.nrel.gov/grid/solar-resource/spectra-am1.5
+
+The "Global tilt" spectrum is the standard AM1.5G total (global, hemispherical)
+spectral irradiance on a 37-degree sun-facing tilted surface, for the standard
+atmospheric conditions (air mass 1.5, ~48 deg solar zenith).
+
+Conversion applied when building am15g.csv:
+    photon_flux(lambda) = irradiance(lambda) * lambda / (h c)
+This converts spectral irradiance (energy per wavelength) into spectral photon
+flux (photon count per wavelength), the correct weighting for photocurrent,
+since one absorbed photon yields at most one electron regardless of its energy.
+    h = 6.62607015e-34 J s,  c = 2.99792458e8 m/s.
+
+The absolute scale of photon_flux is arbitrary for the enhancement factor E
+(a ratio of two spectrally weighted integrals, so any common constant cancels),
+but the physically correct scaling in photons m^-2 s^-1 nm^-1 is retained here.
+
+Columns in am15g.csv:
+    wavelength_nm       -- wavelength (nm)
+    irradiance_W_m2_nm  -- spectral irradiance, Global tilt (W m^-2 nm^-1)
+    photon_flux         -- spectral photon flux (photons m^-2 s^-1 nm^-1)
+
+Range trimmed to 280-1200 nm (c-Si PV window with margin), 1041 points.

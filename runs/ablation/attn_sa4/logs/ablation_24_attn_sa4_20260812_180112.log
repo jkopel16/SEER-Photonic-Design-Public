@@ -1,0 +1,13 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/attn_sa4/logs/ablation_24_attn_sa4_20260812_180112.log
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.model -i /project/rise-batteries/Photonics_RISE/data/samples_128.npz -o /project/rise-batteries/Photonics_RISE/runs/ablation/attn_sa4 --raster-only --fft-channel --ensemble 5 --seed 137 --use-best --nll-head --kfold-members --attention sa4
+[model] device = cuda
+[input] --raster-only: keeping channel 0 of 2 (dropping ['fft_baked_v1'])
+[input] appended fft_onfly_v1 -> X (2724, 2, 128, 128)
+[input] channel recipe: ['raster', 'fft_onfly_v1']
+[eval] norm stats reproduce the bundle's (split verified)
+[eval] 5-member photonic-surrogate-bundle-v2 (heteroscedastic)
+[eval] test/tta_on        MAE 0.005884  RMSE 0.007465  rho +0.646  RMS(s)/RMSE 1.179  PICP1 0.739
+[eval] test/tta_off       MAE 0.005940  RMSE 0.007571  rho +0.638  RMS(s)/RMSE 1.146  PICP1 0.721
+[eval] wrote /project/rise-batteries/Photonics_RISE/runs/ablation/attn_sa4/ablation_metrics.json
+
+VERDICT: stage-4 self-attn MAE 0.005884, rho +0.646, PICP1 0.739 -- compare to deployed SE (MAE 0.005447, rho 0.701) and #21 all-blocks sa (MAE 0.006693, rho 0.488). Beats SE = long-range mixing helps where the receptive field matters; parity/worse = the SE result stands unconfounded.

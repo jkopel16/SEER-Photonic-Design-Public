@@ -1,0 +1,13 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/attn_sa/logs/ablation_21_attn_sa_20260812_155343.log
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.model -i /project/rise-batteries/Photonics_RISE/data/samples_128.npz -o /project/rise-batteries/Photonics_RISE/runs/ablation/attn_sa --raster-only --fft-channel --ensemble 5 --seed 137 --use-best --nll-head --kfold-members --attention sa
+[model] device = cuda
+[input] --raster-only: keeping channel 0 of 2 (dropping ['fft_baked_v1'])
+[input] appended fft_onfly_v1 -> X (2724, 2, 128, 128)
+[input] channel recipe: ['raster', 'fft_onfly_v1']
+[eval] norm stats reproduce the bundle's (split verified)
+[eval] 5-member photonic-surrogate-bundle-v2 (heteroscedastic)
+[eval] test/tta_on        MAE 0.006693  RMSE 0.008511  rho +0.488  RMS(s)/RMSE 1.073  PICP1 0.713
+[eval] test/tta_off       MAE 0.006660  RMSE 0.008483  rho +0.499  RMS(s)/RMSE 1.073  PICP1 0.713
+[eval] wrote /project/rise-batteries/Photonics_RISE/runs/ablation/attn_sa/ablation_metrics.json
+
+VERDICT: self-attn MAE 0.006693, rho +0.488, PICP1 0.713 -- compare to deployed v2 (MAE 0.005447, rho 0.701, PICP1 0.651). Unusual for a CNN surrogate; either a gap (spatial mixing matters beyond channel gating) or parity at this data size is honest.

@@ -1,0 +1,13 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/raster256/logs/ablation_14_raster256_20260804_130331.log
+[skip] /project/rise-batteries/Photonics_RISE/data/samples_256.npz exists
+[skip] /project/rise-batteries/Photonics_RISE/runs/ablation/raster256/surrogate_bundle.pt already exists -- refusing to retrain (delete the dir to redo; out-dirs are never reused, audit sec. 11.3)
+[model] device = cuda
+[input] appended fft_onfly_v1 -> X (2724, 2, 256, 256)
+[input] channel recipe: ['raster', 'fft_onfly_v1']
+[eval] norm stats reproduce the bundle's (split verified)
+[eval] 5-member photonic-surrogate-bundle-v2 (heteroscedastic)
+[eval] test/tta_on        MAE 0.006030  RMSE 0.007764  rho +0.619  RMS(s)/RMSE 1.027  PICP1 0.669
+[eval] test/tta_off       MAE 0.006023  RMSE 0.007779  rho +0.608  RMS(s)/RMSE 1.024  PICP1 0.665
+[eval] wrote /project/rise-batteries/Photonics_RISE/runs/ablation/raster256/ablation_metrics.json
+
+VERDICT: 256 px MAE 0.006030, rho +0.619 vs deployed 128 px (0.005447, +0.701). Parity = 128 px raster quantization is not the accuracy bottleneck (labels/data are); improvement = raster resolution was leaving accuracy on the table.

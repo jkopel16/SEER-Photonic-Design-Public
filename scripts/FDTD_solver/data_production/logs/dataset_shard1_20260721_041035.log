@@ -1,0 +1,120 @@
+[log] mirroring all output to gpu_out_n8r60/logs/dataset_shard1_20260721_041035.log
+================================================================
+DATASET GENERATION (GPU FDTD)  [mode=FULL  solver=torch-FDTD(GPU)  supercell=7x7 (a_super=4550 nm)  res=60/um  decay_tol=0.0003  cap=2500  grid=12/2.5 nm  stack=air/Si(300)/ZnO(80)/Ag  device=auto fp32]
+grid: 2 classes x 10 sigmas x 75 seeds + 50 random + ordered
+================================================================
+[device] cuda
+
+[pre-flight validation]
+[Drude-Lorentz fit ledger  (per band, fit vs table)]
+    si    400- 700 nm: max|dn|=1.41e-02  max|dk|=9.25e-03  (rel k err where k>1e-3: 7.35%)  -> OK
+    si    700- 950 nm: max|dn|=1.53e-03  max|dk|=7.12e-04  (rel k err where k>1e-3: 8.43%)  -> OK
+    si    950-1100 nm: max|dn|=3.12e-03  max|dk|=3.64e-04  (rel k err where k>1e-3: 32.49%)  -> OK
+    zno   400- 700 nm: max|dn|=2.47e-05  max|dk|=3.94e-09  (rel k err where k>1e-3: 0.00%)  -> OK
+    zno   700- 950 nm: max|dn|=4.08e-06  max|dk|=6.92e-10  (rel k err where k>1e-3: 0.00%)  -> OK
+    zno   950-1100 nm: max|dn|=7.02e-06  max|dk|=4.41e-10  (rel k err where k>1e-3: 0.00%)  -> OK
+    ag    400- 700 nm: max|dn|=1.09e-03  max|dk|=4.06e-03  (rel k err where k>1e-3: 0.17%)  -> OK
+    ag    700- 950 nm: max|dn|=2.21e-03  max|dk|=4.65e-03  (rel k err where k>1e-3: 0.08%)  -> OK
+    ag    950-1100 nm: max|dn|=2.71e-03  max|dk|=7.93e-03  (rel k err where k>1e-3: 0.10%)  -> OK
+    LABEL GATE planar: eta(table)=0.13968  eta(fit)=0.13853  (-0.82%, gate 1%)   max|dA_si|=2.429e-02
+    LABEL GATE trapping (L_eff=15um): eta(table)=0.69847  eta(fit)=0.69512  (-0.48%, gate 2.5%)
+[pseudo-1D planar stack: torch-FDTD vs fitted-material TMM, res=500/um, device=cuda]
+    band 400-700 nm: max|dA_si| = 4.51e-03  (R err 4.51e-03, A_par err 1.84e-04)  -> OK
+    band 700-950 nm: max|dA_si| = 3.43e-04  (R err 3.63e-04, A_par err 2.74e-05)  -> OK
+    band 950-1100 nm: max|dA_si| = 2.54e-05  (R err 4.27e-05, A_par err 4.10e-05)  -> OK
+[3D uniform slab @ res=120, cell=650 nm]
+    band 400-700: max|dA_si| = 5.95e-02 (gate 8e-02)  -> OK
+    band 700-950: max|dA_si| = 2.53e-03 (gate 2e-02)  -> OK
+    band 950-1100: max|dA_si| = 2.35e-04 (gate 1e-02)  -> OK
+  NOTE: skipping 50 previously QUARANTINED samples in this shard;
+  inspect gpu_out_n8r60/quarantine and delete their files to force a re-solve.
+
+shard 1/3: 385 samples to solve, one at a time on cuda
+  [    1/385] sample   1918 (jitter  s=0.1) E=2.634   904.0s  ->  shard ETA 96.4 h
+  [    2/385] sample   1921 (jitter  s=0.1) E=2.633   951.0s  ->  shard ETA 98.7 h
+  [    3/385] sample   1924 (jitter  s=0.1) E=2.606   856.9s  ->  shard ETA 95.9 h
+  [    4/385] sample   1927 (jitter  s=0.1) E=2.625  1036.7s  ->  shard ETA 99.2 h
+  [    5/385] sample   1930 (jitter  s=0.1) E=2.613  1058.6s  ->  shard ETA 101.5 h
+  [    6/385] sample   1933 (jitter  s=0.1) E=2.604   881.8s  ->  shard ETA 99.8 h
+  [    7/385] sample   1936 (jitter  s=0.1) E=2.618   791.4s  ->  shard ETA 97.2 h
+  [    8/385] sample   1939 (jitter  s=0.1) E=2.615   931.1s  ->  shard ETA 97.0 h
+  [    9/385] sample   1942 (jitter  s=0.1) E=2.613   913.9s  ->  shard ETA 96.6 h
+  [   10/385] sample   1945 (jitter  s=0.1) E=2.617   861.7s  ->  shard ETA 95.7 h
+  [   11/385] sample   1948 (jitter  s=0.1) E=2.626   924.3s  ->  shard ETA 95.5 h
+  [   12/385] sample   1951 (jitter  s=0.125) E=2.604   984.3s  ->  shard ETA 95.8 h
+  [   13/385] sample   1954 (jitter  s=0.125) E=2.607   878.8s  ->  shard ETA 95.2 h
+  [   14/385] sample   1957 (jitter  s=0.125) E=2.625   857.6s  ->  shard ETA 94.5 h
+  [   15/385] sample   1960 (jitter  s=0.125) E=2.608   836.0s  ->  shard ETA 93.7 h
+  [   16/385] sample   1963 (jitter  s=0.125) E=2.617   908.8s  ->  shard ETA 93.4 h
+  [   17/385] sample   1966 (jitter  s=0.125) E=2.612   943.2s  ->  shard ETA 93.3 h
+  [   18/385] sample   1969 (jitter  s=0.125) E=2.620   998.7s  ->  shard ETA 93.6 h
+  [   19/385] sample   1972 (jitter  s=0.125) E=2.614   964.2s  ->  shard ETA 93.6 h
+  [   20/385] sample   1975 (jitter  s=0.125) E=2.627   924.5s  ->  shard ETA 93.3 h
+  [   21/385] sample   1978 (jitter  s=0.125) E=2.613   877.0s  ->  shard ETA 92.9 h
+  [   22/385] sample   1981 (jitter  s=0.125) E=2.613   830.8s  ->  shard ETA 92.2 h
+  [   23/385] sample   1984 (jitter  s=0.125) E=2.612   873.9s  ->  shard ETA 91.8 h
+  [   24/385] sample   1987 (jitter  s=0.125) E=2.610   948.5s  ->  shard ETA 91.7 h
+  [   25/385] sample   1990 (jitter  s=0.125) E=2.626   985.3s  ->  shard ETA 91.7 h
+  [   26/385] sample   1993 (jitter  s=0.125) E=2.606   933.7s  ->  shard ETA 91.5 h
+  [   27/385] sample   1996 (jitter  s=0.125) E=2.608   857.8s  ->  shard ETA 91.0 h
+  [   28/385] sample   1999 (jitter  s=0.125) E=2.616   847.8s  ->  shard ETA 90.5 h
+  [   29/385] sample   2002 (jitter  s=0.125) E=2.612   801.1s  ->  shard ETA 89.9 h
+  [   30/385] sample   2005 (jitter  s=0.125) E=2.616   930.9s  ->  shard ETA 89.7 h
+  [   31/385] sample   2008 (jitter  s=0.125) E=2.615   785.8s  ->  shard ETA 89.1 h
+  [   32/385] sample   2011 (jitter  s=0.125) E=2.602   882.5s  ->  shard ETA 88.8 h
+  [   33/385] sample   2014 (jitter  s=0.125) E=2.592   813.0s  ->  shard ETA 88.2 h
+  [   34/385] sample   2017 (jitter  s=0.125) E=2.612   941.5s  ->  shard ETA 88.1 h
+  [   35/385] sample   2020 (jitter  s=0.125) E=2.617   986.1s  ->  shard ETA 88.1 h
+  [   36/385] sample   2023 (jitter  s=0.125) E=2.622  1021.4s  ->  shard ETA 88.1 h
+Traceback (most recent call last):
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_GPU_test/run_dataset.py", line 833, in <module>
+    main()
+    ~~~~^^
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_GPU_test/run_dataset.py", line 828, in main
+    {"generate": cmd_generate, "plan": cmd_plan,
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     "analyze": cmd_analyze, "verify": cmd_verify}[cmd](args)
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_GPU_test/run_dataset.py", line 298, in cmd_generate
+    A_si, A_par, info = solve_one(rec, wl, device)
+                        ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_GPU_test/run_dataset.py", line 210, in solve_one
+    return broadband_absorption_many(
+        [holes], rec.get("a_super_nm", C.A_SUPER_NM), C.THICKNESS_NM, wl,
+        m["fits"], C.BUFFER_NM, resolution or C.RESOLUTION,
+        decay_tol or C.DECAY_TOL, max_time or C.MAX_TIME, NORM_DIR,
+        device=device, n_cells_tag=f"sc{C.N_CELLS}")
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_GPU_test/fdtd_torch.py", line 945, in broadband_absorption_many
+    Rb, Ab, dt_s, cap, ns = run_single(
+                            ~~~~~~~~~~^
+        holes_list[g], a_super_nm, thickness_nm, buffer_nm, resolution,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        b, p, wl[idx], fits, norm_dir, device, bits, decay_tol,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        max_time, n_cells_tag)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_GPU_test/fdtd_torch.py", line 877, in run_single
+    res = sim.run(decay_tol=decay_tol, max_time=max_time)
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_GPU_test/fdtd_torch.py", line 749, in run
+    self._step(n)
+    ~~~~~~~~~~^^^
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_GPU_test/fdtd_torch.py", line 712, in _step
+    self.mon_apar.accumulate_H(torch, self.Hx, self.Hy,
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+                               t_H, self.dt_eff)
+                               ^^^^^^^^^^^^^^^^^
+  File "/project/rise-batteries/Photonics_RISE/scripts/FDTD_GPU_test/fdtd_torch.py", line 300, in accumulate_H
+    self.acc["Hx"][0].addr_(c, hx)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+KeyboardInterrupt
+Exception ignored in atexit callback <function shutdown_compile_workers at 0x1456d7f48220>:
+Traceback (most recent call last):
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/site-packages/torch/_inductor/async_compile.py", line 179, in shutdown_compile_workers
+    pool.shutdown()
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/site-packages/torch/_inductor/compile_worker/subproc_pool.py", line 342, in shutdown
+    self.process.wait(300)
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/subprocess.py", line 1280, in wait
+    return self._wait(timeout=timeout)
+  File "/project/rise-batteries/photonics-fdtd/lib/python3.13/subprocess.py", line 2079, in _wait
+    time.sleep(delay)
+KeyboardInterrupt: 

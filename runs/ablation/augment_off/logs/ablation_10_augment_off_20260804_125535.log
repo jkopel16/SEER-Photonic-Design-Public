@@ -1,0 +1,13 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/augment_off/logs/ablation_10_augment_off_20260804_125535.log
+[skip] /project/rise-batteries/Photonics_RISE/runs/ablation/augment_off/surrogate_bundle.pt already exists -- refusing to retrain (delete the dir to redo; out-dirs are never reused, audit sec. 11.3)
+[model] device = cuda
+[input] --raster-only: keeping channel 0 of 2 (dropping ['fft_baked_v1'])
+[input] appended fft_onfly_v1 -> X (2724, 2, 128, 128)
+[input] channel recipe: ['raster', 'fft_onfly_v1']
+[eval] norm stats reproduce the bundle's (split verified)
+[eval] 5-member photonic-surrogate-bundle-v2 (heteroscedastic)
+[eval] test/tta_on        MAE 0.006112  RMSE 0.007808  rho +0.621  RMS(s)/RMSE 1.010  PICP1 0.702
+[eval] test/tta_off       MAE 0.005992  RMSE 0.007565  rho +0.626  RMS(s)/RMSE 1.000  PICP1 0.654
+[eval] wrote /project/rise-batteries/Photonics_RISE/runs/ablation/augment_off/ablation_metrics.json
+
+VERDICT: aug-off rows -- tta_on MAE 0.006112 rho +0.621; tta_off MAE 0.005992 rho +0.626. Combine with ablation #4's two rows for the train-aug x TTA 2x2; the aug-on-minus-aug-off delta is the data-efficiency win of exploiting the exact D4 symmetry.

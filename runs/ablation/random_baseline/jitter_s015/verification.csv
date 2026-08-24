@@ -1,0 +1,21 @@
+name,method,pred_E_mean,pred_E_lcb,true_E60,gain_vs_cell_mean_pct,verdict,true_E120
+candidate_0000,random,2.60892,2.60892,2.62043,0.647,CLAIMABLE,nan
+candidate_0001,random,2.60153,2.60153,2.59034,-0.509,below mean,nan
+candidate_0002,random,2.60305,2.60305,2.61015,0.252,ELITE-VERIFY,nan
+candidate_0003,random,2.60394,2.60394,2.61058,0.268,ELITE-VERIFY,nan
+candidate_0004,random,2.60586,2.60586,2.60178,-0.070,below mean,nan
+candidate_0005,random,2.59706,2.59706,2.60510,0.058,ELITE-VERIFY,nan
+candidate_0006,random,2.61185,2.61185,2.60692,0.128,ELITE-VERIFY,nan
+candidate_0007,random,2.60114,2.60114,2.59072,-0.495,below mean,nan
+candidate_0008,random,2.60363,2.60363,2.60205,-0.059,below mean,nan
+candidate_0009,random,2.60431,2.60431,2.60911,0.212,ELITE-VERIFY,nan
+candidate_0010,random,2.61214,2.61214,2.62142,0.685,CLAIMABLE,nan
+candidate_0011,random,2.60243,2.60243,2.59547,-0.312,below mean,nan
+candidate_0012,random,2.60855,2.60855,2.60678,0.122,ELITE-VERIFY,nan
+candidate_0013,random,2.59355,2.59355,2.59168,-0.458,below mean,nan
+candidate_0014,random,2.59729,2.59729,2.59148,-0.465,below mean,nan
+candidate_0015,random,2.59735,2.59735,2.60062,-0.114,below mean,nan
+candidate_0016,random,2.60102,2.60102,2.60187,-0.066,below mean,nan
+candidate_0017,random,2.60398,2.60398,2.59190,-0.449,below mean,nan
+candidate_0018,random,2.60587,2.60587,2.59852,-0.195,below mean,nan
+candidate_0019,random,2.60779,2.60779,2.61012,0.250,ELITE-VERIFY,nan

@@ -1,0 +1,91 @@
+[log] mirroring all output to gpu_out_n8r60/logs/dataset_shard2_20260719_045256.log
+================================================================
+DATASET GENERATION (GPU FDTD)  [mode=FULL  solver=torch-FDTD(GPU)  supercell=7x7 (a_super=4550 nm)  res=60/um  decay_tol=0.0003  cap=2500  grid=12/2.5 nm  stack=air/Si(300)/ZnO(80)/Ag  device=auto fp32]
+grid: 2 classes x 10 sigmas x 75 seeds + 50 random + ordered
+================================================================
+[device] cuda
+
+[pre-flight validation]
+[Drude-Lorentz fit ledger  (per band, fit vs table)]
+    si    400- 700 nm: max|dn|=1.41e-02  max|dk|=9.25e-03  (rel k err where k>1e-3: 7.35%)  -> OK
+    si    700- 950 nm: max|dn|=1.53e-03  max|dk|=7.12e-04  (rel k err where k>1e-3: 8.43%)  -> OK
+    si    950-1100 nm: max|dn|=3.12e-03  max|dk|=3.64e-04  (rel k err where k>1e-3: 32.49%)  -> OK
+    zno   400- 700 nm: max|dn|=2.47e-05  max|dk|=3.94e-09  (rel k err where k>1e-3: 0.00%)  -> OK
+    zno   700- 950 nm: max|dn|=4.08e-06  max|dk|=6.92e-10  (rel k err where k>1e-3: 0.00%)  -> OK
+    zno   950-1100 nm: max|dn|=7.02e-06  max|dk|=4.41e-10  (rel k err where k>1e-3: 0.00%)  -> OK
+    ag    400- 700 nm: max|dn|=1.09e-03  max|dk|=4.06e-03  (rel k err where k>1e-3: 0.17%)  -> OK
+    ag    700- 950 nm: max|dn|=2.21e-03  max|dk|=4.65e-03  (rel k err where k>1e-3: 0.08%)  -> OK
+    ag    950-1100 nm: max|dn|=2.71e-03  max|dk|=7.93e-03  (rel k err where k>1e-3: 0.10%)  -> OK
+    LABEL GATE planar: eta(table)=0.13968  eta(fit)=0.13853  (-0.82%, gate 1%)   max|dA_si|=2.429e-02
+    LABEL GATE trapping (L_eff=15um): eta(table)=0.69847  eta(fit)=0.69512  (-0.48%, gate 2.5%)
+[pseudo-1D planar stack: torch-FDTD vs fitted-material TMM, res=500/um, device=cuda]
+    band 400-700 nm: max|dA_si| = 4.51e-03  (R err 4.51e-03, A_par err 1.84e-04)  -> OK
+    band 700-950 nm: max|dA_si| = 3.43e-04  (R err 3.63e-04, A_par err 2.74e-05)  -> OK
+    band 950-1100 nm: max|dA_si| = 2.54e-05  (R err 4.27e-05, A_par err 4.10e-05)  -> OK
+[3D uniform slab @ res=120, cell=650 nm]
+    band 400-700: max|dA_si| = 5.95e-02 (gate 8e-02)  -> OK
+    band 700-950: max|dA_si| = 2.53e-03 (gate 2e-02)  -> OK
+    band 950-1100: max|dA_si| = 2.35e-04 (gate 1e-02)  -> OK
+  NOTE: skipping 46 previously QUARANTINED samples in this shard;
+  inspect gpu_out_n8r60/quarantine and delete their files to force a re-solve.
+
+shard 2/3: 434 samples to solve, one at a time on cuda
+  [    1/434] sample   1769 (jitter  s=0.06) E=2.613  1281.5s  ->  shard ETA 154.1 h
+  [    2/434] sample   1772 (jitter  s=0.06) E=2.613  1286.1s  ->  shard ETA 154.1 h
+  [    3/434] sample   1775 (jitter  s=0.06) E=2.620  1321.8s  ->  shard ETA 155.2 h
+  [    4/434] sample   1778 (jitter  s=0.06) E=2.609  1231.5s  ->  shard ETA 152.9 h
+  [    5/434] sample   1781 (jitter  s=0.06) E=2.612  1397.2s  ->  shard ETA 155.3 h
+  [    6/434] sample   1784 (jitter  s=0.06) E=2.616  1464.3s  ->  shard ETA 158.2 h
+  [    7/434] sample   1787 (jitter  s=0.06) E=2.625  1370.1s  ->  shard ETA 158.5 h
+  [    8/434] sample   1790 (jitter  s=0.06) E=2.618  1232.1s  ->  shard ETA 156.6 h
+  [    9/434] sample   1793 (jitter  s=0.08) E=2.628  1345.9s  ->  shard ETA 156.5 h
+  [   10/434] sample   1796 (jitter  s=0.08) E=2.630  1351.6s  ->  shard ETA 156.4 h
+  [   11/434] sample   1799 (jitter  s=0.08) E=2.620  1511.1s  ->  shard ETA 158.0 h
+  [   12/434] sample   1802 (jitter  s=0.08) E=2.619  1324.6s  ->  shard ETA 157.4 h
+  [   13/434] sample   1805 (jitter  s=0.08) E=2.638  1300.2s  ->  shard ETA 156.7 h
+  [   14/434] sample   1808 (jitter  s=0.08) E=2.606  1142.8s  ->  shard ETA 154.7 h
+  [   15/434] sample   1811 (jitter  s=0.08) E=2.623  1261.7s  ->  shard ETA 153.8 h
+  [   16/434] sample   1814 (jitter  s=0.08) E=2.618  1226.7s  ->  shard ETA 152.8 h
+  [   17/434] sample   1817 (jitter  s=0.08) E=2.630  1362.9s  ->  shard ETA 152.7 h
+  [   18/434] sample   1820 (jitter  s=0.08) E=2.627  1371.0s  ->  shard ETA 152.7 h
+  [   19/434] sample   1823 (jitter  s=0.08) E=2.628  1153.3s  ->  shard ETA 151.3 h
+  [   20/434] sample   1826 (jitter  s=0.08) E=2.621  1148.8s  ->  shard ETA 150.0 h
+  [   21/434] sample   1829 (jitter  s=0.08) E=2.617  1150.6s  ->  shard ETA 148.8 h
+  [   22/434] sample   1832 (jitter  s=0.08) E=2.632  1308.8s  ->  shard ETA 148.5 h
+  [   23/434] sample   1835 (jitter  s=0.08) E=2.631  1212.8s  ->  shard ETA 147.7 h
+  [   24/434] sample   1838 (jitter  s=0.08) E=2.616  1313.8s  ->  shard ETA 147.4 h
+  [   25/434] sample   1841 (jitter  s=0.08) E=2.619  1154.0s  ->  shard ETA 146.4 h
+  [   26/434] sample   1844 (jitter  s=0.08) E=2.616  1127.9s  ->  shard ETA 145.4 h
+  [   27/434] sample   1847 (jitter  s=0.08) E=2.625  1259.1s  ->  shard ETA 144.9 h
+  [   28/434] sample   1850 (jitter  s=0.08) E=2.631  1169.3s  ->  shard ETA 144.1 h
+  [   29/434] sample   1853 (jitter  s=0.08) E=2.616  1043.6s  ->  shard ETA 142.9 h
+  [   30/434] sample   1856 (jitter  s=0.08) E=2.620  1289.8s  ->  shard ETA 142.6 h
+  [   31/434] sample   1859 (jitter  s=0.08) E=2.637  1194.9s  ->  shard ETA 142.0 h
+  [   32/434] sample   1862 (jitter  s=0.08) E=2.628  1286.1s  ->  shard ETA 141.7 h
+  [   33/434] sample   1865 (jitter  s=0.08) E=2.621  1051.0s  ->  shard ETA 140.6 h
+  [   34/434] sample   1868 (jitter  s=0.08) E=2.626  1092.2s  ->  shard ETA 139.7 h
+  [   35/434] sample   1871 (jitter  s=0.1) E=2.621  1113.5s  ->  shard ETA 138.9 h
+  [   36/434] sample   1874 (jitter  s=0.1) E=2.638  1252.0s  ->  shard ETA 138.5 h
+  [   37/434] sample   1877 (jitter  s=0.1) E=2.612  1184.4s  ->  shard ETA 138.0 h
+  [   38/434] sample   1880 (jitter  s=0.1) E=2.620  1169.4s  ->  shard ETA 137.4 h
+  [   39/434] sample   1883 (jitter  s=0.1) E=2.606  1333.5s  ->  shard ETA 137.3 h
+  [   40/434] sample   1886 (jitter  s=0.1) E=2.619  1077.8s  ->  shard ETA 136.5 h
+  [   41/434] sample   1889 (jitter  s=0.1) E=2.607  1248.8s  ->  shard ETA 136.1 h
+  [   42/434] sample   1892 (jitter  s=0.1) E=2.616  1225.4s  ->  shard ETA 135.7 h
+  [   43/434] sample   1895 (jitter  s=0.1) E=2.619  1319.1s  ->  shard ETA 135.5 h
+  [   44/434] sample   1898 (jitter  s=0.1) E=2.620  1170.3s  ->  shard ETA 135.0 h
+  [   45/434] sample   1901 (jitter  s=0.1) E=2.629  1148.2s  ->  shard ETA 134.4 h
+  [   46/434] sample   1904 (jitter  s=0.1) E=2.612  1166.5s  ->  shard ETA 133.9 h
+  [   47/434] sample   1907 (jitter  s=0.1) E=2.624  1270.8s  ->  shard ETA 133.6 h
+  [   48/434] sample   1910 (jitter  s=0.1) E=2.623  1208.6s  ->  shard ETA 133.2 h
+  [   49/434] sample   1913 (jitter  s=0.1) E=2.626  1128.7s  ->  shard ETA 132.6 h
+  [   50/434] sample   1916 (jitter  s=0.1) E=2.616  1113.3s  ->  shard ETA 132.0 h
+  [   51/434] sample   1919 (jitter  s=0.1) E=2.627  1326.5s  ->  shard ETA 131.8 h
+  [   52/434] sample   1922 (jitter  s=0.1) E=2.629  1262.7s  ->  shard ETA 131.5 h
+  [   53/434] sample   1925 (jitter  s=0.1) E=2.618  1064.8s  ->  shard ETA 130.8 h
+  [   54/434] sample   1928 (jitter  s=0.1) E=2.616  1280.7s  ->  shard ETA 130.6 h
+  [   55/434] sample   1931 (jitter  s=0.1) E=2.621  1151.8s  ->  shard ETA 130.1 h
+  [   56/434] sample   1934 (jitter  s=0.1) E=2.618  1333.4s  ->  shard ETA 129.9 h
+  [   57/434] sample   1937 (jitter  s=0.1) E=2.619  1338.3s  ->  shard ETA 129.8 h
+  [   58/434] sample   1940 (jitter  s=0.1) E=2.620  1234.5s  ->  shard ETA 129.4 h
+  [   59/434] sample   1943 (jitter  s=0.1) E=2.626  1178.0s  ->  shard ETA 129.0 h

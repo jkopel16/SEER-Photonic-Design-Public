@@ -1,0 +1,34 @@
+{
+  "mode": "FULL",
+  "device": "cuda",
+  "fake": false,
+  "engine": "torch-fdtd-1.0",
+  "gates": {
+    "materials": true,
+    "planar_pseudo1d": true,
+    "uniform_3d": true
+  },
+  "anchor": {},
+  "ladder": [],
+  "probes": {
+    "ordered": {
+      "runtime_s": 719.8988571166992,
+      "E": 2.4568994682914425,
+      "hit_cap": false,
+      "n_steps": 288000.0
+    },
+    "jitter_s0.15": {
+      "runtime_s": 683.5941390991211,
+      "E": 2.592218839872904,
+      "hit_cap": false,
+      "n_steps": 301200.0
+    }
+  },
+  "eta": {
+    "n_samples": 1551,
+    "s_per_sample": 683.5941390991211,
+    "wall_h_1gpu": 294.5151415952047
+  },
+  "total_runtime_s": 1521.3928263187408,
+  "all_gates_ok": true
+}

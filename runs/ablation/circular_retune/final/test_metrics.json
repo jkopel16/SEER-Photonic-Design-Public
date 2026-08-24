@@ -1,0 +1,158 @@
+{
+  "mae": 0.005762835498899221,
+  "rmse": 0.007306915707886219,
+  "r2": 0.9320756793022156,
+  "pct_error": 0.22255375981330872,
+  "within_sigma_spearman": 0.6665585245659457,
+  "tta_std_mean": 0.0010542331729084253,
+  "ensemble_std_mean": 0.001315074972808361,
+  "relative_uncertainty": 0.0004073477757629007,
+  "error_uncertainty_rho": 0.010844404663174628,
+  "nll_sigma_mean": 0.008357882499694824,
+  "nll_picp_1sigma": 0.7316176470588235,
+  "nll_picp_2sigma": 0.9779411764705882,
+  "nll_picp_3sigma": 1.0,
+  "error_sigma_rho": 0.16053153713346346,
+  "per_cell_spearman": {
+    "jitter/sigma=0.02": {
+      "rho": 0.47692307692307695,
+      "n": 14,
+      "true_spread_pct": 0.3406,
+      "rho_ceiling": 0.9668,
+      "efficiency": 0.4933
+    },
+    "jitter/sigma=0.04": {
+      "rho": 0.5642857142857143,
+      "n": 15,
+      "true_spread_pct": 0.3158,
+      "rho_ceiling": 0.9617,
+      "efficiency": 0.5867
+    },
+    "jitter/sigma=0.06": {
+      "rho": 0.611764705882353,
+      "n": 16,
+      "true_spread_pct": 0.3224,
+      "rho_ceiling": 0.9632,
+      "efficiency": 0.6351
+    },
+    "jitter/sigma=0.08": {
+      "rho": 0.8529411764705882,
+      "n": 16,
+      "true_spread_pct": 0.3024,
+      "rho_ceiling": 0.9585,
+      "efficiency": 0.8899
+    },
+    "jitter/sigma=0.1": {
+      "rho": 0.35810113519091846,
+      "n": 18,
+      "true_spread_pct": 0.3688,
+      "rho_ceiling": 0.9715,
+      "efficiency": 0.3686
+    },
+    "jitter/sigma=0.125": {
+      "rho": 0.6821465428276574,
+      "n": 18,
+      "true_spread_pct": 0.4034,
+      "rho_ceiling": 0.976,
+      "efficiency": 0.6989
+    },
+    "jitter/sigma=0.15": {
+      "rho": 0.8529411764705882,
+      "n": 16,
+      "true_spread_pct": 0.3879,
+      "rho_ceiling": 0.9741,
+      "efficiency": 0.8756
+    },
+    "jitter/sigma=0.2": {
+      "rho": 0.6862745098039216,
+      "n": 18,
+      "true_spread_pct": 0.4455,
+      "rho_ceiling": 0.9802,
+      "efficiency": 0.7001
+    },
+    "jitter/sigma=0.25": {
+      "rho": 0.6601503759398496,
+      "n": 20,
+      "true_spread_pct": 0.3166,
+      "rho_ceiling": 0.9619,
+      "efficiency": 0.6863
+    },
+    "jitter/sigma=0.3": {
+      "rho": 0.23076923076923078,
+      "n": 12,
+      "true_spread_pct": 0.3054,
+      "rho_ceiling": 0.9592,
+      "efficiency": 0.2406
+    },
+    "radius/sigma=0.04": {
+      "rho": 0.4,
+      "n": 4,
+      "true_spread_pct": 0.1798,
+      "rho_ceiling": 0.8942,
+      "efficiency": 0.4473
+    },
+    "radius/sigma=0.06": {
+      "rho": 0.6,
+      "n": 5,
+      "true_spread_pct": 0.3341,
+      "rho_ceiling": 0.9656,
+      "efficiency": 0.6214
+    },
+    "radius/sigma=0.08": {
+      "rho": 0.972027972027972,
+      "n": 12,
+      "true_spread_pct": 0.4548,
+      "rho_ceiling": 0.981,
+      "efficiency": 0.9909
+    },
+    "radius/sigma=0.1": {
+      "rho": 0.8251748251748252,
+      "n": 12,
+      "true_spread_pct": 0.3517,
+      "rho_ceiling": 0.9688,
+      "efficiency": 0.8518
+    },
+    "radius/sigma=0.125": {
+      "rho": 0.9065934065934066,
+      "n": 13,
+      "true_spread_pct": 0.2283,
+      "rho_ceiling": 0.9303,
+      "efficiency": 0.9745
+    },
+    "radius/sigma=0.15": {
+      "rho": 0.6642857142857143,
+      "n": 15,
+      "true_spread_pct": 0.3182,
+      "rho_ceiling": 0.9623,
+      "efficiency": 0.6903
+    },
+    "radius/sigma=0.2": {
+      "rho": 0.5934065934065934,
+      "n": 13,
+      "true_spread_pct": 0.344,
+      "rho_ceiling": 0.9674,
+      "efficiency": 0.6134
+    },
+    "radius/sigma=0.25": {
+      "rho": 0.7909090909090909,
+      "n": 11,
+      "true_spread_pct": 0.4474,
+      "rho_ceiling": 0.9804,
+      "efficiency": 0.8068
+    },
+    "radius/sigma=0.3": {
+      "rho": 0.7736842105263158,
+      "n": 19,
+      "true_spread_pct": 0.4908,
+      "rho_ceiling": 0.9836,
+      "efficiency": 0.7866
+    },
+    "random/sigma=inf": {
+      "rho": 0.6,
+      "n": 5,
+      "true_spread_pct": 0.3678,
+      "rho_ceiling": 0.9713,
+      "efficiency": 0.6177
+    }
+  }
+}

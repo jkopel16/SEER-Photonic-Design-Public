@@ -1,0 +1,14 @@
+{
+  "batch_size": 32,
+  "dropout": 0.23782456920869988,
+  "ema_decay": 0.998,
+  "hidden_units": 32,
+  "lr": 0.0022681043129372763,
+  "smoothl1_beta": 4.822952845962547,
+  "stochastic_depth": 0.007765290412355041,
+  "warmup_epochs": 8,
+  "weight_decay": 0.000583261688961886,
+  "combo_score": 0.4611534253022418,
+  "within_sigma_spearman": 0.5408041924497828,
+  "best_val_loss": 0.007965076714754105
+}

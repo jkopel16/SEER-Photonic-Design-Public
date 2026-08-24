@@ -1,0 +1,5 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/screen_only_jitter_s015/logs/ablation_26_screen_only_20260812_181839.log
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.inverse_design --bundle /project/rise-batteries/Photonics_RISE/runs/surrogate_128_fft_nll_sweep/surrogate_bundle.pt --disorder-class jitter --sigma 0.15 --export-dir /project/rise-batteries/Photonics_RISE/runs/ablation/screen_only_jitter_s015 --kappa 0.2 --no-calibration --tiers baseline screen --n-baseline 5000 --n-screen 50000 --screen-keep-frac 0.2 --export-top 20
+[cmd] PC_MODE=FULL PC_COMPILE=1 /project/rise-batteries/photonics-fdtd/bin/python3 -u scripts/FDTD_solver/verify_candidates.py --in-dir /project/rise-batteries/Photonics_RISE/runs/ablation/screen_only_jitter_s015
+
+[note] no verification.csv yet -- run with --verify on a GPU node; predicted-only results are never quotable (the surrogate proposes, FDTD disposes).

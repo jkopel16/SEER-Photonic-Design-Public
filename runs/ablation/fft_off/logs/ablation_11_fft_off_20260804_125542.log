@@ -1,0 +1,12 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/fft_off/logs/ablation_11_fft_off_20260804_125542.log
+[skip] /project/rise-batteries/Photonics_RISE/runs/ablation/fft_off/surrogate_bundle.pt already exists -- refusing to retrain (delete the dir to redo; out-dirs are never reused, audit sec. 11.3)
+[model] device = cuda
+[input] --raster-only: keeping channel 0 of 2 (dropping ['fft_baked_v1'])
+[input] channel recipe: ['raster']
+[eval] norm stats reproduce the bundle's (split verified)
+[eval] 5-member photonic-surrogate-bundle-v2 (heteroscedastic)
+[eval] test/tta_on        MAE 0.006286  RMSE 0.007788  rho +0.564  RMS(s)/RMSE 1.108  PICP1 0.717
+[eval] test/tta_off       MAE 0.006254  RMSE 0.007790  rho +0.559  RMS(s)/RMSE 1.104  PICP1 0.728
+[eval] wrote /project/rise-batteries/Photonics_RISE/runs/ablation/fft_off/ablation_metrics.json
+
+VERDICT: raster-only MAE 0.006286, rho +0.564 -- compare to deployed v2 (MAE 0.005447, rho 0.701). A material gap = the structure-factor channel earns its Methods paragraph; parity = the CNN recovers reciprocal-space structure unaided (report either honestly).

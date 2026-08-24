@@ -1,0 +1,61 @@
+[log] mirroring all output to gpu_out_n8r60/logs/dataset_shard0_20260719_135854.log
+================================================================
+DATASET GENERATION (GPU FDTD)  [mode=FULL  solver=torch-FDTD(GPU)  supercell=7x7 (a_super=4550 nm)  res=60/um  decay_tol=0.0003  cap=2500  grid=12/2.5 nm  stack=air/Si(300)/ZnO(80)/Ag  device=auto fp32]
+grid: 2 classes x 10 sigmas x 75 seeds + 50 random + ordered
+================================================================
+[device] cuda
+
+[pre-flight validation]
+[Drude-Lorentz fit ledger  (per band, fit vs table)]
+    si    400- 700 nm: max|dn|=1.41e-02  max|dk|=9.25e-03  (rel k err where k>1e-3: 7.35%)  -> OK
+    si    700- 950 nm: max|dn|=1.53e-03  max|dk|=7.12e-04  (rel k err where k>1e-3: 8.43%)  -> OK
+    si    950-1100 nm: max|dn|=3.12e-03  max|dk|=3.64e-04  (rel k err where k>1e-3: 32.49%)  -> OK
+    zno   400- 700 nm: max|dn|=2.47e-05  max|dk|=3.94e-09  (rel k err where k>1e-3: 0.00%)  -> OK
+    zno   700- 950 nm: max|dn|=4.08e-06  max|dk|=6.92e-10  (rel k err where k>1e-3: 0.00%)  -> OK
+    zno   950-1100 nm: max|dn|=7.02e-06  max|dk|=4.41e-10  (rel k err where k>1e-3: 0.00%)  -> OK
+    ag    400- 700 nm: max|dn|=1.09e-03  max|dk|=4.06e-03  (rel k err where k>1e-3: 0.17%)  -> OK
+    ag    700- 950 nm: max|dn|=2.21e-03  max|dk|=4.65e-03  (rel k err where k>1e-3: 0.08%)  -> OK
+    ag    950-1100 nm: max|dn|=2.71e-03  max|dk|=7.93e-03  (rel k err where k>1e-3: 0.10%)  -> OK
+    LABEL GATE planar: eta(table)=0.13968  eta(fit)=0.13853  (-0.82%, gate 1%)   max|dA_si|=2.429e-02
+    LABEL GATE trapping (L_eff=15um): eta(table)=0.69847  eta(fit)=0.69512  (-0.48%, gate 2.5%)
+[pseudo-1D planar stack: torch-FDTD vs fitted-material TMM, res=500/um, device=cuda]
+    band 400-700 nm: max|dA_si| = 4.51e-03  (R err 4.51e-03, A_par err 1.84e-04)  -> OK
+    band 700-950 nm: max|dA_si| = 3.43e-04  (R err 3.63e-04, A_par err 2.74e-05)  -> OK
+    band 950-1100 nm: max|dA_si| = 2.54e-05  (R err 4.27e-05, A_par err 4.10e-05)  -> OK
+[3D uniform slab @ res=120, cell=650 nm]
+    band 400-700: max|dA_si| = 5.95e-02 (gate 8e-02)  -> OK
+    band 700-950: max|dA_si| = 2.53e-03 (gate 2e-02)  -> OK
+    band 950-1100: max|dA_si| = 2.35e-04 (gate 1e-02)  -> OK
+  NOTE: skipping 43 previously QUARANTINED samples in this shard;
+  inspect gpu_out_n8r60/quarantine and delete their files to force a re-solve.
+
+shard 0/3: 675 samples to solve, one at a time on cuda
+  [    1/675] sample   1047 (radius  s=0.08) E=2.557  1482.2s  ->  shard ETA 277.5 h
+  [    2/675] sample   1050 (radius  s=0.08) E=2.563  1471.8s  ->  shard ETA 276.1 h
+  [    3/675] sample   1053 (radius  s=0.1) E=2.589  1547.2s  ->  shard ETA 280.1 h
+    QUARANTINED sample 1056 (radius, sigma=0.1): A_si out of [0,1]: [0.00188,739]
+  [    4/675] sample   1056 (radius  s=0.1) E=2.756  2727.2s  ->  shard ETA 336.8 h
+  [    5/675] sample   1059 (radius  s=0.1) E=2.563  1468.9s  ->  shard ETA 323.7 h
+    QUARANTINED sample 1062 (radius, sigma=0.1): A_si out of [0,1]: [-0.0191,305]
+  [    6/675] sample   1062 (radius  s=0.1) E=2.745  2723.6s  ->  shard ETA 353.8 h
+  [    7/675] sample   1065 (radius  s=0.1) E=2.582  1452.5s  ->  shard ETA 341.3 h
+  [    8/675] sample   1068 (radius  s=0.1) E=2.577  1317.2s  ->  shard ETA 328.7 h
+  [    9/675] sample   1071 (radius  s=0.1) E=2.581  1603.9s  ->  shard ETA 324.7 h
+  [   10/675] sample   1074 (radius  s=0.1) E=2.563  1530.1s  ->  shard ETA 320.0 h
+  [   11/675] sample   1077 (radius  s=0.1) E=2.570  1447.1s  ->  shard ETA 314.8 h
+  [   12/675] sample   1080 (radius  s=0.1) E=2.573  1542.1s  ->  shard ETA 311.8 h
+  [   13/675] sample   1083 (radius  s=0.1) E=2.584  1427.6s  ->  shard ETA 307.6 h
+  [   14/675] sample   1086 (radius  s=0.1) E=2.570  1357.0s  ->  shard ETA 303.0 h
+  [   15/675] sample   1089 (radius  s=0.1) E=2.573  1413.3s  ->  shard ETA 299.6 h
+  [   16/675] sample   1092 (radius  s=0.1) E=2.575  1468.4s  ->  shard ETA 297.3 h
+  [   17/675] sample   1095 (radius  s=0.1) E=2.566  1527.2s  ->  shard ETA 295.8 h
+  [   18/675] sample   1098 (radius  s=0.1) E=2.590  1347.6s  ->  shard ETA 292.6 h
+  [   19/675] sample   1101 (radius  s=0.1) E=2.578  1252.1s  ->  shard ETA 288.8 h
+  [   20/675] sample   1104 (radius  s=0.1) E=2.593  1079.4s  ->  shard ETA 283.7 h
+  [   21/675] sample   1107 (radius  s=0.1) E=2.569  1462.3s  ->  shard ETA 282.5 h
+  [   22/675] sample   1110 (radius  s=0.1) E=2.602  1124.0s  ->  shard ETA 278.5 h
+  [   23/675] sample   1113 (radius  s=0.1) E=2.567  1326.5s  ->  shard ETA 276.4 h
+  [   24/675] sample   1116 (radius  s=0.1) E=2.566  1231.0s  ->  shard ETA 273.8 h
+  [   25/675] sample   1119 (radius  s=0.1) E=2.571  1301.7s  ->  shard ETA 271.8 h
+  [   26/675] sample   1122 (radius  s=0.1) E=2.564  1211.5s  ->  shard ETA 269.3 h
+  [   27/675] sample   1125 (radius  s=0.1) E=2.576  1359.0s  ->  shard ETA 268.0 h

@@ -1,0 +1,12 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/kappa0_jitter_s015/logs/ablation_05_kappa0_20260804_105144.log
+[skip] /project/rise-batteries/Photonics_RISE/runs/ablation/kappa0_jitter_s015/manifest.json exists -- design already done
+
+=== kappa ablation, verified arms (mean +- SE) ===
+  kappa=0.2 (production)       n=20  E = 2.6472 +- 0.0025  max 2.6675  claimable 20/20
+  kappa=0 (jitter_s015)        n=20  E = 2.6503 +- 0.0020  max 2.6618  claimable 20/20
+
+  per-candidate predicted-vs-verified table: /project/rise-batteries/Photonics_RISE/runs/ablation/kappa0_jitter_s015/verification.csv (the pred/true gap is the exploitation figure)
+
+  arm difference (kappa0 - production): +0.0030 +- 0.0032 E
+
+VERDICT: NULL at the arm level -- kappa = 0 verified as well as the production LCB run. Apply the pre-registered fallback TOGETHER with #7's outcome (see module docstring); do not rationalize post hoc.

@@ -1,0 +1,13 @@
+[log] mirroring all output to /project/rise-batteries/Photonics_RISE/runs/ablation/attn_none/logs/ablation_18_attn_none_20260812_150616.log
+[cmd] /project/rise-batteries/photonics-fdtd/bin/python3 -u -m models.model -i /project/rise-batteries/Photonics_RISE/data/samples_128.npz -o /project/rise-batteries/Photonics_RISE/runs/ablation/attn_none --raster-only --fft-channel --ensemble 5 --seed 137 --use-best --nll-head --kfold-members --attention none
+[model] device = cuda
+[input] --raster-only: keeping channel 0 of 2 (dropping ['fft_baked_v1'])
+[input] appended fft_onfly_v1 -> X (2724, 2, 128, 128)
+[input] channel recipe: ['raster', 'fft_onfly_v1']
+[eval] norm stats reproduce the bundle's (split verified)
+[eval] 5-member photonic-surrogate-bundle-v2 (heteroscedastic)
+[eval] test/tta_on        MAE 0.005553  RMSE 0.007084  rho +0.681  RMS(s)/RMSE 0.984  PICP1 0.643
+[eval] test/tta_off       MAE 0.005540  RMSE 0.007073  rho +0.679  RMS(s)/RMSE 0.985  PICP1 0.651
+[eval] wrote /project/rise-batteries/Photonics_RISE/runs/ablation/attn_none/ablation_metrics.json
+
+VERDICT: no-attention MAE 0.005553, rho +0.681, PICP1 0.643 -- compare to deployed v2 (MAE 0.005447, rho 0.701, PICP1 0.651). A material gap = the SE gate earns its Methods paragraph; parity = the residual conv body alone suffices at this size.

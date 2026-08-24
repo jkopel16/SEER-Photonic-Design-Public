@@ -1,0 +1,76 @@
+[model] device = cuda
+[input] --raster-only: keeping channel 0 of 2 (dropping ['fft_baked_v1'])
+[input] appended fft_onfly_v1 -> X (2724, 2, 128, 128)
+[input] channel recipe: ['raster', 'fft_onfly_v1']
+[split] train=2180 val=272 test=272 (grouped=yes)
+
+=== member 1/1 (seed=137) ===
+    epoch 0: train recon MSE 1.2393
+
+=== test metrics (ensemble mean, TTA) ===
+  mae                      0.022882
+  rmse                     0.028261
+  r2                       -0.016083
+  pct_error                0.886032
+  within_sigma_spearman    -0.070972
+  tta_std_mean             0.000225
+  ensemble_std_mean        0.000000
+  relative_uncertainty     0.000087
+  error_uncertainty_rho    0.017234
+  nll_sigma_mean           0.023247
+  nll_picp_1sigma          0.562500
+  nll_picp_2sigma          0.911765
+  nll_picp_3sigma          0.985294
+  error_sigma_rho          0.307560
+  rho[jitter/sigma=0.02       ] = -0.323  (n=14, ceiling 0.97, efficiency -33%)
+  rho[jitter/sigma=0.04       ] = +0.407  (n=15, ceiling 0.96, efficiency 42%)
+  rho[jitter/sigma=0.06       ] = -0.303  (n=16, ceiling 0.96, efficiency -31%)
+  rho[jitter/sigma=0.08       ] = -0.135  (n=16, ceiling 0.96, efficiency -14%)
+  rho[jitter/sigma=0.1        ] = -0.158  (n=18, ceiling 0.97, efficiency -16%)
+  rho[jitter/sigma=0.125      ] = -0.189  (n=18, ceiling 0.98, efficiency -19%)
+  rho[jitter/sigma=0.15       ] = +0.147  (n=16, ceiling 0.97, efficiency 15%)
+  rho[jitter/sigma=0.2        ] = -0.053  (n=18, ceiling 0.98, efficiency -5%)
+  rho[jitter/sigma=0.25       ] = -0.050  (n=20, ceiling 0.96, efficiency -5%)
+  rho[jitter/sigma=0.3        ] = +0.063  (n=12, ceiling 0.96, efficiency 7%)
+  rho[radius/sigma=0.04       ] = +0.400  (n=4, ceiling 0.89, efficiency 45%)
+  rho[radius/sigma=0.06       ] = -0.100  (n=5, ceiling 0.97, efficiency -10%)
+  rho[radius/sigma=0.08       ] = -0.224  (n=12, ceiling 0.98, efficiency -23%)
+  rho[radius/sigma=0.1        ] = +0.140  (n=12, ceiling 0.97, efficiency 14%)
+  rho[radius/sigma=0.125      ] = -0.626  (n=13, ceiling 0.93, efficiency -67%)
+  rho[radius/sigma=0.15       ] = -0.018  (n=15, ceiling 0.96, efficiency -2%)
+  rho[radius/sigma=0.2        ] = -0.022  (n=13, ceiling 0.97, efficiency -2%)
+  rho[radius/sigma=0.25       ] = -0.218  (n=11, ceiling 0.98, efficiency -22%)
+  rho[radius/sigma=0.3        ] = +0.142  (n=19, ceiling 0.98, efficiency 14%)
+  rho[random/sigma=inf        ] = -0.100  (n=5, ceiling 0.97, efficiency -10%)
+[report] wrote /project/rise-batteries/Photonics_RISE/runs/ablation/_smoke_recon/test_metrics.json, /project/rise-batteries/Photonics_RISE/runs/ablation/_smoke_recon/test_predictions.csv, 3 figures -> /project/rise-batteries/Photonics_RISE/runs/ablation/_smoke_recon
+
+saved bundle -> /project/rise-batteries/Photonics_RISE/runs/ablation/_smoke_recon/surrogate_bundle.pt
+[model] device = cuda
+[OK] ECA k(C=128) == 5
+[OK] ECA k(C=32) == 3
+[OK] shapes h=128
+[OK] shapes h=48
+[OK] recon arch strict round-trip
+[OK] legacy arch builds, no decoder
+[OK] smoke train rc == 0
+[OK] bundle arch records recon_head
+[OK] recon bundle strict reload
+[OK] decoder weights present
+[input] --raster-only: keeping channel 0 of 2 (dropping ['fft_baked_v1'])
+[input] appended fft_onfly_v1 -> X (2724, 2, 128, 128)
+[input] channel recipe: ['raster', 'fft_onfly_v1']
+[eval] norm stats reproduce the bundle's (split verified)
+[eval] 5-member photonic-surrogate-bundle-v2 (heteroscedastic)
+[eval] test/tta_on        MAE 0.005442  RMSE 0.006912  rho +0.701  RMS(s)/RMSE 1.005  PICP1 0.651
+[eval] test/tta_off       MAE 0.005442  RMSE 0.006913  rho +0.701  RMS(s)/RMSE 1.003  PICP1 0.651
+[eval] wrote /dev/null
+[OK] deployed metrics reproduce -- mae 0.005442 rho 0.701 ratio 1.005
+[model] device = cuda
+[scorer] channel recipe: ['raster', 'fft_onfly_v1']
+[scorer] 5-model ensemble (heteroscedastic v2), img=128px, TTA=on, kappa=0.2
+[scorer] UQ calibration: none (raw ensemble std)
+[OK] SurrogateScorer strict load
+[OK] dry-run ablation_22_recon.py 
+[OK] dry-run ablation_18_attn_none.py --wandb
+
+ALL CHECKS PASSED

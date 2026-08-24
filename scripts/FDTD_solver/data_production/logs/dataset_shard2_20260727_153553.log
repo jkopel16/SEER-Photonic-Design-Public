@@ -1,0 +1,190 @@
+[log] mirroring all output to gpu_out_n8r60/logs/dataset_shard2_20260727_153553.log
+================================================================
+DATASET GENERATION (GPU FDTD)  [mode=FULL  solver=torch-FDTD(GPU)  supercell=7x7 (a_super=4550 nm)  res=60/um  decay_tol=0.0003  cap=2500  grid=12/2.5 nm  stack=air/Si(300)/ZnO(80)/Ag  device=auto fp32]
+grid: 2 classes x 10 sigmas x 75 seeds + 50 random + ordered
+================================================================
+[device] cuda
+
+[pre-flight validation]
+[Drude-Lorentz fit ledger  (per band, fit vs table)]
+    si    400- 700 nm: max|dn|=1.41e-02  max|dk|=9.25e-03  (rel k err where k>1e-3: 7.35%)  -> OK
+    si    700- 950 nm: max|dn|=1.53e-03  max|dk|=7.12e-04  (rel k err where k>1e-3: 8.43%)  -> OK
+    si    950-1100 nm: max|dn|=3.12e-03  max|dk|=3.64e-04  (rel k err where k>1e-3: 32.49%)  -> OK
+    zno   400- 700 nm: max|dn|=2.47e-05  max|dk|=3.94e-09  (rel k err where k>1e-3: 0.00%)  -> OK
+    zno   700- 950 nm: max|dn|=4.08e-06  max|dk|=6.92e-10  (rel k err where k>1e-3: 0.00%)  -> OK
+    zno   950-1100 nm: max|dn|=7.02e-06  max|dk|=4.41e-10  (rel k err where k>1e-3: 0.00%)  -> OK
+    ag    400- 700 nm: max|dn|=1.09e-03  max|dk|=4.06e-03  (rel k err where k>1e-3: 0.17%)  -> OK
+    ag    700- 950 nm: max|dn|=2.21e-03  max|dk|=4.65e-03  (rel k err where k>1e-3: 0.08%)  -> OK
+    ag    950-1100 nm: max|dn|=2.71e-03  max|dk|=7.93e-03  (rel k err where k>1e-3: 0.10%)  -> OK
+    LABEL GATE planar: eta(table)=0.13968  eta(fit)=0.13853  (-0.82%, gate 1%)   max|dA_si|=2.429e-02
+    LABEL GATE trapping (L_eff=15um): eta(table)=0.69847  eta(fit)=0.69512  (-0.48%, gate 2.5%)
+[pseudo-1D planar stack: torch-FDTD vs fitted-material TMM, res=500/um, device=cuda]
+    band 400-700 nm: max|dA_si| = 4.51e-03  (R err 4.51e-03, A_par err 1.84e-04)  -> OK
+    band 700-950 nm: max|dA_si| = 3.43e-04  (R err 3.63e-04, A_par err 2.74e-05)  -> OK
+    band 950-1100 nm: max|dA_si| = 2.54e-05  (R err 4.27e-05, A_par err 4.10e-05)  -> OK
+[3D uniform slab @ res=120, cell=650 nm]
+    band 400-700: max|dA_si| = 5.95e-02 (gate 8e-02)  -> OK
+    band 700-950: max|dA_si| = 2.53e-03 (gate 2e-02)  -> OK
+    band 950-1100: max|dA_si| = 2.35e-04 (gate 1e-02)  -> OK
+  NOTE: skipping 87 previously QUARANTINED samples in this shard;
+  inspect gpu_out_n8r60/quarantine and delete their files to force a re-solve.
+
+shard 2/3: 157 samples to solve, one at a time on cuda
+  [    1/157] sample   2681 (radius  s=0.1) E=2.566   385.2s  ->  shard ETA 16.7 h
+  [    2/157] sample   2684 (radius  s=0.1) E=2.566   325.9s  ->  shard ETA 15.3 h
+  [    3/157] sample   2687 (radius  s=0.1) E=2.559   367.3s  ->  shard ETA 15.4 h
+  [    4/157] sample   2690 (radius  s=0.1) E=2.568   395.7s  ->  shard ETA 15.7 h
+  [    5/157] sample   2693 (radius  s=0.1) E=2.581   344.3s  ->  shard ETA 15.4 h
+  [    6/157] sample   2696 (radius  s=0.1) E=2.582   375.2s  ->  shard ETA 15.3 h
+  [    7/157] sample   2699 (radius  s=0.1) E=2.567   368.4s  ->  shard ETA 15.3 h
+  [    8/157] sample   2702 (radius  s=0.1) E=2.561   375.6s  ->  shard ETA 15.2 h
+  [    9/157] sample   2705 (radius  s=0.1) E=2.581   337.6s  ->  shard ETA 15.0 h
+  [   10/157] sample   2708 (radius  s=0.1) E=2.567   333.2s  ->  shard ETA 14.7 h
+  [   11/157] sample   2711 (radius  s=0.1) E=2.583   382.2s  ->  shard ETA 14.7 h
+  [   12/157] sample   2714 (radius  s=0.1) E=2.575   405.7s  ->  shard ETA 14.8 h
+  [   13/157] sample   2717 (radius  s=0.1) E=2.568   393.4s  ->  shard ETA 14.7 h
+  [   14/157] sample   2720 (radius  s=0.1) E=2.582   353.7s  ->  shard ETA 14.6 h
+  [   15/157] sample   2723 (radius  s=0.1) E=2.563   425.1s  ->  shard ETA 14.6 h
+  [   16/157] sample   2726 (radius  s=0.1) E=2.577   322.3s  ->  shard ETA 14.4 h
+  [   17/157] sample   2729 (radius  s=0.1) E=2.570   342.1s  ->  shard ETA 14.3 h
+  [   18/157] sample   2732 (radius  s=0.1) E=2.584   362.6s  ->  shard ETA 14.1 h
+  [   19/157] sample   2735 (radius  s=0.1) E=2.556   282.9s  ->  shard ETA 13.9 h
+  [   20/157] sample   2738 (radius  s=0.1) E=2.573   261.1s  ->  shard ETA 13.6 h
+  [   21/157] sample   2741 (radius  s=0.1) E=2.562   316.4s  ->  shard ETA 13.4 h
+  [   22/157] sample   2744 (radius  s=0.1) E=2.566   287.1s  ->  shard ETA 13.2 h
+  [   23/157] sample   2747 (radius  s=0.1) E=2.563   244.0s  ->  shard ETA 12.9 h
+  [   24/157] sample   2750 (radius  s=0.1) E=2.579   231.7s  ->  shard ETA 12.7 h
+  [   25/157] sample   2753 (radius  s=0.125) E=2.579   226.0s  ->  shard ETA 12.4 h
+  [   26/157] sample   2756 (radius  s=0.125) E=2.584   240.3s  ->  shard ETA 12.2 h
+  [   27/157] sample   2759 (radius  s=0.125) E=2.583   218.2s  ->  shard ETA 11.9 h
+  [   28/157] sample   2762 (radius  s=0.125) E=2.581   219.9s  ->  shard ETA 11.7 h
+  [   29/157] sample   2765 (radius  s=0.125) E=2.589   233.3s  ->  shard ETA 11.5 h
+  [   30/157] sample   2768 (radius  s=0.125) E=2.601   222.1s  ->  shard ETA 11.3 h
+  [   31/157] sample   2771 (radius  s=0.125) E=2.587   268.1s  ->  shard ETA 11.1 h
+  [   32/157] sample   2774 (radius  s=0.125) E=2.577   255.2s  ->  shard ETA 11.0 h
+  [   33/157] sample   2777 (radius  s=0.125) E=2.589   277.4s  ->  shard ETA 10.8 h
+  [   34/157] sample   2780 (radius  s=0.125) E=2.599   240.9s  ->  shard ETA 10.7 h
+  [   35/157] sample   2783 (radius  s=0.125) E=2.590   246.6s  ->  shard ETA 10.5 h
+  [   36/157] sample   2786 (radius  s=0.125) E=2.583   236.7s  ->  shard ETA 10.4 h
+  [   37/157] sample   2789 (radius  s=0.125) E=2.597   226.9s  ->  shard ETA 10.2 h
+  [   38/157] sample   2792 (radius  s=0.125) E=2.588   249.2s  ->  shard ETA 10.1 h
+  [   39/157] sample   2795 (radius  s=0.125) E=2.590   222.3s  ->  shard ETA 9.9 h
+  [   40/157] sample   2798 (radius  s=0.125) E=2.573   253.7s  ->  shard ETA 9.8 h
+  [   41/157] sample   2801 (radius  s=0.125) E=2.607   241.1s  ->  shard ETA 9.7 h
+  [   42/157] sample   2804 (radius  s=0.125) E=2.592   256.6s  ->  shard ETA 9.5 h
+  [   43/157] sample   2807 (radius  s=0.125) E=2.587   211.9s  ->  shard ETA 9.4 h
+  [   44/157] sample   2810 (radius  s=0.125) E=2.584   211.9s  ->  shard ETA 9.3 h
+  [   45/157] sample   2813 (radius  s=0.125) E=2.616   213.0s  ->  shard ETA 9.1 h
+  [   46/157] sample   2816 (radius  s=0.125) E=2.584   244.3s  ->  shard ETA 9.0 h
+  [   47/157] sample   2819 (radius  s=0.125) E=2.598   249.1s  ->  shard ETA 8.9 h
+  [   48/157] sample   2822 (radius  s=0.125) E=2.577   283.2s  ->  shard ETA 8.8 h
+  [   49/157] sample   2825 (radius  s=0.125) E=2.593   254.0s  ->  shard ETA 8.7 h
+  [   50/157] sample   2828 (radius  s=0.125) E=2.595   221.8s  ->  shard ETA 8.6 h
+  [   51/157] sample   2831 (radius  s=0.15) E=2.580   246.8s  ->  shard ETA 8.5 h
+  [   52/157] sample   2834 (radius  s=0.15) E=2.600   215.9s  ->  shard ETA 8.4 h
+  [   53/157] sample   2837 (radius  s=0.15) E=2.596   237.8s  ->  shard ETA 8.3 h
+  [   54/157] sample   2840 (radius  s=0.15) E=2.592   213.1s  ->  shard ETA 8.1 h
+  [   55/157] sample   2843 (radius  s=0.15) E=2.601   232.0s  ->  shard ETA 8.0 h
+  [   56/157] sample   2846 (radius  s=0.15) E=2.588   237.8s  ->  shard ETA 7.9 h
+  [   57/157] sample   2849 (radius  s=0.15) E=2.596   214.9s  ->  shard ETA 7.8 h
+  [   58/157] sample   2852 (radius  s=0.15) E=2.596   250.7s  ->  shard ETA 7.7 h
+  [   59/157] sample   2855 (radius  s=0.15) E=2.618   236.9s  ->  shard ETA 7.6 h
+  [   60/157] sample   2858 (radius  s=0.15) E=2.611   261.4s  ->  shard ETA 7.5 h
+  [   61/157] sample   2861 (radius  s=0.15) E=2.587   229.8s  ->  shard ETA 7.4 h
+  [   62/157] sample   2864 (radius  s=0.15) E=2.614   246.7s  ->  shard ETA 7.3 h
+  [   63/157] sample   2867 (radius  s=0.15) E=2.594   214.4s  ->  shard ETA 7.2 h
+  [   64/157] sample   2870 (radius  s=0.15) E=2.583   272.4s  ->  shard ETA 7.2 h
+  [   65/157] sample   2873 (radius  s=0.15) E=2.606   219.9s  ->  shard ETA 7.1 h
+  [   66/157] sample   2876 (radius  s=0.15) E=2.611   215.1s  ->  shard ETA 7.0 h
+  [   67/157] sample   2879 (radius  s=0.15) E=2.583   265.7s  ->  shard ETA 6.9 h
+  [   68/157] sample   2882 (radius  s=0.15) E=2.594   231.4s  ->  shard ETA 6.8 h
+  [   69/157] sample   2885 (radius  s=0.15) E=2.598   250.4s  ->  shard ETA 6.7 h
+  [   70/157] sample   2888 (radius  s=0.15) E=2.607   224.2s  ->  shard ETA 6.6 h
+  [   71/157] sample   2891 (radius  s=0.15) E=2.613   240.9s  ->  shard ETA 6.5 h
+  [   72/157] sample   2894 (radius  s=0.15) E=2.593   213.9s  ->  shard ETA 6.4 h
+  [   73/157] sample   2897 (radius  s=0.15) E=2.605   205.5s  ->  shard ETA 6.3 h
+  [   74/157] sample   2900 (radius  s=0.15) E=2.592   247.1s  ->  shard ETA 6.3 h
+  [   75/157] sample   2903 (radius  s=0.15) E=2.599   213.8s  ->  shard ETA 6.2 h
+  [   76/157] sample   2906 (radius  s=0.15) E=2.598   223.5s  ->  shard ETA 6.1 h
+  [   77/157] sample   2909 (radius  s=0.15) E=2.607   224.9s  ->  shard ETA 6.0 h
+  [   78/157] sample   2912 (radius  s=0.2) E=2.606   208.2s  ->  shard ETA 5.9 h
+  [   79/157] sample   2915 (radius  s=0.2) E=2.600   223.7s  ->  shard ETA 5.8 h
+  [   80/157] sample   2918 (radius  s=0.2) E=2.602   233.7s  ->  shard ETA 5.7 h
+  [   81/157] sample   2921 (radius  s=0.2) E=2.618   213.3s  ->  shard ETA 5.6 h
+  [   82/157] sample   2924 (radius  s=0.2) E=2.595   249.1s  ->  shard ETA 5.6 h
+  [   83/157] sample   2927 (radius  s=0.2) E=2.608   263.8s  ->  shard ETA 5.5 h
+  [   84/157] sample   2930 (radius  s=0.2) E=2.591   240.2s  ->  shard ETA 5.4 h
+  [   85/157] sample   2933 (radius  s=0.2) E=2.607   224.9s  ->  shard ETA 5.3 h
+  [   86/157] sample   2936 (radius  s=0.2) E=2.610   224.8s  ->  shard ETA 5.2 h
+  [   87/157] sample   2939 (radius  s=0.2) E=2.589   218.3s  ->  shard ETA 5.1 h
+  [   88/157] sample   2942 (radius  s=0.2) E=2.616   237.0s  ->  shard ETA 5.1 h
+  [   89/157] sample   2945 (radius  s=0.2) E=2.606   237.1s  ->  shard ETA 5.0 h
+  [   90/157] sample   2948 (radius  s=0.2) E=2.622   228.6s  ->  shard ETA 4.9 h
+  [   91/157] sample   2951 (radius  s=0.2) E=2.598   236.0s  ->  shard ETA 4.8 h
+  [   92/157] sample   2954 (radius  s=0.2) E=2.608   215.8s  ->  shard ETA 4.7 h
+  [   93/157] sample   2957 (radius  s=0.2) E=2.591   226.4s  ->  shard ETA 4.7 h
+  [   94/157] sample   2960 (radius  s=0.2) E=2.590   244.2s  ->  shard ETA 4.6 h
+  [   95/157] sample   2963 (radius  s=0.2) E=2.605   220.3s  ->  shard ETA 4.5 h
+  [   96/157] sample   2966 (radius  s=0.2) E=2.603   226.0s  ->  shard ETA 4.4 h
+  [   97/157] sample   2969 (radius  s=0.2) E=2.604   212.8s  ->  shard ETA 4.3 h
+  [   98/157] sample   2972 (radius  s=0.2) E=2.601   255.9s  ->  shard ETA 4.3 h
+  [   99/157] sample   2975 (radius  s=0.2) E=2.603   221.7s  ->  shard ETA 4.2 h
+  [  100/157] sample   2978 (radius  s=0.2) E=2.605   225.8s  ->  shard ETA 4.1 h
+  [  101/157] sample   2981 (radius  s=0.2) E=2.613   221.3s  ->  shard ETA 4.0 h
+  [  102/157] sample   2984 (radius  s=0.2) E=2.613   235.0s  ->  shard ETA 4.0 h
+  [  103/157] sample   2987 (radius  s=0.2) E=2.613   223.2s  ->  shard ETA 3.9 h
+  [  104/157] sample   2990 (radius  s=0.2) E=2.612   228.6s  ->  shard ETA 3.8 h
+  [  105/157] sample   2993 (radius  s=0.25) E=2.574   221.6s  ->  shard ETA 3.7 h
+  [  106/157] sample   2996 (radius  s=0.25) E=2.602   232.8s  ->  shard ETA 3.7 h
+  [  107/157] sample   2999 (radius  s=0.25) E=2.568   260.5s  ->  shard ETA 3.6 h
+  [  108/157] sample   3002 (radius  s=0.25) E=2.598   226.7s  ->  shard ETA 3.5 h
+  [  109/157] sample   3005 (radius  s=0.25) E=2.610   224.8s  ->  shard ETA 3.4 h
+  [  110/157] sample   3008 (radius  s=0.25) E=2.594   210.9s  ->  shard ETA 3.4 h
+  [  111/157] sample   3011 (radius  s=0.25) E=2.603   242.3s  ->  shard ETA 3.3 h
+  [  112/157] sample   3014 (radius  s=0.25) E=2.585   254.5s  ->  shard ETA 3.2 h
+  [  113/157] sample   3017 (radius  s=0.25) E=2.573   243.5s  ->  shard ETA 3.1 h
+  [  114/157] sample   3020 (radius  s=0.25) E=2.589   237.8s  ->  shard ETA 3.1 h
+  [  115/157] sample   3023 (radius  s=0.25) E=2.595   229.1s  ->  shard ETA 3.0 h
+  [  116/157] sample   3026 (radius  s=0.25) E=2.588   215.2s  ->  shard ETA 2.9 h
+  [  117/157] sample   3029 (radius  s=0.25) E=2.594   218.1s  ->  shard ETA 2.8 h
+  [  118/157] sample   3032 (radius  s=0.25) E=2.575   230.3s  ->  shard ETA 2.8 h
+  [  119/157] sample   3035 (radius  s=0.25) E=2.583   232.2s  ->  shard ETA 2.7 h
+  [  120/157] sample   3038 (radius  s=0.25) E=2.596   221.0s  ->  shard ETA 2.6 h
+  [  121/157] sample   3041 (radius  s=0.25) E=2.581   233.8s  ->  shard ETA 2.6 h
+  [  122/157] sample   3044 (radius  s=0.25) E=2.595   240.4s  ->  shard ETA 2.5 h
+  [  123/157] sample   3047 (radius  s=0.25) E=2.609   259.0s  ->  shard ETA 2.4 h
+  [  124/157] sample   3050 (radius  s=0.25) E=2.594   260.4s  ->  shard ETA 2.3 h
+  [  125/157] sample   3053 (radius  s=0.25) E=2.609   249.2s  ->  shard ETA 2.3 h
+  [  126/157] sample   3056 (radius  s=0.25) E=2.578   213.5s  ->  shard ETA 2.2 h
+  [  127/157] sample   3059 (radius  s=0.25) E=2.583   257.5s  ->  shard ETA 2.1 h
+  [  128/157] sample   3062 (radius  s=0.25) E=2.563   224.6s  ->  shard ETA 2.0 h
+  [  129/157] sample   3065 (radius  s=0.25) E=2.601   229.5s  ->  shard ETA 2.0 h
+  [  130/157] sample   3068 (radius  s=0.25) E=2.602   277.5s  ->  shard ETA 1.9 h
+  [  131/157] sample   3071 (radius  s=0.3) E=2.562   243.1s  ->  shard ETA 1.8 h
+  [  132/157] sample   3074 (radius  s=0.3) E=2.576   222.7s  ->  shard ETA 1.8 h
+  [  133/157] sample   3077 (radius  s=0.3) E=2.576   254.9s  ->  shard ETA 1.7 h
+  [  134/157] sample   3080 (radius  s=0.3) E=2.581   258.0s  ->  shard ETA 1.6 h
+  [  135/157] sample   3083 (radius  s=0.3) E=2.573   238.3s  ->  shard ETA 1.6 h
+  [  136/157] sample   3086 (radius  s=0.3) E=2.585   249.4s  ->  shard ETA 1.5 h
+  [  137/157] sample   3089 (radius  s=0.3) E=2.561   242.3s  ->  shard ETA 1.4 h
+  [  138/157] sample   3092 (radius  s=0.3) E=2.571   267.3s  ->  shard ETA 1.3 h
+  [  139/157] sample   3095 (radius  s=0.3) E=2.557   252.3s  ->  shard ETA 1.3 h
+  [  140/157] sample   3098 (radius  s=0.3) E=2.554   229.4s  ->  shard ETA 1.2 h
+  [  141/157] sample   3101 (radius  s=0.3) E=2.579   243.3s  ->  shard ETA 1.1 h
+  [  142/157] sample   3104 (radius  s=0.3) E=2.571   229.7s  ->  shard ETA 1.1 h
+  [  143/157] sample   3107 (radius  s=0.3) E=2.565   214.9s  ->  shard ETA 1.0 h
+  [  144/157] sample   3110 (radius  s=0.3) E=2.565   247.2s  ->  shard ETA 0.9 h
+  [  145/157] sample   3113 (radius  s=0.3) E=2.561   231.1s  ->  shard ETA 0.8 h
+  [  146/157] sample   3116 (radius  s=0.3) E=2.581   241.1s  ->  shard ETA 0.8 h
+  [  147/157] sample   3119 (radius  s=0.3) E=2.559   238.8s  ->  shard ETA 0.7 h
+  [  148/157] sample   3122 (radius  s=0.3) E=2.538   262.4s  ->  shard ETA 0.6 h
+  [  149/157] sample   3125 (radius  s=0.3) E=2.579   210.8s  ->  shard ETA 0.6 h
+  [  150/157] sample   3128 (radius  s=0.3) E=2.575   250.7s  ->  shard ETA 0.5 h
+  [  151/157] sample   3131 (radius  s=0.3) E=2.600   228.0s  ->  shard ETA 0.4 h
+  [  152/157] sample   3134 (radius  s=0.3) E=2.588   235.9s  ->  shard ETA 0.4 h
+  [  153/157] sample   3137 (radius  s=0.3) E=2.567   256.5s  ->  shard ETA 0.3 h
+  [  154/157] sample   3140 (radius  s=0.3) E=2.554   230.6s  ->  shard ETA 0.2 h
+  [  155/157] sample   3143 (radius  s=0.3) E=2.562   252.1s  ->  shard ETA 0.1 h
+  [  156/157] sample   3146 (radius  s=0.3) E=2.538   260.8s  ->  shard ETA 0.1 h
+  [  157/157] sample   3149 (radius  s=0.3) E=2.550   250.9s  ->  shard ETA 0.0 h
+shard complete.
