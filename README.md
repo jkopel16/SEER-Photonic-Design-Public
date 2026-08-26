@@ -1,7 +1,5 @@
 # SEER-Photonic-Design
 
-Photonic Phenoms
-
 ![Art](assets/Photonic_Phenoms.jpeg)
 
 SEER (Surrogate Ensemble for Enhancement Ranking): a CNN ensemble trained on electromagnetic simulations to predict and inverse-design disordered photonic-crystal thin-film solar cell layouts with enhanced solar absorption. The repo ships **Photra-2.7k**, the FDTD-labeled training dataset of 2,723 manufacturable disordered layouts.
