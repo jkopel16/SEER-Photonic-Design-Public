@@ -4,6 +4,8 @@
 
 SEER (Surrogate Ensemble for Enhancement Ranking): a CNN ensemble trained on electromagnetic simulations to predict and inverse-design disordered photonic-crystal thin-film solar cell layouts with enhanced solar absorption. The repo ships **Photra-2.7k**, the FDTD-labeled training dataset of 2,723 manufacturable disordered layouts.
 
+**New here?** [IMAGES.md](IMAGES.md) is a captioned figure gallery: the dataset, what the model sees, and the design results.
+
 > **Reviewing anonymously?** Use the mirror's download button to get the
 > full archive. `data/samples/` holds the complete Photra-2.7k dataset as
 > regular files; items stored in Git LFS (pretrained weights, prebuilt
