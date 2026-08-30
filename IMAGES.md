@@ -12,3 +12,11 @@ As the training set grows, ensemble test error (red) crosses below the
 ranking fidelity rho (blue, right axis) keeps climbing. The purple curve
 is the model's own error forecast, which tracks measured error to within
 8% for N >= 200 and stays cautious when data is scarce.
+
+## Ranking fidelity per cell
+
+![Spearman by cell](assets/gallery/spearman_by_cell.png)
+
+Within-cell Spearman correlation between predicted and true E on unseen
+test layouts, per disorder class and strength. Good enough to search
+with; final ordering always comes from full FDTD.
